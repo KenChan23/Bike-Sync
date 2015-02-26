@@ -1,0 +1,18 @@
+<html>
+<head>
+ <title>Demo</title>
+</head>
+<body>
+ <h1>Hello</h1>
+ <form action="/write" method="POST">
+  <input type="text" name="userinput" id="userinput">
+  <input type="submit" value="Submit">
+ </form>
+ <a href="./deleteall">Delete all</a>
+
+  {% for userinput in userinputs %}
+ <p>'{{userinput.message}}' has database id {{userinput._id}}</p>
+ {% endfor %}
+</body>
+
+</html>
