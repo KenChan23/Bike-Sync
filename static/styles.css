@@ -1,0 +1,44 @@
+html { 
+  background: url(images/citi-bike.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%); 
+}
+
+/*.container {
+  max-width: 90% !important;
+}*/
+
+#data-table {
+  background-color: rgba(10, 10, 10, 0.5);
+  border-radius: 10px;
+}
+
+#data-table tbody {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+#data-table tr{
+  color: rgba(255, 255, 255, 1);
+  display: inline-block;
+}
+
+#top-title {
+  top: 5%;
+  margin: 0px auto;
+  left: 50%;
+  position: absolute;
+  display: inline-block;
+}
+
+form {
+  position: absolute;
+}
+

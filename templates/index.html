@@ -1,18 +1,172 @@
 <html>
-<head>
- <title>Demo</title>
-</head>
-<body>
- <h1>Hello</h1>
- <form action="/write" method="POST">
-  <input type="text" name="userinput" id="userinput">
-  <input type="submit" value="Submit">
- </form>
- <a href="./deleteall">Delete all</a>
-
-  {% for userinput in userinputs %}
- <p>'{{userinput.message}}' has database id {{userinput._id}}</p>
- {% endfor %}
-</body>
-
+  <head>
+    <title>CitiBike API</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='Skeleton-2.0.4/css/normalize.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='Skeleton-2.0.4/css/skeleton.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div>
+      <h1 id="top-title">CitiBike API</h1>
+      <h6 id="subtitle">Opening Historical Data</h6>
+      <form action="/write" method="POST">
+        <input type="text" name="userinput" id="userinput">
+        <input type="submit" value="Submit">
+      </form>
+      <!-- <a href="./deleteall">Delete all</a> -->
+      <select>
+        <option value="2013-08">August 2013</option>
+        <option value="2013-09">September 2013</option>
+        <option value="2013-10">October 2013</option>
+        <option value="2013-11">November 2013</option>
+        <option value="2013-12">December 2013</option>
+        <option value="2014-01">January 2014</option>
+        <option value="2014-02">February 2014</option>
+        <option value="2014-03">March 2014</option>
+        <option value="2014-04">April 2014</option>
+        <option value="2014-05">May 2014</option>
+        <option value="2014-06">June 2014</option>
+        <option value="2014-07">July 2014</option>
+        <option value="2014-08">August 2014</option>
+        <option value="2014-09">September 2014</option>
+        <option value="2014-10">October 2014</option>
+        <option value="2014-11">Novemner 2014</option>
+        <option value="2014-12">December 2014</option>
+      </select>
+      <div id="data-table">
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Bike ID</th>
+              <th>Birth Year</th>
+              <th>Start Station ID</th>
+              <th>Start Station Name</th>
+              <th>Start Station Coordinates</th>
+              <th>End Station ID</th>
+              <th>End Station Name</th>
+              <th>End Station Coordinates</th>
+              <th>Start &amp; Stop Time</th>
+              <th>Trip Duration</th>
+              <th>Gender</th>
+              <th>User Type</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+            <tr>
+              <td class="bike-id">21376</td>
+              <td class="birth-year">1977</td>
+              <td class="start-station">479</td>
+              <td class="start-station-name">9 Ave. &amp; W 45 St.</td>
+              <td class="start-station-coordinates">[-73.9912551, 40.76019252]</td>
+              <td class="end-station-id">540</td>
+              <td class="end-station-name">Lexington Ave. &amp; E 26 St.</td>
+              <td class="end-station-coordinates">[-73.98320928, 40.74147286]</td>
+              <td class="start-stop-time">[10/01/2014-00:00:27, 10/01/2014-00:17:34]</td>
+              <td class="trip-duration">1027</td>
+              <td class="gender">1</td>
+              <td class="user-type">Subscriber</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
