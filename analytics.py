@@ -7,6 +7,7 @@ import pandas as pd
 import math
 import random
 import sklearn as ml
+
 import collections
 
 # data = from hardware
@@ -15,14 +16,6 @@ import collections
 # heart_rate
 # activity
 # context
-
-# Happy, Sad, Neutral, and Angry
-# according to the paper, the heart rate is in the following order
-# neutral < sad < happy < angry
-
-N_EMOTIONS = 4 
-emotions = {1:"neutral", 2:"sad", 3:"happy", 4:"angry"}
-emotions_heart_rate_range = {(0, 0.25):1, (0.26, 0.50):2, (0.51, 0.75):3, (0.76, 1.00):4}
 
 def getStdDevOfActivity(activity_one_second):
     # according to the readings, the standarad deviation value is great for clusltering and comparison
@@ -40,16 +33,23 @@ def stackSeriesToDataFrame(df, series, n_columns):
         df.drop('0', inplace = True)
         
     df = df.append(series)
-    
     return df
+
+
+""" 
+ACTIVITY-BASED CLASSIFICATION 
+
+REFERENCE
+    - Nirjon S, Dickerson R, Li Q, Asare P, Stankovic J, Hong D, Zhang B, Shen G, 
+    Jiang X, Zhao F.  2012.  MusicalHeart: A Hearty Way of Listening to Music. 
+    The 10th ACM Conference on Embedded Networked Sensor Systems (SenSys 2012)
+"""
 
 def featureExtractActivity(data, random_sample_size):
     # extracts the features from the dataset whose data instance is the Activity instance
-    
     # for each second, randomly select 50 samples from the whole dataset
     # randmoly generate numbers between 0 and the size of the accleration_df 
     # with the size of random_sample_sizes
-    
     idx = []
     for i in range(random_sample_size):
         idx.append(random.randint(0,data.itemsize()))
@@ -59,10 +59,10 @@ def featureExtractActivity(data, random_sample_size):
 def activity_cluster(idx, data_df, n_clusters):
     # exectue the k-means clustering algorithm and returns the newly made labels 
     # n_clusters can be adjusted based upon the user's request
-    
+
     # extract the features by extracting only a small sample of the dataset
     random_features = data_df[idx]
-
+    # run the k-means clustering algorithm to cluster the randomly selected features
     k_means_obj = ml.cluster.KMeans(n_clusters)
     k_means_obj.fit(random_features)
     return k_means_obj.predict(random_features)
@@ -87,17 +87,25 @@ def predict_user_activity(pred_values):
     
     return collections.Counter(pred_values).most_common()[0]
 
-def normalize(data_df):
-    # normalize the data so that it can have appropriate classes
-    # averages and standard deviations must be the 
-    means = data_df.mean(axis = 1)
-    std_dev= data_df.std(axis = 1)
+
     
-    data_df = data_df.substract(means.ix[0], axis = 'columns')
-    data_df = data_df.div(std_dev.ix[0], axis= 'columns')
-    
-    return data_df
-    
+""" 
+HEART RATE-BASED SENTIMENT ANALYSIS 
+
+REFERENCE
+    - Muhammad Tauseef Quazi, Human Emotion Recognition Using Smart Sensors,
+    School of Engineering and Advanced Technology, Massey University (2012)
+
+"""
+
+N_EMOTIONS = 4 
+emotions = {1:"neutral", 2:"sad", 3:"happy", 4:"angry"}
+emotions_heart_rate_range = {(0, 0.25):1, (0.26, 0.50):2, (0.51, 0.75):3, (0.76, 1.00):4}
+
+# Happy, Sad, Neutral, and Angry
+# according to the paper, the heart rate is in the following order
+# neutral < sad < happy < angry
+
 
 def heart_rate_cluster(heart_rate_df, n_emotions = N_EMOTIONS, his_current_heart_rate):
     # uses the clustering algortihm to classify the emotions using the user's heart rate
@@ -114,6 +122,28 @@ def heart_rate_cluster(heart_rate_df, n_emotions = N_EMOTIONS, his_current_heart
     
     return pred_emotion
 
+"""
+
+"""
+
+def fitbit_data_cluster(fitbit_data_df, n_emotions, user_current_status):
+    # using the data from the fitbit (activity, heart rate, blood pressure, etc)
+    heart_rate_df = normalize(fitbit_data_df)
+    k_means_obj = ml.cluster.Kmeans(n_emotions)
+    k_means_obj.fit(fitbit_data_df)
+    
+    pred_val = k_means_obj.predict(user_current_status)
+    pred_emotion = ''
+    # use the labeled data structures for emotions to tell you what kind of emotion the user is in
+    for a_range in emotions_heart_rate_range.keys():
+        if(pred_val >= a_range[0] and pred_val <= a_range[1]):
+            pred_emotion = emotions[emotions_heart_rate_range[a_range]]
+    
+    return pred_emotion
+
+
+
+
 
 def make_recommendation(user_data, music_datatable):
     # based on the user_data, the music recommendation is being done
@@ -121,6 +151,49 @@ def make_recommendation(user_data, music_datatable):
     
     
     return music_datatable[user_data]
+    
+
+
+"""
+Using Bayesian Network to recommend music (Fuzzy Bayesian)
+RERFERENCE
+    - Han-Saem Park, Ji-Oh Yoo, and Sung-Bae Cho, 
+    A Context-Aware Music Recommendation System Using Fuzzy Bayesian Networks with Utility Theory (2012)
+"""
+
+from skfuzzy.membership import generatemf as fuzzy
+
+def makeFuzzyMembership(data_df, type_of_data):
+    # uses the fuzzy function in order to make a fuzzy membership vector
+    # depending on the type of data, the techniques are divided into two groups:
+    # continuous and discrete.
+    # variables such as temperature, heart rate, accelerometer, blood pressure, time are continuous
+    # variables such as weather, gender, season, etc, are continuous
+    
+    # Parameter
+    # data_array : 1-dimensitonal array, the independent variable
+    # type_of_data : whether the data type is cotinuous or discrete
+
+    """ must divide the data into continous and discrete"""
+    membership_vecs = []
+    data_np_array = np.array(data_df)
+    for each_feature in data_np_array:
+        if(type_of_data == 'continuous'):
+            param = [0.25, 0.50, 0.75, 1.00]
+            membership_vecs.append(fuzzy.trapmf(each_feature, param))
+        else:
+            param = [0, 0.50, 0.75]
+            membership_vecs.append(fuzzy.piecemf(each_feature, param))
+    
+    return membership_vecs
+        
+
+
+
+def getFuzzyEvidence(membership_vecs):
+    
+    for a_membershp_vec in membershp_vecs:
+        """starting from here again..."""
     
 
 
