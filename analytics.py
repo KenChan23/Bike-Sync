@@ -9,6 +9,7 @@ import random
 import sklearn as ml
 
 import collections
+import preprocessing
 
 # data = from hardware
 # we have the object-oriented design for heart rate, activity, and contxt
@@ -169,38 +170,81 @@ def makeFuzzyMembership(data_df, type_of_data):
     # continuous and discrete.
     # variables such as temperature, heart rate, accelerometer, blood pressure, time are continuous
     # variables such as weather, gender, season, etc, are continuous
+
+    # type of data is 1xn dimentional array, where n is the number of features that data_df has
+    # data_df is in mxn dimensional array
+    # each element in the type_of_data corresponds to the type of variable for each feature in data_df
+    # : continous or discrete
     
     # Parameter
-    # data_array : 1-dimensitonal array, the independent variable
+    # data_df : the data frame that contains the heart rate, gender, age, etc. all different types of data
     # type_of_data : whether the data type is cotinuous or discrete
 
     """ must divide the data into continous and discrete"""
     membership_vecs = []
     data_np_array = np.array(data_df)
-    for each_feature in data_np_array:
-        if(type_of_data == 'continuous'):
+    for i in range(len(types_of_data)):
+        
+        if(type_of_data[i] == 'continuous'):
             param = [0.25, 0.50, 0.75, 1.00]
-            membership_vecs.append(fuzzy.trapmf(each_feature, param))
+            # fuzzy.trampf function returns 1-d array representing the fuzzy membershp vector
+            # of a certain data
+            # data_np_array[i] access the data for a particular feature (type of data)
+            membership_vecs.append(fuzzy.trapmf(data_np_array[i], param))
         else:
-            param = [0, 0.50, 0.75]
-            membership_vecs.append(fuzzy.piecemf(each_feature, param))
+            # if the data is discrete
+            # normalize the dataset
+            data_np_array[i] = preprocessing.normalize(pd.DataFrame(data_np_array[i]))
+            param = [0, 0.50, 1] 
+            """ YOU NEED TO CHECK THE PARAMETER AS WELL """
+            membership_vecs.append(fuzzy.piecemf(data_np_array[i], param))
     
     return membership_vecs
         
 
-
-
 def getFuzzyEvidence(membership_vecs):
-    
-    for a_membershp_vec in membershp_vecs:
-        """starting from here again..."""
-    
+    # use the membershp vectors you obtained from makeFuzzyMembership 
+    # function to estimate the fuzzy evidence
+    membership_vecs = pd.DataFrame(memebership_vecs)
+    fuzzy_evidence = membership_vecs.apply(lambda x: sum(x), axis = 0)
+    return fuzzy_evidence
 
 
-    
-    
-    
-    
+def getProbForMood(membership_vecs):
+    # estimate the probability that the user may be in a certain kind of mood
+    fuzzy_evidence = getFuzzyEvidence(membership_vecs)    
+    sum_fuzzy_evidence = fuzzy_evidence.apply(lambda x: sum(x))    
+    prob = fuzzy_evidence.apply(lambda x: x/sum_fuzzy_evidence) 
+    ''' YOU MUST CHECK ABOVE PROBABILITY PART '''   
+    return prob
 
 
+""" utility_dataset represetns a combination of attribute and state of music """
+
+
+def estimate_recommendation_score_for_that_music(utility_dataset, prob):
+    # make a new data table that contains the scores of user preference for a particular feature 
+    # of the music and for a particular mood
+    # utility_dataset is in n x m data frame, where n is the number of attributes 
+    # (genre, mood, tempo, etc)
+    # and m is the number of mood (it must be 4 since we are testing only four moods)
+    # returns the scores of each attribute 
+    attributes_type = utility_dataset.index
+    mood_type = utility_dataset.columnss
+    prob = np.array(prob)
+    utility_dataset = np.array(utility_dataset)
+    """ HERE IT IS ASSUMED THAT WE HAVE THE SAUME NUMBER OF COLUMNS (THE SAME NUMBER OF MOOD TYPE)"""
+    scores = {}
+    for i in range(len(utility_dataset)):
+        an_attribute = utility_dataset[i]
+        score = 0
+        for j in range(len(a_record)):
+            score = score + a_record[j]*prob[j]
+        
+        scores[an_attribute] = score
+        
+    scores = pd.DataFrame(scores)
+    sums_scores = scores.apply(lambda x: sum(x))
+    
+    return sum_scores
     
