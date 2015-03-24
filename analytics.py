@@ -24,19 +24,6 @@ def getStdDevOfActivity(activity_one_second):
     return activity_one_second.apply(lambda a: np.std(math.abs(math.sqrt((a.X)**2 + (a.Y)**2 + (a.Z)**2))))
 
 
-def stackSeriesToDataFrame(df, series, n_columns):
-    # stack the series columwise to the df
-    # depending on the value of n_columns, stack it columnwise
-    # if the size of the column exceeds the n_columns, the deletion of the very first column must be done
-    
-    if(df.shape()[1]>=n_columns):
-        # if tthe number of the columns in the df is better than n_columns
-        df.drop('0', inplace = True)
-        
-    df = df.append(series)
-    return df
-
-
 """ 
 ACTIVITY-BASED CLASSIFICATION 
 
@@ -123,9 +110,6 @@ def heart_rate_cluster(heart_rate_df, n_emotions = N_EMOTIONS, his_current_heart
     
     return pred_emotion
 
-"""
-
-"""
 
 def fitbit_data_cluster(fitbit_data_df, n_emotions, user_current_status):
     # using the data from the fitbit (activity, heart rate, blood pressure, etc)
@@ -143,9 +127,6 @@ def fitbit_data_cluster(fitbit_data_df, n_emotions, user_current_status):
     return pred_emotion
 
 
-
-
-
 def make_recommendation(user_data, music_datatable):
     # based on the user_data, the music recommendation is being done
     
@@ -153,7 +134,6 @@ def make_recommendation(user_data, music_datatable):
     
     return music_datatable[user_data]
     
-
 
 """
 Using Bayesian Network to recommend music (Fuzzy Bayesian)
