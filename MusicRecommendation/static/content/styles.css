@@ -1,0 +1,47 @@
+body 
+{ 
+  margin: 0px; 
+  padding: 0px; 
+}
+
+#map 
+{ 
+  position: absolute; 
+  top: 56px; 
+  bottom: 0px; 
+  width:100%; 
+}
+
+nav
+{
+  background-color: #26a69a;
+}
+
+.brand-logo
+{
+  margin-left: 20px;
+}
+
+#logo-text
+{
+  display: inline-block;
+  float: left;
+} 
+
+#bike-img
+{
+  height: 50px;
+  display: inline-block;
+  float: right;
+  color: white;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 601px)
+{
+  #map
+  {
+    top: 64px;
+  }
+}
