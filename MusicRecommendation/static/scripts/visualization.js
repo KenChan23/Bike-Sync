@@ -14,7 +14,7 @@
   var svg = d3.select(map.getPanes().overlayPane).append("svg");
   var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-  d3.json("/api/sample/10-2014/54ef5588cbbe69683aa684b0", function(collection) {
+  d3.json("/api/sample/10-2014/54ef557bcbbe69683aa68342", function(collection) {
     tripdata = collection[0];
     collection = collection[0].geoData;
 

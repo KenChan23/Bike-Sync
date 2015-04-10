@@ -112,7 +112,7 @@ def addGeoJSONAttribute(data_year):
           # options[data_year]["collection"].update({"_id": ObjectId(str(d["_id"]))}, {"$set": {"geoData": geoJSONData}})
           oldData = options[data_year]["collection"].find_one({"_id": ObjectId(str(d["_id"]))})
           options[data_year]["sample"].insert(oldData)
-          options[data_year]["sample"].update({"_id": ObjectId(str(d["_id"]))}, {"$set": {"geoData": geoJSONData}})
+          options[data_year]["sample"].update({"_id": ObjectId(str(d["_id"]))}, {"$set": {"geoData": geoJSONData, "index": sample_counter}})
           sample_counter += 1
         else:
           # options[data_year]["collection"].update({"_id": ObjectId(str(d["_id"]))}, {"$set": {"geoData": 'null'}})
