@@ -40,13 +40,14 @@ nav
 
 #right-panel
 {
+  width: 100% !important;
   float: right;
 }
 
 #right-div
 {
   position: absolute;
-  width: 100%;
+  width: 25% !important;
   height: 75%;
   top: 15%;
   right: 1%;
@@ -55,6 +56,11 @@ nav
 #right-panel, #right-card
 {
   height: 100%;
+}
+
+#card-info
+{
+  margin-top: 10px;
 }
 
 /*****************/
