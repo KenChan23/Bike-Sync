@@ -77,7 +77,7 @@ def generatePointsJSON(decoded):
 
   for latlng in decoded:
     time_counter += 1
-    feature = Feature(geometry=Point((latlng[0], latlng[1])), properties={"latitude": latlng[0], "longitude": latlng[1], "time": time_counter, "id": "route", "city": "New York City", "state": "New York", "country": "US"})
+    feature = Feature(geometry=Point((latlng[1], latlng[0])), properties={"latitude": latlng[0], "longitude": latlng[1], "time": time_counter, "id": "route", "city": "New York City", "state": "New York", "country": "US"})
     feature_list.append(feature)
   feature_collection = FeatureCollection(feature_list, crs=crs)
   return json.loads(geojson.dumps(feature_collection))

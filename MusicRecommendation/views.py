@@ -6,6 +6,7 @@ from pymongo import MongoClient
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, jsonify
 from bson import json_util
+from bson.objectid import ObjectId
 from MusicRecommendation import app
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
@@ -46,15 +47,27 @@ def retrieve_data(quantity, data_year):
     }
     return options[data_year]
 
-@app.route('/')
-@app.route('/home')
-def home():
-    """Renders the home page."""
-    return render_template(
-        'index.html',
-        title='Bike-Sync',
-        year=datetime.now().year,
-    )
+def retrieve_sample(data_year, oid):
+    options = {
+        "12-2014": list(handle._2014_12_sample.find({"_id": ObjectId(oid)})),
+        "11-2014": list(handle._2014_11_sample.find({"_id": ObjectId(oid)})),
+        "10-2014": list(handle._2014_10_sample.find({"_id": ObjectId(oid)})),
+        "09-2014": list(handle._2014_09_sample.find({"_id": ObjectId(oid)})),
+        "08-2014": list(handle._2014_08_sample.find({"_id": ObjectId(oid)})),
+        "07-2014": list(handle._2014_07_sample.find({"_id": ObjectId(oid)})),
+        "06-2014": list(handle._2014_06_sample.find({"_id": ObjectId(oid)})),
+        "05-2014": list(handle._2014_05_sample.find({"_id": ObjectId(oid)})),
+        "04-2014": list(handle._2014_04_sample.find({"_id": ObjectId(oid)})),
+        "03-2014": list(handle._2014_03_sample.find({"_id": ObjectId(oid)})),
+        "02-2014": list(handle._2014_02_sample.find({"_id": ObjectId(oid)})),
+        "01-2014": list(handle._2014_01_sample.find({"_id": ObjectId(oid)})),
+        "12-2013": list(handle._2013_12_sample.find({"_id": ObjectId(oid)})),
+        "11-2013": list(handle._2013_11_sample.find({"_id": ObjectId(oid)})),
+        "10-2013": list(handle._2013_10_sample.find({"_id": ObjectId(oid)})),
+        "09-2013": list(handle._2013_09_sample.find({"_id": ObjectId(oid)})),
+        "08-2013": list(handle._2013_08_sample.find({"_id": ObjectId(oid)}))
+    }
+    return options[data_year]
 
 @app.route("/api/12-2014/<quantity>", methods=['GET'])
 def get_12_2014(quantity):
@@ -123,3 +136,19 @@ def get_09_2013(quantity):
 @app.route("/api/08-2013/<quantity>", methods=['GET'])
 def get_08_2013(quantity):
     return json.dumps(retrieve_data(quantity, "08-2013"), default=json_util.default)
+
+## Sample end-points for rendering visualization
+# 54ef556ccbbe69683aa68197
+@app.route("/api/sample/10-2014/<_id>", methods=['GET'])
+def get_10_2014_sample(_id):
+    return json.dumps(retrieve_sample("10-2014", _id), default=json_util.default)
+
+@app.route('/')
+@app.route('/home')
+def home():
+    """Renders the home page."""
+    return render_template(
+        'index.html',
+        title='Bike-Sync',
+        year=datetime.now().year,
+    )

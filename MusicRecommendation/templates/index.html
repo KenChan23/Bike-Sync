@@ -2,8 +2,27 @@
 
 {% block content %}
 
-<div class="row">
+
     <div id="map"></div>
+
+
+<div id="right-div" class="row">
+  <div id="right-panel" class="col s12 m3">
+    <div id="right-card" class="card-panel teal">
+      <div>
+        <label>Browser Select</label>
+        <select class="browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      </span>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
