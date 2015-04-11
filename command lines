@@ -1,0 +1,7 @@
+# some useful command line
+
+# accessing the AWS
+ssh changhl@ec2-54-172-195-184.compute-1.amazonaws.com
+
+# accessing the data in mongdo db
+mongo ec2-54-172-195-184.compute-1.amazonaws.com/citibike -u kenchan -p root

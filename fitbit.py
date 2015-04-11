@@ -40,11 +40,22 @@ if __name__ == "__main__":
     html_string = repr(literal_source.encode("utf-8"))
     # Heart Rate JSON Data - Regex Expression: (\{\"bpm\".*?\})
     match_data = re.findall(r'(\{\"bpm\".*?\})', html_string)
+    """  WE HAVE TO PUT the newline character to make seperation between """
     print json.loads(match_data[0])["dateTime"]
 
-    fo = open(json.loads(match_data[0])["dateTime"][0:json.loads(match_data[0])["dateTime"].index(" ")] + ".json", "wb")
-    fo.write(''.join(match_data))
+    fo = open('./Analytics/' + json.loads(match_data[0])["dateTime"][0:json.loads(match_data[0])["dateTime"].index(" ")] + ".json", "wb")
+    fo.write('['+''.join(match_data)+']')
+    filename = fo.name
     fo.close()
+
+    # open .json file again to parse the data readable for the 
+    json_file = open(filename, 'r')
+    content = json_file.read()
+    json_file.close()     
+    content = content.replace("}{", "},\n{")
+    d = open(filename, 'w')
+    d.write(content)
+    d.close()
 
     browser.find_element_by_css_selector("div.nav-item:nth-child(1)").click()
     browser.find_element_by_css_selector("#header-settings-subnav > li:nth-child(15) > a:nth-child(1)").click()
