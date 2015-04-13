@@ -1,6 +1,11 @@
-import sentiment_analysis 
+import sentiment_analysis
+import music_recommendation
 import preprocessing
 import pandas as pd
+
+from os import listdir
+from os.path import isfile, join
+
 
 
 N_EMOTIONS = 5 
@@ -14,7 +19,7 @@ emotions_range = {1:(0, 0.2), 2:(0.21, 0.4), 3:(0.41, 0.6), 4:(0.61, 0.8), 5:(0.
 # emotions = {1:"neutral", 2:"sad", 3:"happy", 4:"angry"}
 # emotions_range = {(0, 0.25):1, (0.26, 0.50):2, (0.51, 0.75):3, (0.76, 1.00):4}
 
-def main(ls_filenames):
+def obtain_sentiment(ls_filenames):
     # get the data
     # here it is just the json data format
     """  TRAININING DATASET FOR """
@@ -24,11 +29,19 @@ def main(ls_filenames):
 
         if (len(ls_filenames) >= 2):
             for i in range(1, len(ls_filenames)):
-                data_df = data_df.append(pd.io.json.read_json(open(ls_filenames[i], 'r'), orient='records'))
-        
+                data_df = data_df.append(pd.io.json.read_json(open(ls_filenames[i], 'r'), orient='records'), ignore_index=True)
+                
         physiological_data_df = data_df.loc[:,['bpm', 'caloriesBurned']]
         
-        pred_labels = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS, emotions_range)
+        print physiological_data_df
+        
+        physiological_data_df = physiological_data_df[physiological_data_df['bpm']!=0]
+        
+        
+        pred_labels, cluster_model = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS)
+
+
+        
         
         # pred_labels = pred_labels.apply(lambda x: sentiment_analysis.determine_emotion(x, emotions_range))
         
@@ -62,16 +75,31 @@ def main(ls_filenames):
         pred_sentiment = learning_model.predict(data_test)
         """
     
-    return pred_labels
+    return pred_labels, cluster_model, physiological_data_df
 
 
+def recommend_music(music_data):
 
-ls_filenames = []
-stop = 'n'
-while(stop == 'n'):
-    a = raw_input("type the name of the file one at a time: ")
-    ls_filenames.append(a)
-    stop = raw_input("do you wish to stop? y/n: " )
+    data = music_recommendation.getMusicData(music_data)
+
     
-pred_labels, k_means_obj = pd.Series(main(ls_filenames))
-# pred_labels.value_counts()
+ls_filenames = [ join("./data/",f) for f in listdir("./data/") if isfile(join("./data/",f)) ]
+ls_filenames.remove('./data/.DS_Store')
+
+fitbit_data = ls_filenames[0:len(ls_filenames)-1]
+pred_labels, k_means_obj, physiological_data_df = pd.Series(obtain_sentiment(fitbit_data))
+
+# use this pred_labels diagram to predict the emotion at the new time series instance
+
+
+
+recommend_music('./data/music.data')
+
+
+
+
+
+
+
+
+

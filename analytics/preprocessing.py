@@ -29,6 +29,9 @@ def normalize(data_df):
         means = data_df.mean(axis = 1)
         std_dev= data_df.std(axis = 1)
         
+        print means
+        print std_dev
+        
         data_df = data_df.subtract(means.ix[0], axis = 'columns')
         data_df = data_df.div(std_dev.ix[0], axis= 'columns')
 
@@ -82,3 +85,6 @@ def stack_data_frame_to_data_frame_columnwise(df, another_df):
         print "Failed to complete appending, because the number of records is not matching"
 
     return df
+
+    
+    

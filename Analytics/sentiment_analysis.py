@@ -14,8 +14,6 @@ import math
 import random
 import sklearn as ml
 import sklearn.cluster as clustering
-from graphlab import kmeans
-from graphlab import SFrame
 import scipy.fftpack as fft # this is Fast Fourier Transform
 import collections
 import preprocessing
@@ -112,22 +110,36 @@ def determine_emotion(one_record, emotions_range):
     return pred_emotion
 
 
-def data_cluster(data_df, n_emotions, emotions_range):
+def data_cluster(data_df, n_emotions):
     # using the data_df, it clusters into the group of emotions indicated by n_emotions
     # and using the new data that is coming, it gives you the predicted labels 
     # and return the data frame as well as the label in it
 
     """ MAY RUN SOME CROSS-VALIDATION ALGORITHM"""
 
-    data_df = preprocessing.normalize(data_df)
+    #sdata_df = preprocessing.normalize(data_df)
     #data_sf = SFrame(data_df) # turn this into SFrame
     #k_means_obj = kmeans.create(data_sf, num_clusters = n_emotions)
     
     k_means_obj = clustering.KMeans(n_emotions)
     k_means_obj.fit(data_df)
-    pred_labels = pd.DataFrame(k_means_obj.predict(data_df))
     
-    return pred_labels, k_means_obj
+    k_means_obj.cluster_centers_.sort(axis=0)
+    
+    cluster_centers = pd.DataFrame(k_means_obj.cluster_centers_)
+    
+    # using the sorted ndarray, make the predicted emotions range
+    pred_emotions_range = {}
+    for i in range(0, len(cluster_centers[0])):
+        if (i+1 != len(cluster_centers[0])):
+            key = (cluster_centers[0][i], cluster_centers[0][i+1])
+            
+        else:
+            key = (cluster_centers[0][i], 'infinity')
+        
+        pred_emotions_range[key] = i
+    
+    return pred_emotions_range, k_means_obj
 
 def tell_emotions(actual_sentiment):
     # use the hash table structure whose key is the score of the sentiment and whose value is the textual description
