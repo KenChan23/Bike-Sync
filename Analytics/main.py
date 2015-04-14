@@ -7,7 +7,6 @@ from os import listdir
 from os.path import isfile, join
 
 
-
 N_EMOTIONS = 5 
 emotions = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
 #emotions_range = {(0, 0.2):1, (0.21, 0.4):2, (0.41, 0.6):3, (0.61, 0.8):4, (0.81, 1.0):5}
@@ -90,8 +89,6 @@ fitbit_data = ls_filenames[0:len(ls_filenames)-1]
 pred_labels, k_means_obj, physiological_data_df = pd.Series(obtain_sentiment(fitbit_data))
 
 # use this pred_labels diagram to predict the emotion at the new time series instance
-
-
 
 recommend_music('./data/music.data')
 

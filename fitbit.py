@@ -43,7 +43,7 @@ if __name__ == "__main__":
     """  WE HAVE TO PUT the newline character to make seperation between """
     print json.loads(match_data[0])["dateTime"]
 
-    fo = open('./Analytics/' + json.loads(match_data[0])["dateTime"][0:json.loads(match_data[0])["dateTime"].index(" ")] + ".json", "wb")
+    fo = open('./Analytics/data/' + json.loads(match_data[0])["dateTime"][0:json.loads(match_data[0])["dateTime"].index(" ")] + ".json", "wb")
     fo.write('['+''.join(match_data)+']')
     filename = fo.name
     fo.close()
