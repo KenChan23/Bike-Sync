@@ -8,10 +8,11 @@ owm = pyowm.OWM('67b42756a45f998b9ecdeb0b03f9ed31')
 # New York's ID = 5128581
 observation = owm.weather_at_place('New York, USA')
 
-aFile = open("weather.txt", 'a')
+timer = 0
+aFile = open("weather.txt", 'w')
 aFile.write('[')
 
-while(True):
+while(timer!=10):
 	# the time
 	now = datetime.now()
 
@@ -40,10 +41,15 @@ while(True):
 		'temp_max':temp_max,'temp':temp, 'temp_min':temp_min}
 
 	# write to AWS
-	aFile.write(str(dic)+",")
+	aFile.write(str(dic))
 
+	if (timer != 9): aFile.write(",")
+
+	print "did happen"
 
 	time.sleep(60)
+
+	timer = timer + 1
 
 aFile.write("]")
 
