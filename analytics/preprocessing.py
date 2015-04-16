@@ -6,6 +6,8 @@ as well as the fitbit APIs. It uses pandas framework to make the data formatted 
 
 """
 
+from pandas.io.json import read_json 
+
 class Pointer:
     # the class for pointers. This will be used to minimize the memory usage
     def __init__(self, obj): self.__obj = obj
@@ -86,5 +88,16 @@ def stack_data_frame_to_data_frame_columnwise(df, another_df):
 
     return df
 
+
+def get_data_df_from_JSON_Data(ls_filenames):
+    # use the list of filenames, find the json dataset, and return the data frame
+    # that has all the json data
+
+    data_df = read_json(open(ls_filenames[0], 'r'), orient='records')
+    if (len(ls_filenames) >= 2):
+        for i in range(1, len(ls_filenames)):
+            data_df = data_df.append(read_json(open(ls_filenames[i], 'r'), orient='records'), ignore_index=True)
+    
+    return data_df
     
     

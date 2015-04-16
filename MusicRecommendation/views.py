@@ -15,9 +15,10 @@ USERNAME = "kenchan"
 PASSWORD = "root"
 
 def connect():
-# Substitute the 5 pieces of information you got when creating
-# the Mongo DB Database (underlined in red in the screenshots)
-# Obviously, do not store your password as plaintext in practice
+    # Substitute the 5 pieces of information you got when creating
+    # the Mongo DB Database (underlined in red in the screenshots)
+    # Obviously, do not store your password as plaintext in practice
+    
     connection = MongoClient("ds062097.mongolab.com",62097)
     handle = connection["citibike"]
     handle.authenticate("root","root")

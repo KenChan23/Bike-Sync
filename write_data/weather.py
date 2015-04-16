@@ -1,6 +1,6 @@
 import pyowm
 from datetime import datetime
-import pandas as pad
+import pandas as pd
 import time
 
 owm = pyowm.OWM('67b42756a45f998b9ecdeb0b03f9ed31')
@@ -9,10 +9,12 @@ owm = pyowm.OWM('67b42756a45f998b9ecdeb0b03f9ed31')
 observation = owm.weather_at_place('New York, USA')
 
 timer = 0
-aFile = open("weather.txt", 'w')
+aFile = open("./data/weather/weather.json", 'w')
 aFile.write('[')
 
-while(timer!=10):
+max_timer = 10
+
+while(timer!=max_timer):
 	# the time
 	now = datetime.now()
 
@@ -36,20 +38,20 @@ while(timer!=10):
 	temp = temp_dic['temp']
 	temp_min = temp_dic['temp_min']
 
-	dic = {'year':year, 'month': month, 'day': day, 'hr' : hr, 'minute': minute, 'sec':sec,
+	dic = {'year':year, 'month': month, 'day': day, 'hr' : hr, 'min': minute, 'sec':sec,
 		'wind_speed':wind_speed, 'wind_deg':wind_deg, 'humidity':humidty, 
 		'temp_max':temp_max,'temp':temp, 'temp_min':temp_min}
 
 	# write to AWS
 	aFile.write(str(dic))
 
-	if (timer != 9): aFile.write(",")
-
 	print "did happen"
 
 	time.sleep(60)
 
 	timer = timer + 1
+
+	if (timer != max_timer): aFile.write(",\n")
 
 aFile.write("]")
 

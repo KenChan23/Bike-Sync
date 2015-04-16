@@ -137,13 +137,17 @@ def data_cluster(data_df, n_emotions):
         else:
             key = (cluster_centers[0][i], 'infinity')
         
-        pred_emotions_range[key] = i
+        pred_emotions_range[key] = i+1
     
     return pred_emotions_range, k_means_obj
 
-def tell_emotions(actual_sentiment):
-    # use the hash table structure whose key is the score of the sentiment and whose value is the textual description
-    # of the sentiment
+
+def pred_emotion_CRF(pred_emotions_range, ):
+    # use the classifier (k-means) and the predicted emotion range dictionary
+    # in order to predict the user's emotion at a particular instance
+    
+    
+    
     return 0
 
 
