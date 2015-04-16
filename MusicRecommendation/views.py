@@ -15,10 +15,9 @@ USERNAME = "kenchan"
 PASSWORD = "root"
 
 def connect():
-    # Substitute the 5 pieces of information you got when creating
-    # the Mongo DB Database (underlined in red in the screenshots)
-    # Obviously, do not store your password as plaintext in practice
-    
+# Substitute the 5 pieces of information you got when creating
+# the Mongo DB Database (underlined in red in the screenshots)
+# Obviously, do not store your password as plaintext in practice
     connection = MongoClient("ds062097.mongolab.com",62097)
     handle = connection["citibike"]
     handle.authenticate("root","root")
@@ -48,25 +47,25 @@ def retrieve_data(quantity, data_year):
     }
     return options[data_year]
 
-def retrieve_sample(data_year, oid):
+def retrieve_sample(data_year, index):
     options = {
-        "12-2014": list(handle._2014_12_sample.find({"_id": ObjectId(oid)})),
-        "11-2014": list(handle._2014_11_sample.find({"_id": ObjectId(oid)})),
-        "10-2014": list(handle._2014_10_sample.find({"_id": ObjectId(oid)})),
-        "09-2014": list(handle._2014_09_sample.find({"_id": ObjectId(oid)})),
-        "08-2014": list(handle._2014_08_sample.find({"_id": ObjectId(oid)})),
-        "07-2014": list(handle._2014_07_sample.find({"_id": ObjectId(oid)})),
-        "06-2014": list(handle._2014_06_sample.find({"_id": ObjectId(oid)})),
-        "05-2014": list(handle._2014_05_sample.find({"_id": ObjectId(oid)})),
-        "04-2014": list(handle._2014_04_sample.find({"_id": ObjectId(oid)})),
-        "03-2014": list(handle._2014_03_sample.find({"_id": ObjectId(oid)})),
-        "02-2014": list(handle._2014_02_sample.find({"_id": ObjectId(oid)})),
-        "01-2014": list(handle._2014_01_sample.find({"_id": ObjectId(oid)})),
-        "12-2013": list(handle._2013_12_sample.find({"_id": ObjectId(oid)})),
-        "11-2013": list(handle._2013_11_sample.find({"_id": ObjectId(oid)})),
-        "10-2013": list(handle._2013_10_sample.find({"_id": ObjectId(oid)})),
-        "09-2013": list(handle._2013_09_sample.find({"_id": ObjectId(oid)})),
-        "08-2013": list(handle._2013_08_sample.find({"_id": ObjectId(oid)}))
+        "12-2014": list(handle._2014_12_sample.find({"index": int(index)})),
+        "11-2014": list(handle._2014_11_sample.find({"index": int(index)})),
+        "10-2014": list(handle._2014_10_sample.find({"index": int(index)})),
+        "09-2014": list(handle._2014_09_sample.find({"index": int(index)})),
+        "08-2014": list(handle._2014_08_sample.find({"index": int(index)})),
+        "07-2014": list(handle._2014_07_sample.find({"index": int(index)})),
+        "06-2014": list(handle._2014_06_sample.find({"index": int(index)})),
+        "05-2014": list(handle._2014_05_sample.find({"index": int(index)})),
+        "04-2014": list(handle._2014_04_sample.find({"index": int(index)})),
+        "03-2014": list(handle._2014_03_sample.find({"index": int(index)})),
+        "02-2014": list(handle._2014_02_sample.find({"index": int(index)})),
+        "01-2014": list(handle._2014_01_sample.find({"index": int(index)})),
+        "12-2013": list(handle._2013_12_sample.find({"index": int(index)})),
+        "11-2013": list(handle._2013_11_sample.find({"index": int(index)})),
+        "10-2013": list(handle._2013_10_sample.find({"index": int(index)})),
+        "09-2013": list(handle._2013_09_sample.find({"index": int(index)})),
+        "08-2013": list(handle._2013_08_sample.find({"index": int(index)}))
     }
     return options[data_year]
 
@@ -140,9 +139,9 @@ def get_08_2013(quantity):
 
 ## Sample end-points for rendering visualization
 # 54ef556ccbbe69683aa68197
-@app.route("/api/sample/10-2014/<_id>", methods=['GET'])
-def get_10_2014_sample(_id):
-    return json.dumps(retrieve_sample("10-2014", _id), default=json_util.default)
+@app.route("/api/sample/10-2014/<index>", methods=['GET'])
+def get_10_2014_sample(index):
+    return json.dumps(retrieve_sample("10-2014", index), default=json_util.default)
 
 @app.route('/')
 @app.route('/home')

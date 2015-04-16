@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
 
+{% block backbone-template %}
+  <script type="text/template" id="trip_template">
+    <li>
+      <strong>Username:</strong> <%= username %><br/>
+      <strong>Email:</strong> <%= email %>
+    </li>
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <div id="map"></div>
@@ -8,9 +17,8 @@
   <div id="right-panel" class="col s12 m3">
     <div id="right-card" class="card-panel teal">
       <div>
-        <h1>Data Information</h1>
+        <h6>Data Information</h6>
         <select class="browser-default">
-          <option value="" disabled selected>Choose Month-Year</option>
           <option value="07-2013">July 2013</option>
           <option value="08-2013">August 2013</option>
           <option value="09-2013">September 2013</option>
@@ -26,13 +34,12 @@
           <option value="07-2014">July 2014</option>
           <option value="08-2014">August 2014</option>
           <option value="09-2014">September 2014</option>
-          <option value="10-2014">October 2014</option>
+          <option value="10-2014" selected>October 2014</option>
           <option value="11-2014">November 2014</option>
           <option value="12-2014">December 2014</option>
         </select>
       </div>
-      <div id="card-info" class="white-text">I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      <div id="card-info" class="white-text">
       </div>
     </div>
   </div>
