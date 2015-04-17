@@ -81,9 +81,6 @@ path {
     fill: black;
     opacity: 0;
 }
-.drinks {
-    stroke: black;
-}
 .lineConnect {
     fill: none;
     stroke: white;
@@ -94,6 +91,34 @@ path {
     text-shadow: 1px 1px 1px #FFF, 3px 3px 5px #000;
     font-weight: bold;
     font-size: 13px;
+}
+
+#data-information{
+  margin: 0 auto;
+  padding: 0 1.8rem;
+  display: block;
+}
+
+#data-information ul#dropdown2{
+  height: 21rem;
+}
+
+#download-button {
+  bottom: 10px;
+  right: 25px;
+  position: absolute;
+}
+
+#data-information-table {
+  color: white;
+}
+
+#data-information-table th {
+  font-weight: bold;
+}
+
+#data-information-table td {
+  font-weight: normal;
 }
 
 @media only screen and (min-width: 601px)

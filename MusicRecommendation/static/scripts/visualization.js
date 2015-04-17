@@ -12,9 +12,8 @@
              .addLayer(mapboxTiles)
              .setView([40.72332345541449, -73.99], 13);
 
-  var svg = d3.select(map.getPanes().overlayPane).append("svg");
-
   var newRoute = function(i){
+    var svg = d3.select(map.getPanes().overlayPane).append("svg");
     var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
     d3.json("/api/sample/10-2014/" + i.toString(), function(collection) {
@@ -56,7 +55,7 @@
 
       var marker = g.append("circle")
                     .attr("r", 10)
-                    .attr("id", "marker")
+                    .attr("id", "marker" + i.toString())
                     .attr("class", "travelMarker");
 
       var originANDdestination = [featuresdata[0], featuresdata[featuresdata.length - 1]]
@@ -74,7 +73,10 @@
                   .enter()
                   .append("text")
                   .text(function(d) {
-                      return d.properties.time
+                    if(d.properties.time == 1)
+                      return tripdata["start station id"];
+                    if(d.properties.time == collection.features.length)
+                      return tripdata["end station id"];
                   })
                   .attr("class", "locnames")
                   .attr("y", function(d) {
@@ -166,7 +168,7 @@
               var l = linePath.node().getTotalLength(); 
         
               interpolate = d3.interpolateString("0," + l, l + "," + l);
-              var marker = d3.select("#marker");
+              var marker = d3.select("#marker" + i.toString());
               var p = linePath.node().getPointAtLength(t * l);
 
               marker.attr("transform", "translate(" + p.x + "," + p.y + ")"); 

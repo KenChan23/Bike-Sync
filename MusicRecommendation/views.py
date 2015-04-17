@@ -1,10 +1,11 @@
 # mongo ec2-54-172-195-184.compute-1.amazonaws.com/citibike -u kenchan -p root
 
-import json
+# import json
 import os
 from pymongo import MongoClient
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, jsonify
+from flask import json
 from bson import json_util
 from bson.objectid import ObjectId
 from MusicRecommendation import app
@@ -21,6 +22,7 @@ def connect():
     connection = MongoClient("ds062097.mongolab.com",62097)
     handle = connection["citibike"]
     handle.authenticate("root","root")
+    print "Connected"
     return handle
 
 handle = connect()
@@ -152,3 +154,13 @@ def home():
         title='Bike-Sync',
         year=datetime.now().year,
     )
+
+@app.route('/load_date_data', methods=["POST"])
+def load_data():
+    if request.method == "POST":
+        print request.json['data']
+        return request.json['data']
+        # data = request.json['data']
+        ##  Using a form requires the request.form function 
+        # print data
+

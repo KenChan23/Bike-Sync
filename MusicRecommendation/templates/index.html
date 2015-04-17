@@ -1,13 +1,6 @@
 {% extends "layout.html" %}
 
-{% block backbone-template %}
-  <script type="text/template" id="trip_template">
-    <li>
-      <strong>Username:</strong> <%= username %><br/>
-      <strong>Email:</strong> <%= email %>
-    </li>
-  </script>
-{% endblock %}
+
 
 {% block content %}
 
@@ -17,30 +10,57 @@
   <div id="right-panel" class="col s12 m3">
     <div id="right-card" class="card-panel teal">
       <div>
-        <h6>Data Information</h6>
-        <select class="browser-default">
-          <option value="07-2013">July 2013</option>
-          <option value="08-2013">August 2013</option>
-          <option value="09-2013">September 2013</option>
-          <option value="10-2013">October 2013</option>
-          <option value="11-2013">November 2013</option>
-          <option value="12-2013">December 2013</option>
-          <option value="01-2014">January 2014</option>
-          <option value="02-2014">February 2014</option>
-          <option value="03-2014">March 2014</option>
-          <option value="04-2014">April 2014</option>
-          <option value="05-2014">May 2014</option>
-          <option value="06-2014">June 2014</option>
-          <option value="07-2014">July 2014</option>
-          <option value="08-2014">August 2014</option>
-          <option value="09-2014">September 2014</option>
-          <option value="10-2014" selected>October 2014</option>
-          <option value="11-2014">November 2014</option>
-          <option value="12-2014">December 2014</option>
-        </select>
-      </div>
-      <div id="card-info" class="white-text">
-      </div>
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a href="#!">July 2013</a></li>
+          <li><a href="#!">August 2013</a></li>
+          <li><a href="#!">September 2013</a></li>
+          <li><a href="#!">October 2013</a></li>
+          <li><a href="#!">November 2013</a></li>
+          <li><a href="#!">December 2013</a></li>
+          <li><a href="#!">January 2014</a></li>
+          <li><a href="#!">February 2014</a></li>
+          <li><a href="#!">March 2014</a></li>
+          <li><a href="#!">April 2014</a></li>
+          <li><a href="#!">May 2014</a></li>
+          <li><a href="#!">June 2014</a></li>
+          <li><a href="#!">July 2014</a></li>
+          <li><a href="#!">August 2014</a></li>
+          <li><a href="#!">September 2014</a></li>
+          <li><a href="#!">October 2014</a></li>
+          <li><a href="#!">November 2014</a></li>
+          <li><a href="#!">December 2014</a></li>
+        </ul>
+        <a id="data-information" class="btn dropdown-button" href="#!" data-activates="dropdown2"><span>Data Information</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
+
+        <table id="data-information-table" class="bordered">
+        <thead>
+          <tr>
+              <th data-field="date">Date</th>
+              <th data-field="name">Item Name</th>
+              <th data-field="price">Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+        <a id="download-button" class="btn-floating btn-large waves-effect waves-light"><i class="mdi-file-file-download"></i></a>
     </div>
   </div>
 </div>
