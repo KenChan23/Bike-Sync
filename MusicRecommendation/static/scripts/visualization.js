@@ -1,5 +1,66 @@
 (function(){
 
+  //  Constructor/Prototype Pattern
+  function TableRow(tripdata) {
+    this.date = null;
+    this.start_station = parseInt(tripdata['start station id']);
+    this.end_station = parseInt(tripdata['end station id']);
+    this.start_time = null;
+    this.end_time = null;
+    this.gender = null;
+    this.birth_year = parseInt(tripdata['birth year']);
+
+    var startTime = tripdata['starttime'].split(' ');
+    var stopTime = tripdata['stoptime'].split(' ');
+    this.setDate(startTime[0]);
+    this.setStartTime(startTime[1]);
+    this.setEndTime(stopTime[1]);
+    this.setGender(tripdata['gender']);
+  }
+
+  TableRow.prototype = {
+    constructor: TableRow,
+    setGender: function(gender_id){
+      switch(parseInt(gender_id))
+      {
+        case 0:
+          this.gender = "Unknown";
+          break;
+        case 1:
+          this.gender = "Male";
+          break;
+        case 2:
+          this.gender = "Female";
+          break;
+        default:
+          break;
+      }
+    },
+    setDate: function(startTimeDate){
+      this.date = startTimeDate;
+    },
+    setStartTime: function(startTimeClock){
+      this.start_time = startTimeClock;
+    },
+    setEndTime: function(endTimeClock){
+      this.end_time = endTimeClock;
+    },
+    renderView: function(){
+      var formatDate = this.date.split('/').join('-');
+
+      var dataElement = d3.select('tbody').append('tr').classed(formatDate, true);
+                        dataElement.append('td').classed('date', true).text(this.date)
+                            dataElement.append('td').classed('start-station', true).text(this.start_station)
+                            dataElement.append('td').classed('end-station', true).text(this.end_station)
+                            dataElement.append('td').classed('start-time', true).text(this.start_time)
+                            dataElement.append('td').classed('end-time', true).text(this.end_time)
+                            dataElement.append('td').classed('gender', true).text(this.gender)
+                            dataElement.append('td').classed('birth', true).text(this.birth_year);
+  
+
+    }
+  }
+
   L.mapbox.accessToken = 'pk.eyJ1Ijoia2VuY2hhbiIsImEiOiJpVTRzNG1RIn0.QDivyrM040Y1olXFj8UskA';
 
   var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v4/kenchan.ll57j89l/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
@@ -12,15 +73,25 @@
              .addLayer(mapboxTiles)
              .setView([40.72332345541449, -73.99], 13);
 
+  var counter = 0;
+  var timer; 
+
   var newRoute = function(i){
     var svg = d3.select(map.getPanes().overlayPane).append("svg");
     var g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
     d3.json("/api/sample/10-2014/" + i.toString(), function(collection) {
-      tripdata = collection[0];
-      collection = collection[0].geoData;
+
+      var tripdata = collection[0];
+      var collection = collection[0].geoData;
+
+      var entry = new TableRow(tripdata);
+      entry.renderView();
+      
       console.log(tripdata);
       console.log(collection);
+
+
       var featuresdata = collection.features.filter(function(d) {
           return d.properties.id == "route"
       })
@@ -189,8 +260,14 @@
         var x = d.geometry.coordinates[0]
         return map.latLngToLayerPoint(new L.LatLng(y, x))
     }
+
+    counter++;
+    clearInterval(timer);
+    timer = setInterval(function(){ newRoute(counter); }, 5000);
   };
 
-  newRoute(23);
-  newRoute(80);
+  timer = setInterval(function(){ newRoute(counter); }, 5000);
+
+  // newRoute(23);
+  // newRoute(80);
 })();

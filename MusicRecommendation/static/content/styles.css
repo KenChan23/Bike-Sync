@@ -84,7 +84,7 @@ path {
 .lineConnect {
     fill: none;
     stroke: white;
-    opacity: 1;
+    opacity: 0.6;
 }
 .locnames {
     fill: black;
