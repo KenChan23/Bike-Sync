@@ -40,7 +40,6 @@ def normalize(data_df):
     return data_df
 
 
-
 def stack_series_to_data_frame(df, series):
     # stack the series rowise to the df
     # depending on the value of n_columns, stack it columnwise
@@ -99,5 +98,10 @@ def get_data_df_from_JSON_Data(ls_filenames):
             data_df = data_df.append(read_json(open(ls_filenames[i], 'r'), orient='records'), ignore_index=True)
     
     return data_df
+
     
+def scale(val, min_range_original, max_range_original, min_range, max_range):
+    # scale the value whose range was in [min_range_original, max_range_original]
+    # to a range of [min_range, max_range]
     
+    return (max_range-min_range)*(val-min_range_original)/(max_range_original - min_range_original) + min_range

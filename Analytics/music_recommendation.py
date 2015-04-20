@@ -3,48 +3,34 @@
 
 """
 
-
-"""
-
-	Let's Get Physical: The Psychology of Effective Workout Music
-	http://www.scientificamerican.com/article/psychology-workout-music/
-
-	
-	pop, hip-hop, alternative, rock, dance,  --> makes your heart beat faster
-
-	blues, reggae, classics, --> makes your heartbeat at rest
-
-	country music --> can make you feel depressed
-
-	meditation -> reduce stress and put your heartbeat at ease
-
-"""
-
-"""
-	the way to approach : learn the features of the music, especially the tempo
-	and link this to the sentiment
-	the link between the tempo and the music
-
-	how do you build the top-k scoring functions for music based on the genres?
-
-"""
-
-"""
-    Resonance-Valence-Arousal Systems
-"""
-
-"""
-genre-based
-"""
 import pickle
 import pygn
 import pandas as pd
+from math import hypot
+from re import sub
+# from textblob import TextBlob
+import os
+os.system("alchemypapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
+from alchemyapi import AlchemyAPI
+alchemy_obj = AlchemyAPI()
+
 
 #Register pygn with client id. This is in a separate file to be used once per end user because
 #each call to pygn.register goes towards a quota. We will need to run this for each user
 #and store their UserID in our database. Then, we can query each song individually and store
 #it's metadata in our database.
 
+
+# each tuple = (arousal, valence)
+av_chart = {(22.5, 67.5):'excitment',
+            (67.5, 112.5):'arousal',
+            (112.5, 157.5):'distress',
+            (157.5, 202.5):'displeasure',
+            (202.5, 247.5):'depression',
+            (247.5,292.5):'sleepiness',
+            (292.5,337.5):'relaxation',
+            (337.5, 22.5):'pleasure'}
+            
 def register():
 
     gracenoteClientID = "58624-530E5E2D845DB16CB7D3A258CCCD5E07"
@@ -145,3 +131,34 @@ def getMusicData(filename):
     del data_df['tempo']
     
     return data_df
+
+
+def quantify_mood_text(mood_list):
+    # quantify the textual description of the mood using AlchemyAPI sentiment analysis technique
+    # Parameter:
+    # mood_list : the list that contains the words describing the mood of the music
+    # Returns
+    # sentiment_score : the aggregated score of the sentiment extracted from the word
+    
+    # get the list of the words from the string
+    get_words = []
+    for words in mood_list:
+        extra_words = words.split(" / ")
+        for word in extra_words:
+            get_words.append(word)
+    
+    sentiment_score = 0.0
+    for word in set(get_words):
+        response = alchemy_obj.sentiment("text", word)
+        if(response.has_key('docSentiment')):
+            if (response['docSentiment'].has_key('score')):
+                a_score = response['docSentiment']['score']
+                sentiment_score = sentiment_score + float(a_score)
+                
+    # sentiment_score  = sentiment_score / float(len(mood_list))
+    # scale it into a range between 0 and 200
+    
+    sentiment_score = 100*(sentiment_score-(-1)/(1-(-1)))
+    
+    return sentiment_score
+        

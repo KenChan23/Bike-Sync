@@ -18,6 +18,21 @@ import scipy.fftpack as fft # this is Fast Fourier Transform
 import collections
 import preprocessing
 import time
+from math import hypot
+
+# the mood category used for clustering
+mood_category = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
+
+# the AV-chart to predict the user's sentiment
+# each tuple = (arousal, valence)
+av_chart = {(22.5, 67.5):'excitment',
+            (67.5, 112.5):'arousal',
+            (112.5, 157.5):'distress',
+            (157.5, 202.5):'displeasure',
+            (202.5, 247.5):'depression',
+            (247.5,292.5):'sleepiness',
+            (292.5,337.5):'relaxation',
+            (337.5, 22.5):'pleasure'}
 
 # data = from hardware
 # we have the object-oriented design for heart rate, activity, and contxt
@@ -141,28 +156,44 @@ def data_cluster(data_df, n_emotions):
     
     return pred_emotions_range, k_means_obj
 
+def calculate_angle(data_record):
+    # the function to estimate the angle of the line laying in the 2D coordinate
+    # the function will be used to estimate the AV value and predict the emotions
+    
+    # Paramter:
+    # data_record : ONE instance of data whose number of columns is 2
+    # Returns
+    # angle : the estimated angle
+    
+    # get x and y coordinates
+    x = data_record.iloc[0] # beats per minute
+    y = data_record.iloc[1] # calories burned
+    
+    # get the angle measure using python library
+    """ DO THIS!!!! """
+    
+    return angle
+    
 
-def pred_emotion_CRF(pred_emotions_range, ):
-    # use the classifier (k-means) and the predicted emotion range dictionary
-    # in order to predict the user's emotion at a particular instance
+def predict_emotion_using_AV_model(data_df):
+    # using Russell's Arousal-Valence model, estimate the angular quantity that represents
+    # the predicted sentiment
+    # In Russell's model, caloriesBurned is the horizontal axis (pleasrue-displeasure)
+    # while beats per minute (bpm) represetns the vertical axis (sleepiness-arousal)
+    
+    # Parameter:
+    # data_df : the data frame to be testeed upon, its columns must be two.
+    # Returns
+    # predicted_emotions : the textual description that displays the predicted emotion'
+    
+    # scale x any y to the range of -1 and 1 so that they can be applied to the AV model coordinate
+    
+    data_df.iloc[0] = data_df.iloc[0].apply(lambda x: preprocessing.scale(x,-1,1))
+    data_df.iloc[1] = data_df.iloc[1].apply(lambda x: preprocessing.scale(x,-1,1))
+
+    return data_df.apply(lambda x: calculate_angle(x))
     
     
-    
-    return 0
-
-
-def create_an_emotional_model(pred_sentiments_df):
-    # given the predicted sentiment, create for each instance the emotional model that
-    # contains the scores of Arousal-Valence model
-
-    def get_AV_score(sentiment_score):
-        # as we know, the number of emotions we are currently using are five
-        # N_EMOTIONS = 5 
-        # emotions = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
-        # emotions_range = {(0, 0.2):1, (0.21, 0.4):2, (0.41, 0.6):3, (0.61, 0.8):4, (0.81, 1.0):5}
-        return 0
-    
-    return 0
     
         
     

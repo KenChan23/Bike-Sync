@@ -6,6 +6,8 @@ import json
 import re
 import time
 from pandas.io.json import read_json
+from os import chdir
+from pymongo import MongoClient
 
 USERNAME = "chan.hyeo.ni.3698@gmail.com"
 PASSWORD = "tpxkr369*"
@@ -87,6 +89,7 @@ if __name__ == "__main__":
     """  WE HAVE TO PUT the newline character to make seperation between """
     print json.loads(match_data[0])["dateTime"]
 
+    chdir("..")
     fo = open('./data/fitbit/' + json.loads(match_data[0])["dateTime"][0:json.loads(match_data[0])["dateTime"].index(" ")] + ".json", "wb")
     fo.write('['+''.join(match_data)+']')
     filename = fo.name
@@ -135,7 +138,7 @@ if __name__ == "__main__":
 
 
   # write the mongodb client to write the data to the mongodb database server
-  handle = connect()
+  # handle = connect()
 
 
 
