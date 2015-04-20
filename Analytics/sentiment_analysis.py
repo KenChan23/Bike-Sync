@@ -18,21 +18,22 @@ import scipy.fftpack as fft # this is Fast Fourier Transform
 import collections
 import preprocessing
 import time
-from math import hypot
+from math import atan
+from math import pi
 
 # the mood category used for clustering
 mood_category = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
 
 # the AV-chart to predict the user's sentiment
 # each tuple = (arousal, valence)
-av_chart = {(22.5, 67.5):'excitment',
-            (67.5, 112.5):'arousal',
-            (112.5, 157.5):'distress',
-            (157.5, 202.5):'displeasure',
-            (202.5, 247.5):'depression',
-            (247.5,292.5):'sleepiness',
-            (292.5,337.5):'relaxation',
-            (337.5, 22.5):'pleasure'}
+av_chart = {(22.5+67.5)/2:'excitment',
+            (67.5+112.5)/2:'arousal',
+            (112.5+157.5)/2:'distress',
+            (157.5+202.5)/2:'displeasure',
+            (202.5+247.5)/2:'depression',
+            (247.5+292.5)/2:'sleepiness',
+            (292.5+337.5)/2:'relaxation',
+            0:'pleasure'}
 
 # data = from hardware
 # we have the object-oriented design for heart rate, activity, and contxt
@@ -166,11 +167,11 @@ def calculate_angle(data_record):
     # angle : the estimated angle
     
     # get x and y coordinates
-    x = data_record.iloc[0] # beats per minute
-    y = data_record.iloc[1] # calories burned
-    
+    x = data_record[0] # beats per minute
+    y = data_record[1] # calories burned
+        
     # get the angle measure using python library
-    """ DO THIS!!!! """
+    angle = 180/pi*atan(y/x)
     
     return angle
     
@@ -187,16 +188,19 @@ def predict_emotion_using_AV_model(data_df):
     # predicted_emotions : the textual description that displays the predicted emotion'
     
     # scale x any y to the range of -1 and 1 so that they can be applied to the AV model coordinate
+    min_value_0 = min(data_df.iloc[:,0])
+    max_value_0 = max(data_df.iloc[:,0])
+    data_df.iloc[:,0] = data_df.iloc[:,0].apply(lambda x: preprocessing.scale(x,min_value_0, max_value_0, -1.0,1.0))
+    min_value_1 = min(data_df.iloc[:,1])
+    max_value_1 = max(data_df.iloc[:,1])
+    data_df.iloc[:,1] = data_df.iloc[:,1].apply(lambda x: preprocessing.scale(x,min_value_1, max_value_1, -1.0,1.0))
     
-    data_df.iloc[0] = data_df.iloc[0].apply(lambda x: preprocessing.scale(x,-1,1))
-    data_df.iloc[1] = data_df.iloc[1].apply(lambda x: preprocessing.scale(x,-1,1))
 
-    return data_df.apply(lambda x: calculate_angle(x))
+    return data_df.apply(lambda x: calculate_angle(x), axis=1)
     
     
     
         
-    
 
 """
 Using Bayesian Network to recommend music (Fuzzy Bayesian)

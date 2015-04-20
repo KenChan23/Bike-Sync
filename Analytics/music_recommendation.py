@@ -6,8 +6,6 @@
 import pickle
 import pygn
 import pandas as pd
-from math import hypot
-from re import sub
 # from textblob import TextBlob
 import os
 os.system("alchemypapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
@@ -161,4 +159,21 @@ def quantify_mood_text(mood_list):
     sentiment_score = 100*(sentiment_score-(-1)/(1-(-1)))
     
     return sentiment_score
+
+
+"""  
+    SENTIMENT SIMILARITY Using the MOOD WORD 
+    
+    compare the mood_text words with the AV words
+    categorize each song according to the AV label (assign the angle measurement)
+    along with the angular value
+    store the top k angular values in the inverted index
+    and     
+    
+    tempo, genre, 
+
+"""
+
+
+
         

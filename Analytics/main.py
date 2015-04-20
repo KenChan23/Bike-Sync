@@ -70,12 +70,15 @@ print physiological_data_df['bpm'].corr(physiological_data_df['caloriesBurned'])
 music_data = recommend_music('./data/music/music.data')
 music_data['mood_score'] = music_data['mood_text'].apply(lambda x: music_recommendation.quantify_mood_text(x))
 print music_data['mood_score'].corr(music_data['tempo_val'])
+# -0.245
 
 """ SENTIMENT ANALYSIS """
 pred_emotions_range, cluster_model = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS)
 # get the last k physiological_data_df and predict the emotional state
 pred_labels = cluster_model.predict(physiological_data_df.tail(music_data.shape[0]))
 print pred_labels
+
+print sentiment_analysis.predict_emotion_using_AV_model(physiological_data_df)
 
 
 """ MUSIC RECOMMENDATION """
