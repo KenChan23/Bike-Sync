@@ -5,7 +5,7 @@ The following Flask application serves as the underlying infrastructure for Bike
 ```
 python runserver.py
 ```
-
+ 
 File Structure (will have more details soon)
 ======
 - data/geocode.py: Utilizes the Google Directions API to grab routing data for a sample size of one hundred trips within a given month-year collection.
