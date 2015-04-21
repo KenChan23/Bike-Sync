@@ -11,13 +11,13 @@ import os
 os.system("alchemypapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
 from alchemyapi import AlchemyAPI
 alchemy_obj = AlchemyAPI()
-
+from textblob import TextBlob
+import preprocessing
 
 #Register pygn with client id. This is in a separate file to be used once per end user because
 #each call to pygn.register goes towards a quota. We will need to run this for each user
 #and store their UserID in our database. Then, we can query each song individually and store
 #it's metadata in our database.
-
 
 # each tuple = (arousal, valence)
 av_chart = {(22.5, 67.5):'excitment',
@@ -29,6 +29,17 @@ av_chart = {(22.5, 67.5):'excitment',
             (292.5,337.5):'relaxation',
             (337.5, 22.5):'pleasure'}
             
+# the sentiment score of the av_chart using AlchemyAPI
+# as a result, you will get the following scores
+av_chart_scores = {'arousal': 56.327000000000005,
+                   'depression': 19.394299999999998,
+                   'displeasure': 39.192899999999995,
+                   'distress': 34.732149999999997,
+                   'excitment': 72.7881,
+                   'pleasure': 79.759650000000008,
+                   'relaxation': 69.67649999999999,
+                   'sleepiness': 20.901700000000002}
+
 def register():
 
     gracenoteClientID = "58624-530E5E2D845DB16CB7D3A258CCCD5E07"
@@ -153,26 +164,79 @@ def quantify_mood_text(mood_list):
                 a_score = response['docSentiment']['score']
                 sentiment_score = sentiment_score + float(a_score)
                 
-    # sentiment_score  = sentiment_score / float(len(mood_list))
+    sentiment_score  = sentiment_score / float(len(mood_list))
     # scale it into a range between 0 and 200
     
-    sentiment_score = 100*(sentiment_score-(-1)/(1-(-1)))
+    sentiment_score = preprocessing.scale(sentiment_score,-1, 1, 0, 100)
     
     return sentiment_score
+ 
 
+def categorize_music(av_chart_scores, mood_score):
+    # using the sentiment score data structures for the AV model and the data from the Gracenote API,
+    # categorize the musics by comparing the scores
+    # Approach : categorize the songs whose scores are close to the score of each category
+    # of the AV model
+    # find out the difference between each score of the AV model and mood_score
+    # and assign the label whose absolute value of score difference is the minimum
 
-"""  
-    SENTIMENT SIMILARITY Using the MOOD WORD 
+    # Paramter:
+    # av_chart_score : the sentiment score of the labels of the AV model
+    # mood_score : the single invididual score of one music piece
+
+    # Returns
+    # a_word : the label from the AV model whose sentiment score is very close to the score
+    # of the music's mood
+    diff = 100
+    label = av_chart_scores.keys()[0]
+    for a_word in av_chart_scores.keys():
+        diff_temp = abs(av_chart_scores[a_word]-mood_score)
+        if (diff_temp < diff):
+            diff = diff_temp
+            label = a_word
     
-    compare the mood_text words with the AV words
-    categorize each song according to the AV label (assign the angle measurement)
-    along with the angular value
-    store the top k angular values in the inverted index
-    and     
-    
-    tempo, genre, 
+    return label
 
-"""
+def get_predicted_music_label(av_chart_scores, music_data_mood_score):
+    # use the categorize_music function to get the predicted music label
+    # the lambda function technique is used in this function
+    
+    # Paramter:
+    # av_chart_score : the sentiment score of the labels of the AV model
+    # music_data_mood_score : the DataFrame of music data
+    
+    # Returns
+    # pred_labels : the DataFrame object containing the predicted music labels
+    
+    pred_labels =  music_data_mood_score.apply(lambda x: categorize_music(av_chart_scores, x))
+    
+    return pred_labels
+
+def create_data_structure(music_data):
+    # using the music_data, the function groups by the pred_labels
+    # and it will give you the dictionary whose key is the label and whose value is the list
+    # of the records indicated by the indices in the music_data
+    
+    # then, the grouped data structure will grap each element in the list and store the index
+    # as well as the sentiment score of the music piece in the data structure
+    
+    # Paramter:
+    # music_data : the DataFrame of the music piece
+    
+    # Returns
+    # The data structure
+    
+    groupd_obj = music_data.groupby('pred_labels').groups
+    
+    # create the data structure that has the scores
+    for word in groupd_obj:
+        
+        for i in range(0, len(groupd_obj[word])):
+            index = groupd_obj[word][i]
+            score = music_data.loc[index, 'mood_score']
+            groupd_obj[word][i] = (index, score)
+    
+    return groupd_obj
 
 
 

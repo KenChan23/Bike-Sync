@@ -43,13 +43,6 @@ def get_data_frame_from_mongoddb(dbname, collection_name, query={}, no_id=True):
     return df
 
 
-def recommend_music(music_data):
-
-    data = music_recommendation.getMusicData(music_data)
-    
-    return data
-
-
 chdir("..")
 fitbit_filenames = [ join("./data/fitbit/",f) for f in listdir("./data/fitbit/") if isfile(join("./data/fitbit/",f)) ]
 fitbit_filenames.remove('./data/fitbit/.DS_Store')
@@ -65,11 +58,14 @@ data_df = preprocessing.get_data_df_from_JSON_Data(fitbit_filenames)
 physiological_data_df = data_df.loc[:,['bpm', 'caloriesBurned']]
 physiological_data_df = physiological_data_df[physiological_data_df['bpm']!=0]
 print physiological_data_df['bpm'].corr(physiological_data_df['caloriesBurned'])
+
 # it is 0.71393429575697265
 
-music_data = recommend_music('./data/music/music.data')
-music_data['mood_score'] = music_data['mood_text'].apply(lambda x: music_recommendation.quantify_mood_text(x))
-print music_data['mood_score'].corr(music_data['tempo_val'])
+#music_data = music_recommendation.getMusicData('./data/music/music.data')
+#music_data.to_csv("./data/music.csv")
+
+music_data = pd.read_csv("./data/music.csv")
+
 # -0.245
 
 """ SENTIMENT ANALYSIS """
@@ -82,7 +78,11 @@ print sentiment_analysis.predict_emotion_using_AV_model(physiological_data_df)
 
 
 """ MUSIC RECOMMENDATION """
-
+# find the predicted lables for the musics
+music_data['pred_labels'] = music_recommendation.get_predicted_music_label(music_recommendation.av_chart_scores, music_data['mood_score'])
+# create a data structure that contains the scores of each mood
+groupd_obj = music_recommendation.create_data_structure(music_data)
+ 
 
 
 

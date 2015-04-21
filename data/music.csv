@@ -1,0 +1,76 @@
+,album,artist,track,tempo_val,tempo_text,mood_text,mood_score
+1,Avicii,Wake Me Up,Wake Me Up,150,"['Fast Tempo', 'Fast']","['Aggressive', 'Aggressive Power']",31.3087
+2,Beyonce,BEYONCe,Pretty Hurts,60,"['Medium Tempo', 'Medium']","['Defiant', 'Heavy Brooding']",49.80845
+4,Beyonce,BEYONCe,Haunted,60,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+5,Beyonce,BEYONCe,Drunk in Love (feat. Jay Z),90,"['Medium Tempo', 'Medium Fast']","['Defiant', 'Attitude / Defiant']",42.048399999999994
+6,Beyonce,BEYONCe,Blow,60,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Intimate']",81.0764
+7,Beyonce,BEYONCe,No Angel,60,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Intimate']",81.0764
+8,Beyonce,BEYONCe,Yonce (Video),150,"['Fast Tempo', 'Fast']","['Energizing', 'Abstract Beat']",65.93215000000001
+9,Beyonce,BEYONCe,Partition (Video),90,"['Medium Tempo', 'Medium Fast']","['Cool', 'Cool Confidence']",89.69165
+10,Beyonce,BEYONCe,Jealous,40,"['Slow Tempo', 'Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+11,Beyonce,BEYONCe,Rocket,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Intimate']",81.0764
+13,Beyonce,BEYONCe,XO,160,"['Fast Tempo', 'Fast']","['Excited', 'Happy Excitement']",85.47155
+16,Beyonce,BEYONCe,Blue (feat. Blue Ivy),80,"['Medium Tempo', 'Medium']","['Energizing', 'Edgy / Sexy']",87.3889
+18,Beyonce,BEYONCe (More Only) - EP,711,130,"['Fast Tempo', 'Fast']","['Energizing', 'Abstract Beat']",65.93215000000001
+19,Beyonce,Live At Roseland: Elements of 4,End Of Time (Live),70,"['Medium Tempo', 'Medium']","['Defiant', 'Attitude / Defiant']",42.048399999999994
+21,Capital Cities,In A Tidal Wave Of Mystery,Safe and Sound,110,"['Medium Tempo', 'Medium Fast']","['Excited', 'Euphoric Energy']",65.74325
+22,The Cave Singers,Naomi,When the World,60,"['Medium Tempo', 'Medium']","['Brooding', 'Evocative / Intriguing']",89.852125
+23,Cee Lo Green,Amy (feat. Goodie Mob) - Single,Amy (feat. Goodie Mob),90,"['Medium Tempo', 'Medium Fast']","['Cool', 'Cool Confidence']",89.69165
+24,Changhyun's iPhone,Voice Memos,Meeting,20,"['Slow Tempo', 'Very Slow']","['Somber', 'Solemn / Spiritual']",19.849899999999998
+27,Coldplay,A Rush of Blood to the Head,The Scientist,30,"['Slow Tempo', 'Very Slow']","['Sentimental', 'Tender / Sincere']",71.09802499999999
+28,Daft Punk,Random Access Memories,Give Life Back to Music,60,"['Medium Tempo', 'Medium Slow']","['Melancholy', 'Wistful / Forlorn']",51.169325
+29,Daft Punk,Random Access Memories,The Game of Love,50,"['Medium Tempo', 'Medium Slow']","['Peaceful', 'Reverent / Healing']",71.55584999999999
+30,Daft Punk,Random Access Memories,Giorgio by Moroder,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+31,Daft Punk,Random Access Memories,Within,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+32,Daft Punk,Random Access Memories,Get Lucky (feat. Pharrell Williams),110,"['Medium Tempo', 'Medium Fast']","['Fiery', 'Fiery Groove']",35.067899999999995
+33,Daft Punk,Random Access Memories,Beyond,60,"['Medium Tempo', 'Medium']","['Sensual', 'Sensual Groove']",82.479425
+34,Daft Punk,Random Access Memories,Motherboard,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+35,Daft Punk,Random Access Memories,Contact,120,"['Medium Tempo', 'Medium Fast']","['Excited', 'Euphoric Energy']",65.74325
+37,Daft Punk Feat. Panda Bear,Random Access Memories,Doin' It Right,170,"['Fast Tempo', 'Fast']","['Energizing', 'Abstract Beat']",65.93215000000001
+38,Daft Punk Feat. Paul Williams,Random Access Memories,Touch,30,"['Slow Tempo', 'Very Slow']","['Peaceful', 'Quiet / Introspective']",88.914525
+40,Daft Punk Feat. Todd Edwards,Random Access Memories,Fragments of Time,60,"['Medium Tempo', 'Medium']","['Sensual', 'Sensual Groove']",82.479425
+41,Depeche Mode,Delta Machine (Deluxe Version),Heaven,140,"['Fast Tempo', 'Fast']","['Excited', 'Euphoric Energy']",65.74325
+42,Depeche Mode,Remixes 81 - 04,Enjoy the Silence,110,"['Medium Tempo', 'Medium Fast']","['Urgent', 'Energetic Anxious']",65.8923
+43,Depeche Mode,Strangelove,Strangelove,110,"['Medium Tempo', 'Medium Fast']","['Brooding', 'Energetic Melancholy']",80.21957499999999
+44,DJ HANMIN,my life,Show Me Your BBA SAE,120,"['Medium Tempo', 'Medium Fast']","['Aggressive', 'Chaotic / Intense']",35.13995
+49,Hans Zimmer,Interstellar,No Need To Come Back,90,"['Medium Tempo', 'Medium Fast']","['Upbeat', 'Happy / Soulful']",90.58255
+52,Hans Zimmer,Interstellar,Day One Dark,30,"['Slow Tempo', 'Very Slow']","['Peaceful', 'Quiet / Introspective']",88.914525
+53,Imagine Dragons,Night Visions,Radioactive,60,"['Medium Tempo', 'Medium']","['Brooding', 'Dreamy Brooding']",82.91402500000001
+54,Imagine Dragons,Night Visions,Demons,90,"['Medium Tempo', 'Medium Fast']","['Yearning', 'Sensitive / Exploring']",42.986275
+55,Iron & Wine,Grace for Saints and Ramblers - Single,Grace for Saints and Ramblers,60,"['Medium Tempo', 'Medium']","['Empowering', 'Dramatic Emotion']",58.767275
+56,John Lithgow/ Ellen Burstyn/ Casey Affleck/ Jessica Chastain/ Matthew McConaughey/ Mackenzie Foy,Interstellar,Do Not Go Gentle Into That Good Night,70,"['Medium Tempo', 'Medium']","['Sophisticated', 'Intimate Bittersweet']",50.0
+57,Justin Timberlake,The 20/20 Experience,Pusher Love Girl,30,"['Slow Tempo', 'Very Slow']","['Empowering', 'Dramatic Emotion']",58.767275
+59,Justin Timberlake,The 20/20 Experience,Don't Hold The Wall,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Soft Soulful']",82.34027499999999
+60,Justin Timberlake,The 20/20 Experience,Strawberry Bubblegum,100,"['Medium Tempo', 'Medium Fast']","['Sophisticated', 'Dark Playful']",34.035650000000004
+61,Justin Timberlake,The 20/20 Experience,Tunnel Vision,30,"['Slow Tempo', 'Very Slow']","['Sensual', 'Sensual Groove']",82.479425
+63,Justin Timberlake,The 20/20 Experience,That Girl,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Sensual Groove']",82.479425
+64,Justin Timberlake,The 20/20 Experience,Let The Groove In,110,"['Medium Tempo', 'Medium Fast']","['Fiery', 'Fiery Groove']",35.067899999999995
+66,Justin Timberlake,The 20/20 Experience,Blue Ocean Floor,40,"['Slow Tempo', 'Slow']","['Melancholy', 'Wistful / Forlorn']",51.169325
+68,Justin Timberlake,The 20/20 Experience 2 of 2 (Deluxe),True Blood,30,"['Slow Tempo', 'Very Slow']","['Somber', 'Creepy / Ominous']",31.47625
+69,Justin Timberlake,The 20/20 Experience 2 of 2 (Deluxe),Take Back The Night,50,"['Medium Tempo', 'Medium Slow']","['Cool', 'Wary / Defiant']",40.552075
+70,Karen O,Her - Part II,The Moon Song,50,"['Medium Tempo', 'Medium Slow']","['Romantic', 'Lush / Romantic']",61.361325
+72,Lady GaGa,ARTPOP,Aura,60,"['Medium Tempo', 'Medium']","['Melancholy', 'Wistful / Forlorn']",51.169325
+77,Lady Gaga,iTunes Festival: London 2013 (Live) || www.RockDizMusic.com,Sex Dreams (Live),40,"['Slow Tempo', 'Slow']","['Sensual', 'Intimate']",81.0764
+82,Lana Del Rey,Born to Die - The Paradise Edition,Born To Die,40,"['Slow Tempo', 'Slow']","['Peaceful', 'Delicate / Tranquil']",87.7684
+83,Lana Del Rey,Born to Die - The Paradise Edition,Summertime Sadness,110,"['Medium Tempo', 'Medium Fast']","['Urgent', 'Dark Pop Intensity']",31.4002
+85,Lauryn Hill,The Miseducation of Lauryn Hill,Ex-Factor,40,"['Slow Tempo', 'Slow']","['Sensual', 'Intimate']",81.0764
+86,Lauryn Hill,The Miseducation of Lauryn Hill,Superstar,40,"['Slow Tempo', 'Slow']","['Sensual', 'Intimate']",81.0764
+87,Lorde,Royals - Single,Royals,80,"['Medium Tempo', 'Medium']","['Cool', 'Wary / Defiant']",40.552075
+88,Love Unlimited,The Best of Love Unlimited,Under The Influence Of Love,100,"['Medium Tempo', 'Medium Fast']","['Fiery', 'Passionate Rhythm']",42.724825
+89,M83,Before the Dawn Heals Us,Don't save us from the flames,80,"['Medium Tempo', 'Medium']","['Rowdy', 'Driving Dark Groove']",45.813925
+91,M83,Hurry Up/ We're Dreaming (Disc 1),Midnight City,50,"['Medium Tempo', 'Medium Slow']","['Sensual', 'Dreamy Pulse']",79.330075
+92,M83,Hurry Up/ We're Dreaming (Disc 1),Wait,120,"['Medium Tempo', 'Medium Fast']","['Fiery', 'Fiery Groove']",35.067899999999995
+93,M83,M83,I'm Getting Closer,60,"['Medium Tempo', 'Medium Slow']","['Brooding', 'Dreamy Brooding']",82.91402500000001
+94,M83,Saturdays = Youth,Too Late,150,"['Fast Tempo', 'Fast']","['Defiant', 'Hard Positive Excitement']",42.048399999999994
+99,Maxwell,Now,Lifetime,60,"['Medium Tempo', 'Medium Slow']","['Empowering', 'Dramatic Emotion']",58.767275
+100,Merethe Soltvedt/ Thomas Bergersen,Sun,Interstellar Final Frontier,110,"['Medium Tempo', 'Medium Fast']","['Cool', 'Cool Confidence']",89.69165
+102,Michael Jackson,XSCAPE,Love Never Felt So Good (Feat. Justim Timberlake),110,"['Medium Tempo', 'Medium Fast']","['Urgent', 'Dark Pop']",30.745849999999997
+103,Natalie Maines,Mother,Take It On Faith,60,"['Medium Tempo', 'Medium']","['Empowering', 'Dramatic Emotion']",58.767275
+106,PHOX,Kingfisher - Single,Kingfisher,60,"['Medium Tempo', 'Medium']","['Empowering', 'Dramatic Emotion']",58.767275
+108,Rihanna,Unapologetic,Stay (Feat. Mikky Ekko),50,"['Medium Tempo', 'Medium Slow']","['Somber', 'Enigmatic / Mysterious']",31.47625
+111,She & Him,Volume 3,Never Wanted Your Love,140,"['Fast Tempo', 'Fast']","['Defiant', 'Hard Positive Excitement']",42.048399999999994
+112,Vampire Weekend,Modern Vampires of the City,Worship You,150,"['Fast Tempo', 'Fast']","['Excited', 'Euphoric Energy']",65.74325
+114,Vampire Weekend,Vampire Weekend,A-Punk,80,"['Medium Tempo', 'Medium']","['Brooding', 'Alienated / Brooding']",48.1555
+115,Various Artists,Nymphomaniac,Requiem Mass in D Minor_ Requiem Aeternam - W.A. Mozart,140,"['Fast Tempo', 'Fast']","['Energizing', 'Abstract Beat']",65.93215000000001
+116,Various Artists,Nymphomaniac,Sonata for Violin and Piano in A Major - Cesar Frank,70,"['Medium Tempo', 'Medium']","['Stirring', 'Invigorating / Joyous']",100.120625
+117,Wolfgang Amadeus Mozart,Amadeus Soundtrack,Requiem,100,"['Medium Tempo', 'Medium Fast']","['Serious', 'Thrilling']",67.11930000000001

@@ -20,6 +20,10 @@ import preprocessing
 import time
 from math import atan
 from math import pi
+import os
+os.system("alchemypapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
+from alchemyapi import AlchemyAPI
+from textblob import TextBlob
 
 # the mood category used for clustering
 mood_category = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
@@ -34,6 +38,17 @@ av_chart = {(22.5+67.5)/2:'excitment',
             (247.5+292.5)/2:'sleepiness',
             (292.5+337.5)/2:'relaxation',
             0:'pleasure'}
+            
+# the sentiment score of the av_chart using AlchemyAPI
+# as a result, you will get the following scores
+av_chart_scores = {'arousal': 56.327000000000005,
+                   'depression': 19.394299999999998,
+                   'displeasure': 39.192899999999995,
+                   'distress': 34.732149999999997,
+                   'excitment': 72.7881,
+                   'pleasure': 79.759650000000008,
+                   'relaxation': 69.67649999999999,
+                   'sleepiness': 20.901700000000002}
 
 # data = from hardware
 # we have the object-oriented design for heart rate, activity, and contxt
@@ -116,7 +131,6 @@ REFERENCE
 # neutral < sad < happy < angry
 
 
-
 def determine_emotion(one_record, emotions_range):
     # using the preb_labels's data, predict the emotion
     for a_range in emotions_range.keys():
@@ -176,6 +190,11 @@ def calculate_angle(data_record):
     return angle
     
 
+def get_predicted_labels_using_angles():
+    
+    return 0
+    
+
 def predict_emotion_using_AV_model(data_df):
     # using Russell's Arousal-Valence model, estimate the angular quantity that represents
     # the predicted sentiment
@@ -195,12 +214,32 @@ def predict_emotion_using_AV_model(data_df):
     max_value_1 = max(data_df.iloc[:,1])
     data_df.iloc[:,1] = data_df.iloc[:,1].apply(lambda x: preprocessing.scale(x,min_value_1, max_value_1, -1.0,1.0))
     
-
     return data_df.apply(lambda x: calculate_angle(x), axis=1)
     
+
+def get_sentiment_scores_of_AV():
+    # get the terms describing the regions of the AV model and project the sentiment scores
+
+    # Returns
+    # av_chart_word_score : the dictionary whose keys are words and whose values are associated
+    # sentiment scores according to AlchemyAPI
+    av_chart_word_score = {}    
     
-    
+    for a_word in av_chart.values():
+        alchemy_obj = AlchemyAPI()
+        response = alchemy_obj.sentiment("text", a_word)
+        if (response.has_key('docSentiment')):
+            if (response['docSentiment'].has_key('score')):
+                sentiment_score = response['docSentiment']['score']
+                if(not av_chart_word_score.has_key(a_word)):
+                    av_chart_word_score[a_word] = sentiment_score
         
+        # using TextBlob
+        #textblob_obj = TextBlob(a_word)
+        #sentiment_score = textblob_obj.sentences[0].sentiment.polarity
+        #print sentiment_score
+    
+    return av_chart_word_score
 
 """
 Using Bayesian Network to recommend music (Fuzzy Bayesian)
