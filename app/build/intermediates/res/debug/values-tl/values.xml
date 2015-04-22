@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-tl/strings.xml -->
+    <eat-comment/>
+    <string-array name="weeklist">
+    <item msgid="7005918873419323862">"1 linggo"</item>
+    <item msgid="7487749116155425822">"2 linggo"</item>
+    <item msgid="1565338360539555185">"3 linggo"</item>
+    <item msgid="2142986059836933072">"4 linggo"</item>
+    <item msgid="4332403875260507291">"5 linggo"</item>
+    <item msgid="3847281907869868565">"6 linggo"</item>
+    <item msgid="2942654998558867799">"7 linggo"</item>
+    <item msgid="2115529325850052227">"8 linggo"</item>
+    <item msgid="1396675336665198092">"9 linggo"</item>
+    <item msgid="3178819129208998649">"10 linggo"</item>
+    <item msgid="2727959579637914171">"11 linggo"</item>
+    <item msgid="8708754966127584739">"12 linggo"</item>
+  </string-array>
+    <plurals name="NNNtracksdeleted">
+    <item msgid="8560276109508404217" quantity="one">"Tinanggal ang 1 awit."</item>
+    <item msgid="5156740163031225200" quantity="other">"Tinanggal ang <ns1:g id="SONGS_TO_DELETE">%d</ns1:g> (na) kanta."</item>
+  </plurals>
+    <plurals name="NNNtrackstoplaylist">
+    <item msgid="422388042993582235" quantity="one">"1 kanta ang naidagdag sa playlist."</item>
+    <item msgid="7662771987109627255" quantity="other">"Naidagdag ang <ns1:g id="NUMBER">%d</ns1:g> (na) kanta sa playlist."</item>
+  </plurals>
+    <plurals name="Nalbums">
+    <item msgid="3798955510439465932" quantity="one">"1 album"</item>
+    <item msgid="3047615499770811984" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> (na) album"</item>
+  </plurals>
+    <plurals name="Nsongs">
+    <item msgid="5798230388116542981" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> (na) kanta"</item>
+  </plurals>
+    <plurals name="Nsongscomp">
+    <item msgid="7162294486622945550" quantity="other">"<ns1:g id="COUNT_FOR_ARTIST">%2$d</ns1:g> ng <ns1:g id="TOTAL_COUNT">%1$d</ns1:g> (na) kanta"</item>
+  </plurals>
+    <string msgid="7110273488645072783" name="add_to_playlist">"Idagdag sa playlist"</string>
+    <string msgid="5807982055590211900" name="albums_menu">"Mga Album"</string>
+    <string msgid="8773880394961378035" name="albums_title">"Mga Album"</string>
+    <string msgid="6880186414437237653" name="all_title">"Lahat ng media"</string>
+    <string msgid="8490372367259160067" name="artists_title">"Mga Artist"</string>
+    <string msgid="5248122473075843289" name="browse_menu">"Mga Artist"</string>
+    <string msgid="886559484711947520" name="cancel">"Kanselahin"</string>
+    <string msgid="4565515100924905315" name="clear_playlist">"I-clear ang playlist"</string>
+    <string msgid="8149755205483279143" name="create_playlist_create_text">"I-save"</string>
+    <string msgid="2007808383561024706" name="create_playlist_overwrite_text">"I-overwrite"</string>
+    <string msgid="8172412873562794429" name="delete_album_desc">"Permanenteng tanggalin ang buong album na \"<ns1:g id="ALBUM">%s</ns1:g>\" mula sa SD card?"</string>
+    <string msgid="8612559166069885285" name="delete_album_desc_nosdcard">"Permanenteng tanggalin ang album na \"<ns1:g id="ALBUM">%s</ns1:g>\" mula sa imbakan ng USB?"</string>
+    <string msgid="8665759524898379194" name="delete_artist_desc">"Permanenteng tanggalin ang lahat ng kanta ni <ns1:g id="ARTIST">%s</ns1:g> mula sa SD card?"</string>
+    <string msgid="5729059309796497914" name="delete_artist_desc_nosdcard">"Permanenteng tanggalin ang lahat ng kanta ni <ns1:g id="ARTIST">%s</ns1:g> mula sa USB storage?"</string>
+    <string msgid="7008121194944357274" name="delete_confirm_button_text">"OK"</string>
+    <string msgid="3363330144534750601" name="delete_item">"Tanggalin"</string>
+    <string msgid="8998637685583495247" name="delete_playlist_menu">"Tanggalin"</string>
+    <string msgid="1842681623848282205" name="delete_song_desc">"Permanenteng tanggalin ang \"<ns1:g id="SONG">%s</ns1:g>\" mula sa SD card?"</string>
+    <string msgid="5064973032624148730" name="delete_song_desc_nosdcard">"Permanenteng tanggalin ang \"<ns1:g id="SONG">%s</ns1:g>\" mula sa imbakan ng USB?"</string>
+    <string msgid="571618502105370684" name="edit_playlist_menu">"I-edit"</string>
+    <string msgid="8804547581593509614" name="effectspanel">"Mga sound effect"</string>
+    <string msgid="6711555673997896344" name="emptyplaylist">"Walang laman ang napiling playlist."</string>
+    <string msgid="5548732936480723311" name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string msgid="8979658707407220934" name="goto_start">"Library"</string>
+    <string msgid="1991660396037155453" name="loading">"Naglo-load..."</string>
+    <string msgid="4549836003229914299" name="mediapickerlabel">"Musika"</string>
+    <string msgid="6733604841530940397" name="mediaplaybacklabel">"Musika"</string>
+    <string msgid="959222971261132292" name="mediasearch">"Hanapin ang <ns1:g id="TERM">%s</ns1:g> gamit ang:"</string>
+    <string msgid="4143865470317360605" name="music_picker_title">"Pumili ng track ng musika"</string>
+    <string msgid="3162022214114562892" name="musicbrowserlabel">"Musika"</string>
+    <string msgid="2602980193508150226" name="musicshortcutlabel">"Playlist ng musika"</string>
+    <string msgid="7588112979692632867" name="new_playlist">"Bago"</string>
+    <string msgid="905710296728900597" name="new_playlist_name_template">"Bagong playlist na <ns1:g id="NUMBER">%d</ns1:g>"</string>
+    <string msgid="4456351945617594418" name="no_playlists_title">"Walang mga playlist"</string>
+    <string msgid="8805805388271238471" name="no_tracks_title">"Walang mga kanta"</string>
+    <string msgid="6218814130364793104" name="no_videos_title">"Walang mga video"</string>
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-tl/strings2.xml -->
+    <eat-comment/>
+    <string msgid="4934081953733334979" name="notification_artist_album">"<ns1:g id="ALBUM">%2$s</ns1:g>\n<ns1:g id="ARTIST">%1$s</ns1:g>"</string>
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-tl/strings.xml -->
+    <eat-comment/>
+    <string msgid="8342523844307751761" name="nowplaying_title">"Nagpe-play ngayon"</string>
+    <string msgid="8336826100414159413" name="onesong">"1 kanta"</string>
+    <string msgid="8213359225506006168" name="party_shuffle">"Party shuffle"</string>
+    <string msgid="1828744483354711679" name="party_shuffle_off">"I-off ang party shuffle"</string>
+    <string msgid="6582413231529992125" name="partyshuffle_title">"Party shuffle"</string>
+    <string msgid="6309622568869321842" name="play_all">"I-play lahat"</string>
+    <string msgid="2854921021814550018" name="play_selection">"I-play"</string>
+    <string msgid="3811851150820251398" name="playback_failed">"Hindi sinusuportahan ng player ang ganitong uri ng audio file."</string>
+    <string msgid="9008053828193961455" name="playlist_deleted_message">"Tinanggal ang playlist."</string>
+    <string msgid="7187580192703005990" name="playlist_renamed_message">"Pinalitan ang pangalan ng playlist."</string>
+    <string msgid="5382792649771928849" name="playlists_menu">"Mga Playlist"</string>
+    <string msgid="5094238486322957927" name="playlists_title">"Mga Playlist"</string>
+    <string msgid="8657809279717670634" name="podcasts_listitem">"Mga Podcast"</string>
+    <string msgid="4928414142496858304" name="podcasts_title">"Mga Podcast"</string>
+    <string msgid="2937629819482787704" name="queue">"Kasalukuyang playlist"</string>
+    <string msgid="110978416756366953" name="recentlyadded">"Naidagdag kamakailan"</string>
+    <string msgid="3153322287249901914" name="recentlyadded_title">"Naidagdag kamakailan"</string>
+    <string msgid="2548577514849026354" name="remove_from_playlist">"Alisin mula sa playlist"</string>
+    <string msgid="3133463747389494668" name="rename_playlist_menu">"Palitan ang pangalan"</string>
+    <string msgid="6443293055987316642" name="repeat_all_notif">"Inuulit ang lahat ng mga kanta."</string>
+    <string msgid="1227153936360904196" name="repeat_current_notif">"Inuulit ang kasalukuyang kanta."</string>
+    <string msgid="1149406899083479716" name="repeat_off_notif">"Naka-off ang ulitin."</string>
+    <string msgid="2737472190159134599" name="ringtone_menu">"Gamitin bilang ringtone ng telepono"</string>
+    <string msgid="3367622038867238133" name="ringtone_menu_short">"Gamitin bilang ringtone"</string>
+    <string msgid="5325818347613843130" name="ringtone_set">"I-set ang \"<ns1:g id="NAME">%s</ns1:g>\" bilang ringtone ng telepono."</string>
+    <string msgid="5180413608901885255" name="save_as_playlist">"I-save bilang playlist"</string>
+    <string msgid="3529383847223198502" name="scanning">"Inii-scan ang SD card…"</string>
+    <string msgid="8105284774487360148" name="scanning_nosdcard">"Ini-scan ang storage ng USB…"</string>
+    <string msgid="579981082201215537" name="sdcard_busy_message">"Abala ang iyong SD card."</string>
+    <string msgid="1493449756827869166" name="sdcard_busy_message_nosdcard">"Abala ang iyong imbakan ng USB."</string>
+    <string msgid="1162763571147174655" name="sdcard_busy_title">"Hindi available ang SD card"</string>
+    <string msgid="3319125156566499501" name="sdcard_busy_title_nosdcard">"Hindi available ang storage ng USB"</string>
+    <string msgid="4574563894036627855" name="sdcard_error_message">"May naganap na error sa iyong SD card."</string>
+    <string msgid="4983430848526821234" name="sdcard_error_message_nosdcard">"May naranasang error sa iyong storage ng USB."</string>
+    <string msgid="165682155008600643" name="sdcard_error_title">"Error sa SD card"</string>
+    <string msgid="7564338137076303931" name="sdcard_error_title_nosdcard">"Error sa storage ng USB"</string>
+    <string msgid="2100061456003981823" name="sdcard_missing_message">"Walang SD card na nakapasok ang iyong telepono."</string>
+    <string msgid="4459620970330194881" name="sdcard_missing_message_nosdcard">"Walang storage ng USB ang iyong telepono"</string>
+    <string msgid="9008284946643270850" name="sdcard_missing_title">"Walang SD card"</string>
+    <string msgid="7984839174824243958" name="sdcard_missing_title_nosdcard">"Walang storage ng USB"</string>
+    <string msgid="3766854898072633001" name="search_hint">"Maghanap ng Musika"</string>
+    <string msgid="6520975349259883368" name="search_settings_description">"Mga artist, album, at track"</string>
+    <string msgid="1016971653383739344" name="search_title">"Paghahanap"</string>
+    <string msgid="480888406592240723" name="service_start_error_button">"OK"</string>
+    <string msgid="7061754255330276478" name="service_start_error_msg">"Hindi mape-play ang kantang ito."</string>
+    <string msgid="8649916852210198813" name="service_start_error_title">"Problema sa Pag-playback"</string>
+    <string msgid="1388193611787878773" name="shuffle_all">"I-shuffle lahat"</string>
+    <string msgid="4251189610017886263" name="shuffle_off_notif">"Naka-off ang shuffle."</string>
+    <string msgid="5453708337808483943" name="shuffle_on_notif">"Naka-on ang shuffle."</string>
+    <string msgid="2912837715658975248" name="sort_by_album">"Mga Album"</string>
+    <string msgid="4607024967813199992" name="sort_by_artist">"Mga Artist"</string>
+    <string msgid="7662999005554152565" name="sort_by_track">"Mga Track"</string>
+    <string msgid="8842426517396356215" name="streamloadingtext">"Kumukonekta sa <ns1:g id="HOST">%s</ns1:g>..."</string>
+    <string msgid="6942246568246092330" name="tracks_menu">"Mga Kanta"</string>
+    <string msgid="3229389424532295124" name="tracks_title">"Mga Kanta"</string>
+    <string msgid="8525145988941244727" name="unknown_album_name">"Hindi kilalang album"</string>
+    <string msgid="5567811106415855219" name="unknown_artist_name">"Hindi kilalang artist"</string>
+    <string msgid="8522326678447494657" name="videobrowserlabel">"Mga Video"</string>
+    <string msgid="2066741954354129115" name="videos_title">"Mga Video"</string>
+    <string msgid="7636608790418067496" name="weekpicker_set">"Tapos na"</string>
+    <string msgid="699535378922101701" name="weekpicker_title">"Itakda ang oras"</string>
+    <string msgid="3166878738860903586" name="widget_initial_text">"Pindutin upang pumili ng musika."</string>
+    <string msgid="8713273699401457426" name="working_albums">"Mga Album…"</string>
+    <string msgid="8678357432732156580" name="working_artists">"Mga Artist…"</string>
+    <string msgid="4424950806134653351" name="working_playlists">"Mga Playlist…"</string>
+    <string msgid="2201491972050410684" name="working_songs">"Mga Kanta…"</string>
+</resources>

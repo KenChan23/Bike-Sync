@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-cs-keyshidden/strings.xml -->
+    <eat-comment/>
+    <string msgid="2379436619128383935" name="create_playlist_create_text_prompt">"Otevřete klávesnici a zadejte název nového seznamu stop. Pokud zvolíte tlačítko Uložit, seznamu stop bude přidělen název <ns1:g id="PLAYLIST">%s</ns1:g>."</string>
+    <string msgid="900422624897120958" name="rename_playlist_diff_prompt">"Otevřete klávesnici a zadejte nový název seznamu stop <ns1:g id="PLAYLIST">%1$s</ns1:g>, nebo zvolte tlačítko Uložit a seznamu stop bude přidělen název <ns1:g id="NAME">%2$s</ns1:g>."</string>
+    <string msgid="7777541452078260899" name="rename_playlist_same_prompt">"Otevřete klávesnici a zadejte nový název seznamu stop <ns1:g id="PLAYLIST">%s</ns1:g>."</string>
+</resources>

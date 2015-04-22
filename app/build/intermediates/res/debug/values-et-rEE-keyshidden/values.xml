@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-et-rEE-keyshidden/strings.xml -->
+    <eat-comment/>
+    <string msgid="2379436619128383935" name="create_playlist_create_text_prompt">"Avage klaviatuur, et lisada oma esitusloendile nimi või valige käsk Salvesta, et lisada sellele nimi „<ns1:g id="PLAYLIST">%s</ns1:g>”."</string>
+    <string msgid="900422624897120958" name="rename_playlist_diff_prompt">"Avage klaviatuur, et lisada esitusloendile „<ns1:g id="PLAYLIST">%1$s</ns1:g>” uus nimi või valige käsk Salvesta, et lisada sellele nimi „<ns1:g id="NAME">%2$s</ns1:g>”."</string>
+    <string msgid="7777541452078260899" name="rename_playlist_same_prompt">"Avage klaviatuur, et anda esitusloendile <ns1:g id="PLAYLIST">%s</ns1:g> uus nimi."</string>
+</resources>

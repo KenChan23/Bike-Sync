@@ -1,0 +1,345 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:17:1
+	package
+		ADDED from AndroidManifest.xml:18:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:17:11
+original-package
+ADDED from AndroidManifest.xml:20:5
+	android:name
+		ADDED from AndroidManifest.xml:20:23
+uses-sdk
+ADDED from AndroidManifest.xml:21:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:21:41
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:21:15
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from AndroidManifest.xml:22:5
+	android:name
+		ADDED from AndroidManifest.xml:22:22
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from AndroidManifest.xml:23:5
+	android:name
+		ADDED from AndroidManifest.xml:23:22
+uses-permission#android.permission.WAKE_LOCK
+ADDED from AndroidManifest.xml:24:5
+	android:name
+		ADDED from AndroidManifest.xml:24:22
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:25:5
+	android:name
+		ADDED from AndroidManifest.xml:25:22
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from AndroidManifest.xml:26:5
+	android:name
+		ADDED from AndroidManifest.xml:26:22
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:27:5
+	android:name
+		ADDED from AndroidManifest.xml:27:22
+uses-permission#android.permission.BROADCAST_STICKY
+ADDED from AndroidManifest.xml:28:5
+	android:name
+		ADDED from AndroidManifest.xml:28:22
+application
+ADDED from AndroidManifest.xml:30:5
+	android:label
+		ADDED from AndroidManifest.xml:31:9
+	android:allowTaskReparenting
+		ADDED from AndroidManifest.xml:33:9
+	android:icon
+		ADDED from AndroidManifest.xml:30:18
+	android:taskAffinity
+		ADDED from AndroidManifest.xml:32:9
+meta-data#android.app.default_searchable
+ADDED from AndroidManifest.xml:34:9
+	android:value
+		ADDED from AndroidManifest.xml:36:13
+	android:name
+		ADDED from AndroidManifest.xml:35:13
+activity#com.android.music.MusicBrowserActivity
+ADDED from AndroidManifest.xml:38:9
+	android:exported
+		ADDED from AndroidManifest.xml:40:13
+	android:theme
+		ADDED from AndroidManifest.xml:39:13
+	android:name
+		ADDED from AndroidManifest.xml:38:19
+intent-filter#android.intent.action.MAIN+android.intent.action.MUSIC_PLAYER+android.intent.category.APP_MUSIC+android.intent.category.DEFAULT+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:42:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:43:17
+	android:name
+		ADDED from AndroidManifest.xml:43:25
+action#android.intent.action.MUSIC_PLAYER
+ADDED from AndroidManifest.xml:44:17
+	android:name
+		ADDED from AndroidManifest.xml:44:25
+category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:45:17
+	android:name
+		ADDED from AndroidManifest.xml:45:27
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:46:17
+	android:name
+		ADDED from AndroidManifest.xml:46:27
+category#android.intent.category.APP_MUSIC
+ADDED from AndroidManifest.xml:47:17
+	android:name
+		ADDED from AndroidManifest.xml:47:27
+receiver#com.android.music.MediaButtonIntentReceiver
+ADDED from AndroidManifest.xml:50:9
+	android:name
+		ADDED from AndroidManifest.xml:50:19
+intent-filter#android.intent.action.MEDIA_BUTTON+android.media.AUDIO_BECOMING_NOISY
+ADDED from AndroidManifest.xml:51:13
+action#android.intent.action.MEDIA_BUTTON
+ADDED from AndroidManifest.xml:52:17
+	android:name
+		ADDED from AndroidManifest.xml:52:25
+action#android.media.AUDIO_BECOMING_NOISY
+ADDED from AndroidManifest.xml:53:17
+	android:name
+		ADDED from AndroidManifest.xml:53:25
+activity#com.android.music.MediaPlaybackActivity
+ADDED from AndroidManifest.xml:67:9
+	android:clearTaskOnLaunch
+		ADDED from AndroidManifest.xml:72:17
+	android:label
+		ADDED from AndroidManifest.xml:69:17
+	android:excludeFromRecents
+		ADDED from AndroidManifest.xml:73:17
+	android:launchMode
+		ADDED from AndroidManifest.xml:71:17
+	android:exported
+		ADDED from AndroidManifest.xml:74:17
+	android:theme
+		ADDED from AndroidManifest.xml:68:17
+	android:taskAffinity
+		ADDED from AndroidManifest.xml:70:17
+	android:name
+		ADDED from AndroidManifest.xml:67:19
+intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:75:13
+action#android.intent.action.VIEW
+ADDED from AndroidManifest.xml:76:17
+	android:name
+		ADDED from AndroidManifest.xml:76:25
+data
+ADDED from AndroidManifest.xml:78:17
+	android:scheme
+		ADDED from AndroidManifest.xml:78:23
+intent-filter#android.intent.category.DEFAULT+com.android.music.PLAYBACK_VIEWER
+ADDED from AndroidManifest.xml:85:13
+action#com.android.music.PLAYBACK_VIEWER
+ADDED from AndroidManifest.xml:86:17
+	android:name
+		ADDED from AndroidManifest.xml:86:25
+activity#com.android.music.AudioPreview
+ADDED from AndroidManifest.xml:91:9
+	android:excludeFromRecents
+		ADDED from AndroidManifest.xml:93:17
+	android:exported
+		ADDED from AndroidManifest.xml:93:51
+	android:theme
+		ADDED from AndroidManifest.xml:91:47
+	android:taskAffinity
+		ADDED from AndroidManifest.xml:92:17
+	android:name
+		ADDED from AndroidManifest.xml:91:19
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:103:13
+category#android.intent.category.BROWSABLE
+ADDED from AndroidManifest.xml:106:17
+	android:name
+		ADDED from AndroidManifest.xml:106:27
+activity#com.android.music.ArtistAlbumBrowserActivity
+ADDED from AndroidManifest.xml:126:9
+	android:exported
+		ADDED from AndroidManifest.xml:126:79
+	android:name
+		ADDED from AndroidManifest.xml:126:19
+intent-filter#android.intent.action.PICK+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:127:13
+action#android.intent.action.PICK
+ADDED from AndroidManifest.xml:128:17
+	android:name
+		ADDED from AndroidManifest.xml:128:25
+activity#com.android.music.AlbumBrowserActivity
+ADDED from AndroidManifest.xml:133:9
+	android:exported
+		ADDED from AndroidManifest.xml:133:73
+	android:name
+		ADDED from AndroidManifest.xml:133:19
+activity#com.android.music.TrackBrowserActivity
+ADDED from AndroidManifest.xml:140:9
+	android:exported
+		ADDED from AndroidManifest.xml:140:73
+	android:name
+		ADDED from AndroidManifest.xml:140:19
+intent-filter#android.intent.action.EDIT+android.intent.action.PICK+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:141:13
+action#android.intent.action.EDIT
+ADDED from AndroidManifest.xml:142:17
+	android:name
+		ADDED from AndroidManifest.xml:142:25
+activity#com.android.music.QueryBrowserActivity
+ADDED from AndroidManifest.xml:148:9
+	android:exported
+		ADDED from AndroidManifest.xml:150:17
+	android:theme
+		ADDED from AndroidManifest.xml:149:17
+	android:name
+		ADDED from AndroidManifest.xml:148:19
+intent-filter#android.intent.action.MEDIA_SEARCH+android.intent.action.SEARCH+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:151:13
+action#android.intent.action.SEARCH
+ADDED from AndroidManifest.xml:152:17
+	android:name
+		ADDED from AndroidManifest.xml:152:25
+action#android.intent.action.MEDIA_SEARCH
+ADDED from AndroidManifest.xml:153:17
+	android:name
+		ADDED from AndroidManifest.xml:153:25
+meta-data#android.app.searchable
+ADDED from AndroidManifest.xml:156:13
+	android:resource
+		ADDED from AndroidManifest.xml:158:17
+	android:name
+		ADDED from AndroidManifest.xml:157:17
+activity#com.android.music.PlaylistBrowserActivity
+ADDED from AndroidManifest.xml:161:9
+	android:label
+		ADDED from AndroidManifest.xml:162:17
+	android:exported
+		ADDED from AndroidManifest.xml:163:17
+	android:name
+		ADDED from AndroidManifest.xml:161:19
+activity-alias#com.android.music.PlaylistShortcutActivity
+ADDED from AndroidManifest.xml:175:9
+	android:label
+		ADDED from AndroidManifest.xml:177:13
+	android:exported
+		ADDED from AndroidManifest.xml:179:13
+	android:targetActivity
+		ADDED from AndroidManifest.xml:176:13
+	android:icon
+		ADDED from AndroidManifest.xml:178:13
+	android:name
+		ADDED from AndroidManifest.xml:175:25
+intent-filter#android.intent.action.CREATE_SHORTCUT+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:181:13
+action#android.intent.action.CREATE_SHORTCUT
+ADDED from AndroidManifest.xml:182:17
+	android:name
+		ADDED from AndroidManifest.xml:182:25
+activity#com.android.music.VideoBrowserActivity
+ADDED from AndroidManifest.xml:187:9
+	android:label
+		ADDED from AndroidManifest.xml:189:13
+	android:exported
+		ADDED from AndroidManifest.xml:191:13
+	android:icon
+		ADDED from AndroidManifest.xml:190:13
+	android:taskAffinity
+		ADDED from AndroidManifest.xml:188:13
+	android:name
+		ADDED from AndroidManifest.xml:187:19
+activity#com.android.music.MediaPickerActivity
+ADDED from AndroidManifest.xml:205:9
+	android:label
+		ADDED from AndroidManifest.xml:206:17
+	android:exported
+		ADDED from AndroidManifest.xml:206:58
+	android:name
+		ADDED from AndroidManifest.xml:205:19
+activity#com.android.music.MusicPicker
+ADDED from AndroidManifest.xml:229:9
+	android:label
+		ADDED from AndroidManifest.xml:230:17
+	android:exported
+		ADDED from AndroidManifest.xml:230:60
+	android:name
+		ADDED from AndroidManifest.xml:229:19
+intent-filter#android.intent.action.GET_CONTENT+android.intent.category.DEFAULT+android.intent.category.OPENABLE
+ADDED from AndroidManifest.xml:233:13
+action#android.intent.action.GET_CONTENT
+ADDED from AndroidManifest.xml:234:17
+	android:name
+		ADDED from AndroidManifest.xml:234:25
+category#android.intent.category.OPENABLE
+ADDED from AndroidManifest.xml:236:17
+	android:name
+		ADDED from AndroidManifest.xml:236:27
+intent-filter#android.intent.action.PICK+android.intent.category.DEFAULT+android.intent.category.OPENABLE
+ADDED from AndroidManifest.xml:243:13
+activity#com.android.music.CreatePlaylist
+ADDED from AndroidManifest.xml:250:9
+	android:exported
+		ADDED from AndroidManifest.xml:251:57
+	android:theme
+		ADDED from AndroidManifest.xml:251:13
+	android:name
+		ADDED from AndroidManifest.xml:250:19
+activity#com.android.music.RenamePlaylist
+ADDED from AndroidManifest.xml:252:9
+	android:exported
+		ADDED from AndroidManifest.xml:253:57
+	android:theme
+		ADDED from AndroidManifest.xml:253:13
+	android:name
+		ADDED from AndroidManifest.xml:252:19
+activity#com.android.music.WeekSelector
+ADDED from AndroidManifest.xml:254:9
+	android:exported
+		ADDED from AndroidManifest.xml:255:57
+	android:theme
+		ADDED from AndroidManifest.xml:255:13
+	android:name
+		ADDED from AndroidManifest.xml:254:19
+activity#com.android.music.DeleteItems
+ADDED from AndroidManifest.xml:256:9
+	android:exported
+		ADDED from AndroidManifest.xml:257:57
+	android:theme
+		ADDED from AndroidManifest.xml:257:13
+	android:name
+		ADDED from AndroidManifest.xml:256:19
+activity#com.android.music.ScanningProgress
+ADDED from AndroidManifest.xml:258:9
+	android:exported
+		ADDED from AndroidManifest.xml:259:57
+	android:theme
+		ADDED from AndroidManifest.xml:259:13
+	android:name
+		ADDED from AndroidManifest.xml:258:19
+service#com.android.music.MediaPlaybackService
+ADDED from AndroidManifest.xml:260:9
+	android:exported
+		ADDED from AndroidManifest.xml:261:13
+	android:name
+		ADDED from AndroidManifest.xml:260:18
+receiver#com.android.music.MediaAppWidgetProvider
+ADDED from AndroidManifest.xml:263:9
+	android:name
+		ADDED from AndroidManifest.xml:263:19
+intent-filter#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from AndroidManifest.xml:264:13
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from AndroidManifest.xml:265:17
+	android:name
+		ADDED from AndroidManifest.xml:265:25
+meta-data#android.appwidget.provider
+ADDED from AndroidManifest.xml:267:13
+	android:resource
+		ADDED from AndroidManifest.xml:267:66
+	android:name
+		ADDED from AndroidManifest.xml:267:24

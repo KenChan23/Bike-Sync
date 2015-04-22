@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-sr/strings.xml -->
+    <eat-comment/>
+    <string-array name="weeklist">
+    <item msgid="7005918873419323862">"1 недеља"</item>
+    <item msgid="7487749116155425822">"2 недеље"</item>
+    <item msgid="1565338360539555185">"3 недеље"</item>
+    <item msgid="2142986059836933072">"4 недеље"</item>
+    <item msgid="4332403875260507291">"5 недеља"</item>
+    <item msgid="3847281907869868565">"6 недеља"</item>
+    <item msgid="2942654998558867799">"7 недеља"</item>
+    <item msgid="2115529325850052227">"8 недеља"</item>
+    <item msgid="1396675336665198092">"9 недеља"</item>
+    <item msgid="3178819129208998649">"10 недеља"</item>
+    <item msgid="2727959579637914171">"11 недеља"</item>
+    <item msgid="8708754966127584739">"12 недеља"</item>
+  </string-array>
+    <plurals name="NNNtracksdeleted">
+    <item msgid="8560276109508404217" quantity="one">"1 песма је избрисана."</item>
+    <item msgid="5156740163031225200" quantity="other">"Песме (<ns1:g id="SONGS_TO_DELETE">%d</ns1:g>) су избрисане."</item>
+  </plurals>
+    <plurals name="NNNtrackstoplaylist">
+    <item msgid="422388042993582235" quantity="one">"1 песма је додата на плејлисту."</item>
+    <item msgid="7662771987109627255" quantity="other">"Песама додато на плејлисту: <ns1:g id="NUMBER">%d</ns1:g>"</item>
+  </plurals>
+    <plurals name="Nalbums">
+    <item msgid="3798955510439465932" quantity="one">"1 албум"</item>
+    <item msgid="3047615499770811984" quantity="other">"Албуми (<ns1:g id="COUNT">%d</ns1:g>)"</item>
+  </plurals>
+    <plurals name="Nsongs">
+    <item msgid="5798230388116542981" quantity="other">"Песме (<ns1:g id="COUNT">%d</ns1:g>)"</item>
+  </plurals>
+    <plurals name="Nsongscomp">
+    <item msgid="7162294486622945550" quantity="other">"<ns1:g id="COUNT_FOR_ARTIST">%2$d</ns1:g> од <ns1:g id="TOTAL_COUNT">%1$d</ns1:g> песама"</item>
+  </plurals>
+    <string msgid="7110273488645072783" name="add_to_playlist">"Додај на плејлисту"</string>
+    <string msgid="5807982055590211900" name="albums_menu">"Албуми"</string>
+    <string msgid="8773880394961378035" name="albums_title">"Албуми"</string>
+    <string msgid="6880186414437237653" name="all_title">"Сви медији"</string>
+    <string msgid="8490372367259160067" name="artists_title">"Извођачи"</string>
+    <string msgid="5248122473075843289" name="browse_menu">"Извођачи"</string>
+    <string msgid="886559484711947520" name="cancel">"Откажи"</string>
+    <string msgid="4565515100924905315" name="clear_playlist">"Обриши плејлисту"</string>
+    <string msgid="8149755205483279143" name="create_playlist_create_text">"Сачувај"</string>
+    <string msgid="2007808383561024706" name="create_playlist_overwrite_text">"Замени"</string>
+    <string msgid="8172412873562794429" name="delete_album_desc">"Желите ли да трајно избришете цео албум „<ns1:g id="ALBUM">%s</ns1:g>“ са SD картице?"</string>
+    <string msgid="8612559166069885285" name="delete_album_desc_nosdcard">"Желите ли да трајно избришете цео албум „<ns1:g id="ALBUM">%s</ns1:g>“ са USB меморије?"</string>
+    <string msgid="8665759524898379194" name="delete_artist_desc">"Желите ли да трајно избришете све песме извођача <ns1:g id="ARTIST">%s</ns1:g> са SD картице?"</string>
+    <string msgid="5729059309796497914" name="delete_artist_desc_nosdcard">"Желите ли да трајно избришете све песме извођача <ns1:g id="ARTIST">%s</ns1:g> са USB меморије?"</string>
+    <string msgid="7008121194944357274" name="delete_confirm_button_text">"Потврди"</string>
+    <string msgid="3363330144534750601" name="delete_item">"Избриши"</string>
+    <string msgid="8998637685583495247" name="delete_playlist_menu">"Избриши"</string>
+    <string msgid="1842681623848282205" name="delete_song_desc">"Желите ли трајно да избришете „<ns1:g id="SONG">%s</ns1:g>“ са SD картице?"</string>
+    <string msgid="5064973032624148730" name="delete_song_desc_nosdcard">"Желите ли да трајно избришете „<ns1:g id="SONG">%s</ns1:g>“ са USB меморије?"</string>
+    <string msgid="571618502105370684" name="edit_playlist_menu">"Измени"</string>
+    <string msgid="8804547581593509614" name="effectspanel">"Звучни ефекти"</string>
+    <string msgid="6711555673997896344" name="emptyplaylist">"Изабрана плејлиста је празна."</string>
+    <string msgid="5548732936480723311" name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string msgid="8979658707407220934" name="goto_start">"Библиотека"</string>
+    <string msgid="1991660396037155453" name="loading">"Учитава се..."</string>
+    <string msgid="4549836003229914299" name="mediapickerlabel">"Музика"</string>
+    <string msgid="6733604841530940397" name="mediaplaybacklabel">"Музика"</string>
+    <string msgid="959222971261132292" name="mediasearch">"Потражите <ns1:g id="TERM">%s</ns1:g> помоћу:"</string>
+    <string msgid="4143865470317360605" name="music_picker_title">"Избор музичке нумере"</string>
+    <string msgid="3162022214114562892" name="musicbrowserlabel">"Музика"</string>
+    <string msgid="2602980193508150226" name="musicshortcutlabel">"Музичка плејлиста"</string>
+    <string msgid="7588112979692632867" name="new_playlist">"Ново"</string>
+    <string msgid="905710296728900597" name="new_playlist_name_template">"Нова плејлиста <ns1:g id="NUMBER">%d</ns1:g>"</string>
+    <string msgid="4456351945617594418" name="no_playlists_title">"Нема плејлиста"</string>
+    <string msgid="8805805388271238471" name="no_tracks_title">"Нема песама"</string>
+    <string msgid="6218814130364793104" name="no_videos_title">"Нема видео снимака"</string>
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-sr/strings2.xml -->
+    <eat-comment/>
+    <string msgid="4934081953733334979" name="notification_artist_album">"<ns1:g id="ALBUM">%2$s</ns1:g>\n<ns1:g id="ARTIST">%1$s</ns1:g>"</string>
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-sr/strings.xml -->
+    <eat-comment/>
+    <string msgid="8342523844307751761" name="nowplaying_title">"Сада се репродукује"</string>
+    <string msgid="8336826100414159413" name="onesong">"1 песма"</string>
+    <string msgid="8213359225506006168" name="party_shuffle">"Насумичан редослед за журку"</string>
+    <string msgid="1828744483354711679" name="party_shuffle_off">"Насумичан редослед за журку је искључен"</string>
+    <string msgid="6582413231529992125" name="partyshuffle_title">"Насумичан редослед за журку"</string>
+    <string msgid="6309622568869321842" name="play_all">"Пусти све"</string>
+    <string msgid="2854921021814550018" name="play_selection">"Пусти"</string>
+    <string msgid="3811851150820251398" name="playback_failed">"Плејер не подржава овај тип аудио датотеке."</string>
+    <string msgid="9008053828193961455" name="playlist_deleted_message">"Плејлиста је избрисана."</string>
+    <string msgid="7187580192703005990" name="playlist_renamed_message">"Плејлиста је преименована."</string>
+    <string msgid="5382792649771928849" name="playlists_menu">"Плејлисте"</string>
+    <string msgid="5094238486322957927" name="playlists_title">"Плејлисте"</string>
+    <string msgid="8657809279717670634" name="podcasts_listitem">"Поткастови"</string>
+    <string msgid="4928414142496858304" name="podcasts_title">"Поткастови"</string>
+    <string msgid="2937629819482787704" name="queue">"Актуелна плејлиста"</string>
+    <string msgid="110978416756366953" name="recentlyadded">"Недавно додато"</string>
+    <string msgid="3153322287249901914" name="recentlyadded_title">"Недавно додато"</string>
+    <string msgid="2548577514849026354" name="remove_from_playlist">"Уклони из плејлисте"</string>
+    <string msgid="3133463747389494668" name="rename_playlist_menu">"Преименуј"</string>
+    <string msgid="6443293055987316642" name="repeat_all_notif">"Понављање свих песама."</string>
+    <string msgid="1227153936360904196" name="repeat_current_notif">"Понављање тренутне песме."</string>
+    <string msgid="1149406899083479716" name="repeat_off_notif">"Понављање је искључено."</string>
+    <string msgid="2737472190159134599" name="ringtone_menu">"Користи као тон звона телефона"</string>
+    <string msgid="3367622038867238133" name="ringtone_menu_short">"Користи као тон звона"</string>
+    <string msgid="5325818347613843130" name="ringtone_set">"„<ns1:g id="NAME">%s</ns1:g>“ је постављена као тон звона телефона."</string>
+    <string msgid="5180413608901885255" name="save_as_playlist">"Сачувај као плејлисту"</string>
+    <string msgid="3529383847223198502" name="scanning">"Скенирање SD картице…"</string>
+    <string msgid="8105284774487360148" name="scanning_nosdcard">"Скенирање USB меморије…"</string>
+    <string msgid="579981082201215537" name="sdcard_busy_message">"SD картица је заузета."</string>
+    <string msgid="1493449756827869166" name="sdcard_busy_message_nosdcard">"Жао нам је, USB меморија је заузета."</string>
+    <string msgid="1162763571147174655" name="sdcard_busy_title">"SD картица је недоступна"</string>
+    <string msgid="3319125156566499501" name="sdcard_busy_title_nosdcard">"USB меморија је недоступна"</string>
+    <string msgid="4574563894036627855" name="sdcard_error_message">"Дошло је до грешке на SD картици."</string>
+    <string msgid="4983430848526821234" name="sdcard_error_message_nosdcard">"Дошло је до грешке у USB меморији."</string>
+    <string msgid="165682155008600643" name="sdcard_error_title">"Грешка у вези са SD картицом"</string>
+    <string msgid="7564338137076303931" name="sdcard_error_title_nosdcard">"Грешка у USB меморији"</string>
+    <string msgid="2100061456003981823" name="sdcard_missing_message">"У телефон није уметнута SD картицa."</string>
+    <string msgid="4459620970330194881" name="sdcard_missing_message_nosdcard">"Телефон нема USB меморију."</string>
+    <string msgid="9008284946643270850" name="sdcard_missing_title">"Нема SD картице"</string>
+    <string msgid="7984839174824243958" name="sdcard_missing_title_nosdcard">"Нема USB меморије"</string>
+    <string msgid="3766854898072633001" name="search_hint">"Претражите музику"</string>
+    <string msgid="6520975349259883368" name="search_settings_description">"Извођачи, албуми и песме"</string>
+    <string msgid="1016971653383739344" name="search_title">"Претражи"</string>
+    <string msgid="480888406592240723" name="service_start_error_button">"Потврди"</string>
+    <string msgid="7061754255330276478" name="service_start_error_msg">"Песму није могуће пустити."</string>
+    <string msgid="8649916852210198813" name="service_start_error_title">"Проблем са репродукцијом"</string>
+    <string msgid="1388193611787878773" name="shuffle_all">"Пусти све насумично"</string>
+    <string msgid="4251189610017886263" name="shuffle_off_notif">"Насумично пуштање је искључено."</string>
+    <string msgid="5453708337808483943" name="shuffle_on_notif">"Насумично пуштање је укључено."</string>
+    <string msgid="2912837715658975248" name="sort_by_album">"Албуми"</string>
+    <string msgid="4607024967813199992" name="sort_by_artist">"Извођачи"</string>
+    <string msgid="7662999005554152565" name="sort_by_track">"Нумере"</string>
+    <string msgid="8842426517396356215" name="streamloadingtext">"Повезивање са хостом <ns1:g id="HOST">%s</ns1:g>..."</string>
+    <string msgid="6942246568246092330" name="tracks_menu">"Песме"</string>
+    <string msgid="3229389424532295124" name="tracks_title">"Песме"</string>
+    <string msgid="8525145988941244727" name="unknown_album_name">"Непознати албум"</string>
+    <string msgid="5567811106415855219" name="unknown_artist_name">"Непознати извођач"</string>
+    <string msgid="8522326678447494657" name="videobrowserlabel">"Видео снимци"</string>
+    <string msgid="2066741954354129115" name="videos_title">"Видео снимци"</string>
+    <string msgid="7636608790418067496" name="weekpicker_set">"Готово"</string>
+    <string msgid="699535378922101701" name="weekpicker_title">"Подешавање времена"</string>
+    <string msgid="3166878738860903586" name="widget_initial_text">"Додирните да бисте изабрали музику."</string>
+    <string msgid="8713273699401457426" name="working_albums">"Албуми…"</string>
+    <string msgid="8678357432732156580" name="working_artists">"Извођачи..."</string>
+    <string msgid="4424950806134653351" name="working_playlists">"Плејлисте…"</string>
+    <string msgid="2201491972050410684" name="working_songs">"Песме..."</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/C:/Users/owner/AndroidStudioProjects/platform_packages_apps_music-master1/app/src/main/res/values-iw-keysexposed/strings.xml -->
+    <eat-comment/>
+    <string msgid="942607395076646686" name="create_playlist_create_text_prompt">"שם הפלייליסט"</string>
+    <string msgid="621210762456614321" name="rename_playlist_diff_prompt">"שנה את השם של \'<ns1:g id="PLAYLIST">%s</ns1:g>\' לשם"</string>
+    <string msgid="6311998573141605099" name="rename_playlist_same_prompt">"שנה את השם של \'<ns1:g id="PLAYLIST">%s</ns1:g>\' לשם"</string>
+</resources>
