@@ -187,6 +187,7 @@ def categorize_music(av_chart_scores, mood_score):
     # Returns
     # a_word : the label from the AV model whose sentiment score is very close to the score
     # of the music's mood
+
     diff = 100
     label = av_chart_scores.keys()[0]
     for a_word in av_chart_scores.keys():
@@ -237,7 +238,67 @@ def create_data_structure(music_data):
             groupd_obj[word][i] = (index, score)
     
     return groupd_obj
+    
+
+def get_most_popular_emotion(emotion_labels):
+    # get the most popular emotions
+    return 0
+
+def map_from_emotion_to_music_label(emotion_labels, groupd_obj):
+    # using the predicted emotion label (the emotioanl state of the user) and the already made
+    # data structure that has categorized the music according to the music labels,
+    # it recommends the songs 
+
+    # Paramter
+    # emotion_labels : the Series object taht has current 20 ~ 25 predicted emotional labels 
+    # groupd_obj : the data structure that has all the categorization of the music
+
+    # Returns
+    # label_of_recoomend_songs : the label of the group of songs that is recommended to the user
+    
+    # Approach :
+    # get the most predicted labels out of all the data from emotion_labels
+    # and make recommendations according to the most popular emotion
+    
+    most_popular_emotion = emotion_labels.value_counts().index[0] 
+    # .value_counts() always sorts out in descending order, so the one in the zeroth index is the most popular one
+    
+    if (most_popular_emotion is 'distress' or most_popular_emotion is 'displeasure' or most_popular_emotion is 'depression'):
+        label_of_recommended_songs = 'pleasure'
+        
+    if (most_popular_emotion is 'pleasure'):
+        label_of_recommended_songs = 'excitement'
+        
+    if (most_popular_emotion is 'arousal'):
+        label_of_recommended_songs = 'relaxation'
+    
+    if (most_popular_emotion is 'relaxation'):
+        label_of_recommended_songs = 'pleasure'
+    
+    if (most_popular_emotion is 'sleepiness'):
+        label_of_recommended_songs = 'arousal'
+    
+    return label_of_recommended_songs
 
 
+def get_songs_from_label(label_of_recommended_songs, groupd_obj, music_data):
+    # get the label of the recommended songs and output the informaiton of the recommended songs to the json file
+
+    # Parameter
+    # label_of_recommended_songs : the recommended emotional label that has the songs
+    # groupd_obj : the data structure that has the categorization of the songs
+    # music_data : the data frame  that has the information about the music
+
+    
+    recommended_songs = groupd_obj[label_of_recommended_songs][0:2]
+    ls_index = []
+    for a_tuple in recommended_songs:
+        an_id = a_tuple[0]
+        ls_index.append(an_id)
+    
+    records = music_data.iloc[ls_index]
+    records.to_json('recommended_songs.json', orient='records')
+
+    
 
         

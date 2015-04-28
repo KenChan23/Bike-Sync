@@ -29,15 +29,16 @@ from textblob import TextBlob
 mood_category = {1:"neutral", 2:"sad", 3:"happy", 4:"angry", 5:"anxious"}
 
 # the AV-chart to predict the user's sentiment
-# each tuple = (arousal, valence)
-av_chart = {(22.5+67.5)/2:'excitment',
-            (67.5+112.5)/2:'arousal',
-            (112.5+157.5)/2:'distress',
-            (157.5+202.5)/2:'displeasure',
-            (202.5+247.5)/2:'depression',
-            (247.5+292.5)/2:'sleepiness',
-            (292.5+337.5)/2:'relaxation',
-            0:'pleasure'}
+# key : the range of angle values
+# value : the label of emotions
+av_chart = {(22.5, 67.5):'excitment',
+            (67.5, 112.5):'arousal',
+            (112.5, 157.5):'distress',
+            (157.5, 202.5):'displeasure',
+            (202.5, 247.5):'depression',
+            (247.5,292.5):'sleepiness',
+            (292.5,337.5):'relaxation',
+            (337.5, 22.5):'pleasure'}
             
 # the sentiment score of the av_chart using AlchemyAPI
 # as a result, you will get the following scores
@@ -187,12 +188,26 @@ def calculate_angle(data_record):
     # get the angle measure using python library
     angle = 180/pi*atan(y/x)
     
+    # if the angle is less than 0, then add 360 to make it positive
+    if (angle < 0): angle = angle + 360
+    
     return angle
     
 
-def get_predicted_labels_using_angles():
+def get_predicted_labels_using_angles(pred_angle):
+    # use the av_chart score to predicte the emotional state
     
-    return 0
+    # Parameter
+    # pred_angle : the float value of an angle representing the labels of the emotioanal state.
+    # Returns
+    # the predicted label of type string that is mapped from the angle range.
+    # if not found, it returns -1
+    
+    for an_angle_range in av_chart.keys():
+        if (pred_angle >= an_angle_range[0] and pred_angle < an_angle_range[1]):
+            return av_chart[an_angle_range]
+            
+    return -1
     
 
 def predict_emotion_using_AV_model(data_df):
