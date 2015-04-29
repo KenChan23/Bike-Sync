@@ -6,13 +6,8 @@
 import pickle
 import pygn
 import pandas as pd
-# from textblob import TextBlob
-import os
-os.system("alchemypapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
-from alchemyapi import AlchemyAPI
-alchemy_obj = AlchemyAPI()
-from textblob import TextBlob
 import preprocessing
+from sentiment_analysis import alchemy_obj
 
 #Register pygn with client id. This is in a separate file to be used once per end user because
 #each call to pygn.register goes towards a quota. We will need to run this for each user
@@ -240,10 +235,6 @@ def create_data_structure(music_data):
     return groupd_obj
     
 
-def get_most_popular_emotion(emotion_labels):
-    # get the most popular emotions
-    return 0
-
 def map_from_emotion_to_music_label(emotion_labels, groupd_obj):
     # using the predicted emotion label (the emotioanl state of the user) and the already made
     # data structure that has categorized the music according to the music labels,
@@ -260,8 +251,11 @@ def map_from_emotion_to_music_label(emotion_labels, groupd_obj):
     # get the most predicted labels out of all the data from emotion_labels
     # and make recommendations according to the most popular emotion
     
+    label_of_recommended_songs = ''
+
     most_popular_emotion = emotion_labels.value_counts().index[0] 
     # .value_counts() always sorts out in descending order, so the one in the zeroth index is the most popular one
+    print "most popular emotion is " + most_popular_emotion
     
     if (most_popular_emotion is 'distress' or most_popular_emotion is 'displeasure' or most_popular_emotion is 'depression'):
         label_of_recommended_songs = 'pleasure'
@@ -278,6 +272,10 @@ def map_from_emotion_to_music_label(emotion_labels, groupd_obj):
     if (most_popular_emotion is 'sleepiness'):
         label_of_recommended_songs = 'arousal'
     
+    if (most_popular_emotion is 'excitement'):
+        label_of_recommended_songs = 'arousal'
+
+    
     return label_of_recommended_songs
 
 
@@ -289,15 +287,21 @@ def get_songs_from_label(label_of_recommended_songs, groupd_obj, music_data):
     # groupd_obj : the data structure that has the categorization of the songs
     # music_data : the data frame  that has the information about the music
 
-    
-    recommended_songs = groupd_obj[label_of_recommended_songs][0:2]
-    ls_index = []
-    for a_tuple in recommended_songs:
-        an_id = a_tuple[0]
-        ls_index.append(an_id)
-    
-    records = music_data.iloc[ls_index]
-    records.to_json('recommended_songs.json', orient='records')
+    if (label_of_recommended_songs != ''):
+        recommended_songs = groupd_obj[label_of_recommended_songs]
+        print recommended_songs
+        ls_index = []
+        for a_tuple in recommended_songs:
+            an_id = a_tuple[0]
+            ls_index.append(an_id)
+        
+        records = music_data.iloc[ls_index]
+        
+        print records
+        
+        records.to_json('./MusicRecommendation/recommended_songs.json', orient='records')
+    else:
+        print "cannot identify the label of the music group"
 
     
 
