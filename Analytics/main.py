@@ -5,6 +5,7 @@ import pandas as pd
 from os import listdir
 from os import chdir
 from os import system
+from os import getcwd
 from time import sleep
 
 from os.path import isfile, join
@@ -101,15 +102,27 @@ def main():
         # to recommenda the music
         recommended_songs_label = music_recommendation.map_from_emotion_to_music_label(pred_labels_using_AV.tail(40), groupd_obj)
         music_recommendation.get_songs_from_label(recommended_songs_label, groupd_obj, music_data)
-        
-        sleep(60)
 
-        i = i + 1
+        
+        # open the json data again and write in a suitable format
+        print getcwd()
+        json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
+        content = json_file.readline()
+        json_file.close()
+        content = '{ "data":' + content + "}"
+        print content
+        json_file = open("./MusicRecommendation/recommended_songs.json", 'w')
+        json_file.write(content)
+        json_file.close()
+    
+        sleep(300)
+
+        i = i + 5
         
         print str(i) + " minutes have passed "
     
  
-main()
+json_files = main()
 
 
 # intelligence 

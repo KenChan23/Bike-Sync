@@ -290,6 +290,7 @@ def get_songs_from_label(label_of_recommended_songs, groupd_obj, music_data):
     if (label_of_recommended_songs != ''):
         recommended_songs = groupd_obj[label_of_recommended_songs]
         print recommended_songs
+
         ls_index = []
         for a_tuple in recommended_songs:
             an_id = a_tuple[0]
@@ -300,6 +301,7 @@ def get_songs_from_label(label_of_recommended_songs, groupd_obj, music_data):
         print records
         
         records.to_json('./MusicRecommendation/recommended_songs.json', orient='records')
+        
     else:
         print "cannot identify the label of the music group"
 
