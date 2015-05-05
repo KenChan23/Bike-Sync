@@ -4,7 +4,7 @@
 import os
 from pymongo import MongoClient
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, Response, render_template, request, redirect, jsonify
 from flask import json
 from bson import json_util
 from bson.objectid import ObjectId
@@ -163,4 +163,16 @@ def load_data():
         # data = request.json['data']
         ##  Using a form requires the request.form function 
         # print data
+
+@app.route('/recommendation', methods=["POST"])
+def recommendation():
+    print "Inside views.py under recommendation"
+    if request.method == "POST":
+        print request.json['data']
+        # return request.json['data']
+        # data = request.json['data']
+        ##  Using a form requires the request.form function 
+        # print data
+        # resp = Response(response=, status=200, mimetype="application/json")
+        return request.json['data']
 
