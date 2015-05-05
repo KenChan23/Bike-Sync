@@ -1,0 +1,2387 @@
+Skyfall - Adele - Skyfall
+	track_title:
+		Skyfall, Let The Sky Fall, So Let The Sky Fall
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Wake Me Up - Avicii - Wake Me Up
+	track_title:
+		Outro (Wake Up)
+	genre:
+		Alternative & Punk
+		Hardcore Punk
+		Punk
+	mood:
+		Aggressive
+		Aggressive Power
+	track_number:
+		5
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+BEYONCe - Beyonce - Pretty Hurts
+	track_title:
+		Pretty Hurts
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Defiant
+		Heavy Brooding
+	track_number:
+		1
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Ghost
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Haunted
+	track_title:
+		Haunted
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		2
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Drunk in Love (feat. Jay Z)
+	track_title:
+		Drunk In Love Remix (Feat. Jay-Z And Kanye West)
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Defiant
+		Attitude / Defiant
+	track_number:
+		3
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Blow
+	track_title:
+		Blow
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		4
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - No Angel
+	track_title:
+		No Angel
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		5
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Yonce (Video)
+	track_title:
+		Video Phone
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Energizing
+		Abstract Beat
+	track_number:
+		10
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Partition (Video)
+	track_title:
+		Partition
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Cool
+		Cool Confidence
+	track_number:
+		6
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Jealous
+	track_title:
+		Jealous
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		7
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Rocket
+	track_title:
+		Rocket
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		8
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Mine (feat. Drake)
+	track_title:
+		Mine (Featuring Drake)
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - XO
+	track_title:
+		XO
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Excited
+		Happy Excitement
+	track_number:
+		10
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - ***Flawless (feat. Chimamanda Ngozi Adiche)
+	track_title:
+		***Flawless (Featuring Chimamanda Ngozi Adichie)
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		11
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Superpower (feat. Frank Ocean)
+	track_title:
+		Superpower (Featuring Frank Ocean)
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		12
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Blue (feat. Blue Ivy)
+	track_title:
+		Ring The Alarm (Tranzformas Remix Feat. Collie Buddz)
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Energizing
+		Edgy / Sexy
+	track_number:
+		6
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe - Beyonce - Grown Woman
+	track_title:
+		Grown Woman
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		15
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+BEYONCe (More Only) - EP - Beyonce - 711
+	track_title:
+		7/11
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Energizing
+		Abstract Beat
+	track_number:
+		1
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+Live At Roseland: Elements of 4 - Beyonce - End Of Time (Live)
+	track_title:
+		End Of Time
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+		Defiant
+		Attitude / Defiant
+	track_number:
+		10
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+A Night With Beyonce ( Live ) - Beyonce - Party (Live at A Night With Beyonce)
+	track_title:
+		Until The End Of Time - Justin Timberlake With Beyonce
+	genre:
+		Urban
+		Urban Crossover
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		18
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Texas
+		United States
+		Houston
+	artist_type:
+		Female
+		Female
+
+
+In A Tidal Wave Of Mystery - Capital Cities - Safe and Sound
+	track_title:
+		Safe And Sound
+	genre:
+		Alternative & Punk
+		Indie Pop
+		Indie Rock
+	mood:
+		Excited
+		Euphoric Energy
+	track_number:
+		1
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male Duo
+
+
+Naomi - The Cave Singers - When the World
+	track_title:
+		When The World Was Young
+	genre:
+		Traditional
+		Nashville Sound
+		Country
+	mood:
+		Brooding
+		Evocative / Intriguing
+	track_number:
+		16
+	artist_era:
+		1960's
+	artist_origin:
+		North America
+		Tennessee
+		United States
+		Nashville
+	artist_type:
+		Female
+		Female Group
+
+
+Amy (feat. Goodie Mob) - Single - Cee Lo Green - Amy (feat. Goodie Mob)
+	track_title:
+		Pt And Goodie Mob
+	genre:
+		Urban
+		General Hip-Hop/Rap
+		Western Hip-Hop/Rap
+	mood:
+		Cool
+		Cool Confidence
+	track_number:
+		13
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Voice Memos - Changhyun's iPhone - Meeting
+	track_title:
+		The High Council Meeting/Qui-Gon's Funeral
+	genre:
+		Traditional
+		Alternative Country
+		Country
+	mood:
+		Somber
+		Solemn / Spiritual
+	track_number:
+		16
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Rather Be - Clean Bandit Ft. Jess Glynne - Rather Be
+	track_title:
+		Rather Be (Clean Bandit & Jess Glynne Cover)
+	genre:
+		Alternative & Punk
+		Alternative Rock
+		Alternative
+	mood:
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Ghost Stories - Coldplay - Magic
+	track_title:
+		Magic
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	track_number:
+		7
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+A Rush of Blood to the Head - Coldplay - The Scientist
+	track_title:
+		The Scientist
+	genre:
+		Other
+		Lullabies
+		Children's
+	mood:
+		Sentimental
+		Tender / Sincere
+	track_number:
+		4
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Random Access Memories - Daft Punk - Give Life Back to Music
+	track_title:
+		Give Life Back To Music
+	genre:
+		Other
+		General Children's Music
+		Children's
+	mood:
+		Melancholy
+		Wistful / Forlorn
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Random Access Memories - Daft Punk - The Game of Love
+	track_title:
+		The Game Of Love
+	genre:
+		Other
+		General Children's Music
+		Children's
+	mood:
+		Peaceful
+		Reverent / Healing
+	track_number:
+		2
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Random Access Memories - Daft Punk - Giorgio by Moroder
+	track_title:
+		Giorgio By Moroder
+	genre:
+		Electronica
+		Euro House
+		House
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		3
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Duo
+
+
+Random Access Memories - Daft Punk - Within
+	track_title:
+		Within
+	genre:
+		Electronica
+		General House
+		House
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		4
+	artist_era:
+		2010's
+		Mid 2010's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Group
+
+
+Random Access Memories - Daft Punk - Get Lucky (feat. Pharrell Williams)
+	track_title:
+		Get Lucky (Featuring Pharrell Williams)
+	genre:
+		Electronica
+		Euro House
+		House
+	mood:
+		Fiery
+		Fiery Groove
+	track_number:
+		6
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Duo
+
+
+Random Access Memories - Daft Punk - Beyond
+	track_title:
+		Beyond
+	genre:
+		Electronica
+		Euro House
+		House
+	mood:
+		Sensual
+		Sensual Groove
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Duo
+
+
+Random Access Memories - Daft Punk - Motherboard
+	track_title:
+		Motherboard
+	genre:
+		Electronica
+		Euro House
+		House
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		10
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Duo
+
+
+Random Access Memories - Daft Punk - Contact
+	track_title:
+		Contact
+	genre:
+		Electronica
+		General House
+		House
+	mood:
+		Excited
+		Euphoric Energy
+	track_number:
+		13
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Group
+
+
+Random Access Memories - Daft Punk Feat. Julian Casablancas - Instant Crush
+	track_title:
+		Instant Crush (Tribute in the Style of Daft Punk & Julian Casablancas)
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Random Access Memories - Daft Punk Feat. Panda Bear - Doin' It Right
+	track_title:
+		Doin' It Right
+	genre:
+		Electronica
+		General House
+		House
+	mood:
+		Energizing
+		Abstract Beat
+	track_number:
+		12
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Group
+
+
+Random Access Memories - Daft Punk Feat. Paul Williams - Touch
+	track_title:
+		Touch
+	genre:
+		Other
+		General Children's Music
+		Children's
+	mood:
+		Peaceful
+		Quiet / Introspective
+	track_number:
+		7
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Random Access Memories - Daft Punk Feat. Pharrell Williams - Lose Yourself to Dance
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Random Access Memories - Daft Punk Feat. Todd Edwards - Fragments of Time
+	track_title:
+		Fragments Of Time
+	genre:
+		Electronica
+		General House
+		House
+	mood:
+		Sensual
+		Sensual Groove
+	track_number:
+		11
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Male
+		Male Group
+
+
+Delta Machine (Deluxe Version) - Depeche Mode - Heaven
+	track_title:
+		Oberkorn
+	genre:
+		Electronica
+		Pop Electronica
+		Electronica Mainstream
+	mood:
+		Excited
+		Euphoric Energy
+	track_number:
+		4
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Remixes 81 - 04 - Depeche Mode - Enjoy the Silence
+	track_title:
+		Enjoy The Silence
+	genre:
+		Rock
+		Nu-Metal
+		Metal
+	mood:
+		Urgent
+		Energetic Anxious
+	track_number:
+		3
+	artist_era:
+		1990's
+		Mid 90's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male Group
+
+
+Strangelove - Depeche Mode - Strangelove
+	track_title:
+		Strangelove
+	genre:
+		Alternative & Punk
+		Synth Pop
+		Synth Pop
+	mood:
+		Brooding
+		Energetic Melancholy
+	track_number:
+		5
+	artist_era:
+		1980's
+	artist_origin:
+		Western Europe
+		England
+		United Kingdom
+	artist_type:
+		Male
+		Male Group
+
+
+my life - DJ HANMIN - Show Me Your BBA SAE
+	track_title:
+		Show Me Your BBA SAE (Dizzy Sunn Remix)
+	genre:
+		Pop
+		K-Pop
+		Korean Pop
+	mood:
+		Aggressive
+		Chaotic / Intense
+	track_number:
+		6
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		Asia
+		South Korea
+	artist_type:
+		Male
+		Male Duo
+
+
+Some Nights - Fun. - Carry On
+	genre:
+		Urban
+		Contemporary R&B
+		Contemporary R&B/Soul
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Interstellar - Hans Zimmer - First Step
+	track_title:
+		First Born (1988) - Bbc Series Main Theme
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	track_number:
+		4
+	artist_era:
+		2010's
+		Mid 2010's
+	artist_origin:
+		Western Europe
+		Switzerland
+	artist_type:
+		Male
+		Male
+
+
+Interstellar - Hans Zimmer - Flying Drone
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male
+
+
+Interstellar - Hans Zimmer - Atmospheric Entry
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male
+
+
+Interstellar - Hans Zimmer - No Need To Come Back
+	track_title:
+		Maybe You Need To Come Back
+	genre:
+		Alternative & Punk
+		Jangle Pop
+		Indie Rock
+	mood:
+		Upbeat
+		Happy / Soulful
+	track_number:
+		1
+	artist_era:
+		1980's
+	artist_origin:
+		Australia/Oceania
+		New Zealand
+	artist_type:
+		Male
+		Male Group
+
+
+Interstellar - Hans Zimmer - Imperfect Lock
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male
+
+
+Interstellar - Hans Zimmer - What Happens Now?
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Male
+		Male
+
+
+Interstellar - Hans Zimmer - Day One Dark
+	track_title:
+		Mind If I Cut In (From "The Dark Knight Rises")
+	genre:
+		Soundtrack
+		General Film Music
+		Original Film/TV Music
+	mood:
+		Peaceful
+		Quiet / Introspective
+	track_number:
+		7
+	artist_era:
+		2010's
+	artist_origin:
+		Western Europe
+		England
+		United Kingdom
+		London
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Night Visions - Imagine Dragons - Radioactive
+	track_title:
+		Radioactive
+	genre:
+		Rock
+		Adult Alternative Rock
+		Adult Alternative Rock
+	mood:
+		Brooding
+		Dreamy Brooding
+	track_number:
+		1
+	artist_era:
+		2010's
+	artist_origin:
+		North America
+		Nevada
+		United States
+		Las Vegas
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Night Visions - Imagine Dragons - Demons
+	track_title:
+		Demons
+	genre:
+		Rock
+		Adult Alternative Rock
+		Adult Alternative Rock
+	mood:
+		Yearning
+		Sensitive / Exploring
+	track_number:
+		4
+	artist_era:
+		2010's
+	artist_origin:
+		North America
+		Nevada
+		United States
+		Las Vegas
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Grace for Saints and Ramblers - Single - Iron & Wine - Grace for Saints and Ramblers
+	track_title:
+		Amazing Grace
+	genre:
+		Jazz
+		Modern Jazz
+		Bebop & Modern Jazz
+	mood:
+		Empowering
+		Dramatic Emotion
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Interstellar - John Lithgow/ Ellen Burstyn/ Casey Affleck/ Jessica Chastain/ Matthew McConaughey/ Mackenzie Foy - Do Not Go Gentle Into That Good Night
+	track_title:
+		Do Not Go Gentle Into That Good Night
+	genre:
+		Rock
+		Art Rock
+		70's Rock
+	mood:
+		Sophisticated
+		Intimate Bittersweet
+	track_number:
+		14
+	artist_era:
+		1970's
+		Early 70's
+	artist_origin:
+		Western Europe
+		Wales
+		United Kingdom
+	artist_type:
+		Male
+		Male
+
+
+The 20/20 Experience - Justin Timberlake - Pusher Love Girl
+	track_title:
+		Pusher Love Girl
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Empowering
+		Dramatic Emotion
+	track_number:
+		2
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Suit & Tie (feat. Jay-Z)
+	track_title:
+		Suit & Tie (feat. JAY Z)
+	genre:
+		Pop
+		Urban Crossover: Pop
+		Western Pop
+	mood:
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Tennessee
+		United States
+		Memphis
+	artist_type:
+		Male
+		Male
+
+
+The 20/20 Experience - Justin Timberlake - Don't Hold The Wall
+	track_title:
+		Don't Hold the Wall
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Sensual
+		Soft Soulful
+	track_number:
+		3
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Strawberry Bubblegum
+	track_title:
+		Strawberry Bubblegum
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Sophisticated
+		Dark Playful
+	track_number:
+		4
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Tunnel Vision
+	track_title:
+		Tunnel Vision
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Sensual
+		Sensual Groove
+	track_number:
+		5
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Spaceship Coupe
+	track_title:
+		Spaceship Coupe
+	genre:
+		Pop
+		Urban Crossover: Pop
+		Western Pop
+	mood:
+	track_number:
+		5
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Tennessee
+		United States
+		Memphis
+	artist_type:
+		Male
+		Male
+
+
+The 20/20 Experience - Justin Timberlake - That Girl
+	track_title:
+		Damn Girl
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Sensual
+		Sensual Groove
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Let The Groove In
+	track_title:
+		Let The Groove Get In
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Fiery
+		Fiery Groove
+	track_number:
+		7
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience - Justin Timberlake - Mirrors
+	track_title:
+		Mirrors
+	genre:
+		Pop
+		Urban Crossover: Pop
+		Western Pop
+	mood:
+	track_number:
+		2
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		Tennessee
+		United States
+		Memphis
+	artist_type:
+		Male
+		Male
+
+
+The 20/20 Experience - Justin Timberlake - Blue Ocean Floor
+	track_title:
+		Blue Ocean Floor
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Melancholy
+		Wistful / Forlorn
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience 2 of 2 (Deluxe) - Justin Timberlake - Gimme What I Don't Know (I Want)
+	track_title:
+		Anytime You Want
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+	track_number:
+		6
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+The 20/20 Experience 2 of 2 (Deluxe) - Justin Timberlake - True Blood
+	track_title:
+		TRUE
+	genre:
+		Alternative & Punk
+		Alternative Pop
+		Alternative
+	mood:
+		Somber
+		Creepy / Ominous
+	track_number:
+		6
+	artist_era:
+		1990's
+		Mid 90's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+The 20/20 Experience 2 of 2 (Deluxe) - Justin Timberlake - Take Back The Night
+	track_title:
+		(And She Said) Take Me Now
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+		Cool
+		Wary / Defiant
+	track_number:
+		4
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Her - Part II - Karen O - The Moon Song
+	track_title:
+		Moon Song
+	genre:
+		Jazz
+		Modern Jazz
+		Bebop & Modern Jazz
+	mood:
+		Romantic
+		Lush / Romantic
+	track_number:
+		4
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Shot At the Night - Single - The Killers - Shot At the Night
+	track_title:
+		One Shot At Glory
+	genre:
+		Rock
+		Classic British Metal
+		Metal
+	mood:
+	track_number:
+		10
+	artist_era:
+		1980's
+	artist_origin:
+		Western Europe
+		England
+		United Kingdom
+		Birmingham
+	artist_type:
+		Male
+		Male Group
+
+
+ARTPOP - Lady GaGa - Aura
+	track_title:
+		Aura
+	genre:
+		Pop
+		Other Easy Listening
+		Easy Listening
+	mood:
+		Melancholy
+		Wistful / Forlorn
+	track_number:
+		1
+	artist_era:
+		2010's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - Aura (Live)
+	genre:
+		Other
+		Data & Other
+		Data & Other
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - MANiCURE (Live)
+	genre:
+		Other
+		Data & Other
+		Data & Other
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - ARTPOP (Live)
+	genre:
+		Other
+		Data & Other
+		Data & Other
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - Jewels and Drugs (ft T.I./ Too $hort & Twista) (Live)
+	track_title:
+		Jewels N' Drugs Featuring T.I., Too $Hort & Twista
+	genre:
+		Pop
+		Dance Pop
+		Western Pop
+	mood:
+	track_number:
+		5
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - Sex Dreams (Live)
+	track_title:
+		VHS Sex
+	genre:
+		Electronica
+		Intelligent (IDM)
+		Techno
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		2
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		New York
+		United States
+	artist_type:
+		Male
+		Male
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - Swine (Live)
+	genre:
+		Other
+		Data & Other
+		Data & Other
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - I Wanna Be With You (Live)
+	track_title:
+		I Wanna Dance With Somebody (Ultimix)
+	genre:
+		Urban
+		Urban AC
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		15
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+iTunes Festival: London 2013 (Live) || www.RockDizMusic.com - Lady Gaga - Applause (Live)
+	genre:
+		Other
+		Data & Other
+		Data & Other
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Born To Die - Deluxe Edition - Lana Del Rey - Without You
+	genre:
+		Pop
+		Karaoke
+		Western Pop
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Born to Die - The Paradise Edition - Lana Del Rey - Born To Die
+	track_title:
+		Born To Die
+	genre:
+		Other
+		Lullabies
+		Children's
+	mood:
+		Peaceful
+		Delicate / Tranquil
+	track_number:
+		2
+	artist_era:
+		2000's
+	artist_origin:
+		Other
+	artist_type:
+		Unknown/Other
+
+
+Born to Die - The Paradise Edition - Lana Del Rey - Summertime Sadness
+	track_title:
+		Summertime Sadness
+	genre:
+		Pop
+		Karaoke
+		Western Pop
+	mood:
+		Urgent
+		Dark Pop Intensity
+	track_number:
+		1
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+ - Lana Del Rey - Summertime Sadness (Cedric Gervais Remix)
+	track_title:
+		Summertime Sadness [Lana Del Rey Vs. Cedric Gervais]
+	genre:
+		Electronica
+		Progressive House
+		House
+	mood:
+	track_number:
+		1
+	artist_era:
+		2010's
+		Mid 2010's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Mixed
+		Mixed Duo
+
+
+The Miseducation of Lauryn Hill - Lauryn Hill - Ex-Factor
+	track_title:
+		Ex-Factor
+	genre:
+		Urban
+		Neo-Soul
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		3
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		New Jersey
+		United States
+	artist_type:
+		Female
+		Female
+
+
+The Miseducation of Lauryn Hill - Lauryn Hill - Superstar
+	track_title:
+		Superstar
+	genre:
+		Urban
+		Neo-Soul
+		Contemporary R&B/Soul
+	mood:
+		Sensual
+		Intimate
+	track_number:
+		6
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		New Jersey
+		United States
+	artist_type:
+		Female
+		Female
+
+
+Royals - Single - Lorde - Royals
+	track_title:
+		Royals (In the Style of Lorde) [Karaoke Version]
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+		Cool
+		Wary / Defiant
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+The Best of Love Unlimited - Love Unlimited - Under The Influence Of Love
+	track_title:
+		Under The Influence Of Love
+	genre:
+		Urban
+		Quiet Storm
+		Contemporary R&B/Soul
+	mood:
+		Fiery
+		Passionate Rhythm
+	track_number:
+		1
+	artist_era:
+		1970's
+	artist_origin:
+		North America
+		California
+		United States
+		Los Angeles
+	artist_type:
+		Female
+		Female Group
+
+
+Before the Dawn Heals Us - M83 - Don't save us from the flames
+	track_title:
+		Devil`s Flame
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+		Rowdy
+		Driving Dark Groove
+	track_number:
+		2
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Before The Dawn Heals Us - M83 - Slight Night Shiver
+	track_title:
+		Slight Night Shiver
+	genre:
+		Alternative & Punk
+		Shoegazer
+		Indie Rock
+	mood:
+	track_number:
+		3
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Hurry Up/ We're Dreaming (Disc 1) - M83 - Midnight City
+	track_title:
+		Midnight City (As Made Famous By M83) [Instrumental]
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+		Sensual
+		Dreamy Pulse
+	track_number:
+		6
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Hurry Up/ We're Dreaming (Disc 1) - M83 - Wait
+	track_title:
+		Donna Washington :
+	genre:
+		Electronica
+		Trance
+		Trance
+	mood:
+		Fiery
+		Fiery Groove
+	track_number:
+		2
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+M83 - M83 - I'm Getting Closer
+	track_title:
+		I'm Getting Closer
+	genre:
+		Alternative & Punk
+		Shoegazer
+		Indie Rock
+	mood:
+		Brooding
+		Dreamy Brooding
+	track_number:
+		9
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+		France
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Saturdays = Youth - M83 - Too Late
+	track_title:
+		A Little Too Late
+	genre:
+		Rock
+		General Mainstream Rock
+		Mainstream Rock
+	mood:
+		Defiant
+		Hard Positive Excitement
+	track_number:
+		8
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+The Heist - Macklemore & Ryan Lewis - Same Love
+	track_title:
+		Same Love (Featuring Mary Lambert)
+	genre:
+		Urban
+		Conscious Hip-Hop/Rap
+		Western Hip-Hop/Rap
+	mood:
+	track_number:
+		5
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		Washington
+		United States
+		Seattle
+	artist_type:
+		Male
+		Male Duo
+
+
+The Heist (Deluxe Edition) - Macklemore & Ryan Lewis - Can't Hold Us (feat. Ray Dalton)
+	track_title:
+		Can't Hold Us (Featuring Ray Dalton)
+	genre:
+		Urban
+		Conscious Hip-Hop/Rap
+		Western Hip-Hop/Rap
+	mood:
+	track_number:
+		2
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		Washington
+		United States
+		Seattle
+	artist_type:
+		Male
+		Male Duo
+
+
+FreshNewMusik.Com - Maxine Ashley  - Cookieman
+	genre:
+		Electronica
+		Club Dance
+		Dance & Club
+	mood:
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Embrya - Maxwell - maxwell-Softly
+	track_title:
+		Maxwell - Sweetback - Softly Softly
+	genre:
+		Urban
+		Neo-Soul
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		8
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Male
+		Male
+
+
+Now - Maxwell - Lifetime
+	track_title:
+		Lifetime
+	genre:
+		Jazz
+		Smooth Jazz Instrumental
+		Smooth Jazz
+	mood:
+		Empowering
+		Dramatic Emotion
+	track_number:
+		4
+	artist_era:
+		2000's
+	artist_origin:
+		North America
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Sun - Merethe Soltvedt/ Thomas Bergersen - Interstellar Final Frontier
+	track_title:
+		Man's Final Frontier
+	genre:
+		Urban
+		Conscious Hip-Hop/Rap
+		Western Hip-Hop/Rap
+	mood:
+		Cool
+		Cool Confidence
+	track_number:
+		1
+	artist_era:
+		1990's
+	artist_origin:
+		North America
+		Georgia, US
+		United States
+		Atlanta
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Oracular Spectacular - MGMT - Electric Feel
+	track_title:
+		Electric Feel
+	genre:
+		Alternative & Punk
+		Neo-Psychedelic
+		Indie Rock
+	mood:
+	track_number:
+		15
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+XSCAPE - Michael Jackson - Love Never Felt So Good (Feat. Justim Timberlake)
+	track_title:
+		Love Never Felt so Good (Originally by Michael Jackson & Justin Timberlake) [Instrumental Karaoke]
+	genre:
+		Pop
+		Pop Vocal
+		Western Pop
+	mood:
+		Urgent
+		Dark Pop
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Mother - Natalie Maines - Take It On Faith
+	track_title:
+		Take It On Faith
+	genre:
+		Traditional
+		Contemporary Country
+		Country
+	mood:
+		Empowering
+		Dramatic Emotion
+	track_number:
+		10
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		Texas
+		United States
+	artist_type:
+		Female
+		Female
+
+
+Native - One Republic - Counting Stars
+	track_title:
+		Counting Stars
+	genre:
+		Alternative & Punk
+		Alternative Rock
+		Alternative
+	mood:
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Happy (from Despicable Me 2) - Pharrell Williams - Happy (from Despicable Me 2)
+	track_title:
+		Happy (From "Despicable Me 2") [Originally Performed By Pharrell Williams]
+	genre:
+		Alternative & Punk
+		Alternative Rock
+		Alternative
+	mood:
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Kingfisher - Single - PHOX - Kingfisher
+	track_title:
+		Kingfisher
+	genre:
+		Alternative & Punk
+		Alternative Folk
+		Alternative Folk
+	mood:
+		Empowering
+		Dramatic Emotion
+	track_number:
+		7
+	artist_era:
+		2010's
+		Early 2010's
+	artist_origin:
+		North America
+		Wisconsin
+		United States
+	artist_type:
+		Mixed
+		Mixed Group
+
+
+Rebelution - Pitbull - I Know You Want Me (Calle Ocho)
+	track_title:
+		I Know You Want Me [Calle Ocho] (More English Radio Edit)
+	genre:
+		Urban
+		General Hip-Hop/Rap
+		Western Hip-Hop/Rap
+	mood:
+	track_number:
+		1
+	artist_era:
+		2010's
+	artist_origin:
+		North America
+		Florida
+		United States
+		Miami
+	artist_type:
+		Male
+		Male
+
+
+Unapologetic - Rihanna - Stay (Feat. Mikky Ekko)
+	track_title:
+		Stay (Originally Performed By Rihanna Featuring Mikky Ekko) [Karaoke Version]
+	genre:
+		Urban
+		Contemporary R&B
+		Contemporary R&B/Soul
+	mood:
+		Somber
+		Enigmatic / Mysterious
+	track_number:
+		3
+	artist_era:
+		2000's
+	artist_origin:
+		Western Europe
+	artist_type:
+		Female
+		Female Group
+
+
+Choose My Life-U - S.E.S. - Just A Feeling (Original Mode)
+	track_title:
+		Just a feeling
+	genre:
+		Pop
+		K-Pop
+		Korean Pop
+	mood:
+	track_number:
+		18
+	artist_era:
+		1990's
+		Late 90's
+	artist_origin:
+		Asia
+		South Korea
+	artist_type:
+		Female
+		Female Group
+
+
+In the Lonely Hour - Sam Smith - Stay With Me
+	track_title:
+		Stay With Me
+	genre:
+		Urban
+		Contemporary R&B
+		Contemporary R&B/Soul
+	mood:
+	track_number:
+		3
+	artist_era:
+		2010's
+	artist_origin:
+		Western Europe
+		England
+		United Kingdom
+		London
+	artist_type:
+		Male
+		Male
+
+
+Volume 3 - She & Him - Never Wanted Your Love
+	track_title:
+		Never Wanted Your Time
+	genre:
+		Alternative & Punk
+		Alternative Rock
+		Alternative
+	mood:
+		Defiant
+		Hard Positive Excitement
+	track_number:
+		1
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Modern Vampires of the City - Vampire Weekend - Worship You
+	track_title:
+		Worship You
+	genre:
+		Alternative & Punk
+		Indie Pop
+		Indie Rock
+	mood:
+		Excited
+		Euphoric Energy
+	track_number:
+		1
+	artist_era:
+		2000's
+		Late 2000's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Male
+		Male Group
+
+
+Modern Vampires of the City - Vampire Weekend - Step
+	genre:
+		Alternative & Punk
+		Indie Pop
+		Indie Rock
+	mood:
+	artist_era:
+		2000's
+		Late 2000's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Male
+		Male Group
+
+
+Vampire Weekend - Vampire Weekend - A-Punk
+	track_title:
+		A-Punk
+	genre:
+		Alternative & Punk
+		Indie Pop
+		Indie Rock
+	mood:
+		Brooding
+		Alienated / Brooding
+	track_number:
+		3
+	artist_era:
+		2000's
+		Late 2000's
+	artist_origin:
+		North America
+		New York
+		United States
+		New York City
+	artist_type:
+		Male
+		Male Group
+
+
+Nymphomaniac - Various Artists - Requiem Mass in D Minor_ Requiem Aeternam - W.A. Mozart
+	track_title:
+		W.A.Mozart. Requiem Mass in D minor, K.626. Dies Irae
+	genre:
+		Classical
+		General Classical
+		Other Classical
+	mood:
+		Energizing
+		Abstract Beat
+	track_number:
+		4
+	artist_era:
+	artist_origin:
+	artist_type:
+
+
+Nymphomaniac - Various Artists - Sonata for Violin and Piano in A Major - Cesar Frank
+	track_title:
+		Sonata For Violin And Piano No.5 In F Major "Spring" Allegro
+	genre:
+		Classical
+		Classical Era Instrumental
+		Classical Era
+	mood:
+		Stirring
+		Invigorating / Joyous
+	track_number:
+		11
+	artist_era:
+		Pre-20th C.
+	artist_origin:
+		Western Europe
+		Germany
+	artist_type:
+		Male
+		Male
+
+
+Amadeus Soundtrack - Wolfgang Amadeus Mozart - Requiem
+	track_title:
+		Requiem d-moll - Confutatis maledictis
+	genre:
+		Classical
+		Classical Era Instrumental
+		Classical Era
+	mood:
+		Serious
+		Thrilling
+	track_number:
+		18
+	artist_era:
+		Pre-20th C.
+	artist_origin:
+		Western Europe
+		Austria
+	artist_type:
+		Male
+		Male
+
+

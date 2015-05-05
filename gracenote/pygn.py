@@ -1,11 +1,11 @@
 """
 pygn.py
 
-pygn (pronounced "pigeon") is a simple Python client for the Gracenote Music 
-Web API, which can retrieve Artist, Album and Track metadata with the most 
+pygn (pronounced "pigeon") is a simple Python client for the Gracenote Music
+Web API, which can retrieve Artist, Album and Track metadata with the most
 common options.
 
-You will need a Gracenote Client ID to use this module. Please contact 
+You will need a Gracenote Client ID to use this module. Please contact
 developers@gracenote.com to get one.
 """
 
@@ -25,7 +25,7 @@ DEBUG = False
 
 class gnmetadata(dict):
 	"""
-	This class is a dictionary containing metadata fields that are available 
+	This class is a dictionary containing metadata fields that are available
 	for the queried item.
 	"""
 	def __init__(self):
@@ -64,41 +64,41 @@ class gnmetadata(dict):
 def register(clientID):
 	"""
 	This function registers an application as a user of the Gracenote service
-	
-	It takes as a parameter a clientID string in the form of 
-	"NNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN" and returns a userID in a 
+
+	It takes as a parameter a clientID string in the form of
+	"NNNNNNN-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN" and returns a userID in a
 	similar format.
-	
-	As the quota of number of users (installed applications or devices) is 
+
+	As the quota of number of users (installed applications or devices) is
 	typically much lower than the number of queries, best practices are for a
-	given installed application to call this only once, store the UserID in 
-	persistent storage (e.g. filesystem), and then use these IDs for all 
+	given installed application to call this only once, store the UserID in
+	persistent storage (e.g. filesystem), and then use these IDs for all
 	subsequent calls to the service.
 	"""
-	
+
 	# Create XML request
 	query = _gnquery()
 	query.addQuery('REGISTER')
 	query.addQueryClient(clientID)
-	
+
 	queryXML = query.toString()
-	
+
 	# POST query
 	response = urllib_request.urlopen(_gnurl(clientID), queryXML)
 	responseXML = response.read()
-	
+
 	# Parse response
 	responseTree = xml.etree.ElementTree.fromstring(responseXML)
-	
+
 	responseElem = responseTree.find('RESPONSE')
 	if responseElem.attrib['STATUS'] == 'OK':
 		userElem = responseElem.find('USER')
 		userID = userElem.text
-	
+
 	return userID
-#*****************************************************************************************************************************************		
+#*****************************************************************************************************************************************
 # Added by Fabian in order to cover the Rhythm API
-# Returns a list of gnmetadata dictionaries 
+# Returns a list of gnmetadata dictionaries
 
 def createRadio(clientID='', userID='', artist='', track='', mood='', era='', genre='', popularity ='', similarity = '', count='10'):
 	"""
@@ -114,22 +114,22 @@ def createRadio(clientID='', userID='', artist='', track='', mood='', era='', ge
 
 	#Create XML request
 	query = _gnquery()
-	
-	# Build the user header 
+
+	# Build the user header
 	query.addAuth(clientID, userID)
-	
+
 	query.addQuery('RADIO_CREATE')
-	
+
 	if artist!='' or track!='':
 		query.addTextSeed(artist,track)
 
-	
+
 	if mood!='' or era!='' or genre!='':
 		query.addAttributeSeed(mood,era,genre)
-			
-	
+
+
 	query.addQueryOption('SELECT_EXTENDED', 'COVER,REVIEW,ARTIST_BIOGRAPHY,ARTIST_IMAGE,ARTIST_OET,MOOD,TEMPO,LINK')
-	query.addQueryOption('SELECT_DETAIL', 'GENRE:3LEVEL,MOOD:2LEVEL,TEMPO:3LEVEL,ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')	
+	query.addQueryOption('SELECT_DETAIL', 'GENRE:3LEVEL,MOOD:2LEVEL,TEMPO:3LEVEL,ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')
 
 	if popularity!='':
 		query.addQueryOption('FOCUS_POPULARITY', popularity)
@@ -155,16 +155,16 @@ def createRadio(clientID='', userID='', artist='', track='', mood='', era='', ge
 	myPlaylist = []
 
 	for x in range(1, int(count)):
-		track = _parseRadioMetadata(responseXML,x)		
+		track = _parseRadioMetadata(responseXML,x)
 		myPlaylist.append(track)
-	
+
 	print(responseXML)
-	
+
 	return myPlaylist
 
-#*****************************************************************************************************************************************		
+#*****************************************************************************************************************************************
 # Added by Fabian in order to cover the Rhythm API
-# Returns a list of gnmetadata dictionaries 
+# Returns a list of gnmetadata dictionaries
 
 
 def radioEvent(clientID='', userID='', radioID='', gnID='', event ='TRACK_PLAYED', count='10', popularity ='', similarity = ''):
@@ -179,16 +179,16 @@ def radioEvent(clientID='', userID='', radioID='', gnID='', event ='TRACK_PLAYED
 
 	#Create XML request
 	query = _gnquery()
-	
-	# Build the user header 
+
+	# Build the user header
 	query.addAuth(clientID, userID)
-	
+
 	query.addQuery('RADIO_EVENT')
 
 	query.addRadioID(radioID)
 
 	query.addQueryEVENT(event, gnID)
-	
+
 	query.addQueryOption('RETURN_COUNT', count)
 
 	if popularity!='':
@@ -200,13 +200,13 @@ def radioEvent(clientID='', userID='', radioID='', gnID='', event ='TRACK_PLAYED
 	query.addQueryOption('SELECT_DETAIL', 'GENRE:3LEVEL,MOOD:2LEVEL,TEMPO:3LEVEL,ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')
 
 	query.addQueryOption('RETURN_SETTINGS', 'YES')
-	
+
 	queryXML = query.toString()
-	if DEBUG:	
+	if DEBUG:
 		print('QUERY:')
 		print(queryXML)
 
-	
+
 	# POST query
 	response = urllib_request.urlopen(_gnurl(clientID), queryXML)
 	responseXML = response.read()
@@ -215,24 +215,24 @@ def radioEvent(clientID='', userID='', radioID='', gnID='', event ='TRACK_PLAYED
 	myPlaylist = []
 
 	for x in range(1, int(count)):
-		track = _parseRadioMetadata(responseXML,x)		
+		track = _parseRadioMetadata(responseXML,x)
 		myPlaylist.append(track)
-	
-	print(responseXML)
-	
-	return myPlaylist
-	
 
-	
-	
+	print(responseXML)
+
+	return myPlaylist
+
+
+
+
 
 #***********************************************************************************************************************
 
 def search(clientID='', userID='', artist='', album='', track='', toc=''):
 	"""
 	Queries the Gracenote service for a track, album, artist, or TOC
-	
-	TOC is a string of offsets in the format '150 20512 30837 50912 64107 78357 ...' 
+
+	TOC is a string of offsets in the format '150 20512 30837 50912 64107 78357 ...'
 	"""
 
 	if clientID=='' or userID=='':
@@ -242,12 +242,12 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 	if artist=='' and album=='' and track=='' and toc=='':
 		print('Must query with at least one field (artist, album, track, toc)')
 		return None
-	
+
 	# Create XML request
 	query = _gnquery()
-	
+
 	query.addAuth(clientID, userID)
-	
+
 	if (toc != ''):
 		query.addQuery('ALBUM_TOC')
 		query.addQueryMode('SINGLE_BEST_COVER')
@@ -260,19 +260,19 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 		query.addQueryTextField('TRACK_TITLE', track)
 	query.addQueryOption('SELECT_EXTENDED', 'COVER,REVIEW,ARTIST_BIOGRAPHY,ARTIST_IMAGE,ARTIST_OET,MOOD,TEMPO')
 	query.addQueryOption('SELECT_DETAIL', 'GENRE:3LEVEL,MOOD:2LEVEL,TEMPO:3LEVEL,ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')
-	
+
 	queryXML = query.toString()
-	
+
 	if DEBUG:
 		print('------------')
 		print('QUERY XML')
 		print('------------')
 		print(queryXML)
-	
+
 	# POST query
 	response = urllib_request.urlopen(_gnurl(clientID), queryXML)
 	responseXML = response.read()
-	
+
 	if DEBUG:
 		print('------------')
 		print('RESPONSE XML')
@@ -281,7 +281,7 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 
 	# Create GNTrackMetadata object
 	metadata = gnmetadata()
-	
+
 	# Parse response
 	responseTree = xml.etree.ElementTree.fromstring(responseXML)
 	responseElem = responseTree.find('RESPONSE')
@@ -299,7 +299,7 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 		metadata['artist_image_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_IMAGE')
 		metadata['artist_bio_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_BIOGRAPHY')
 		metadata['review_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'REVIEW')
-		
+
 		# Look for OET
 		artistOriginElem = albumElem.find('ARTIST_ORIGIN')
 		if artistOriginElem is not None:
@@ -309,12 +309,12 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 		else:
 			# Try to get OET again by fetching album by GNID
 			metadata['artist_origin'], metadata['artist_era'], metadata['artist_type'] = _getOET(clientID, userID, metadata['album_gnid'])
-			
+
 		# Parse track metadata
 		matchedTrackElem = albumElem.find('MATCHED_TRACK_NUM')
 		if matchedTrackElem is not None:
 			trackElem = albumElem.find('TRACK')
-			
+
 			metadata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 			metadata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 			metadata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -322,9 +322,9 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 
 			metadata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 			metadata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-				
-			
-			# If track-level GOET exists, overwrite metadata from album			
+
+
+			# If track-level GOET exists, overwrite metadata from album
 			if trackElem.find('GENRE') is not None:
 				metadata['genre']	= _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 			if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -338,7 +338,7 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 		metadata['tracks'] = []
 		for trackElem in albumElem.iter('TRACK'):
 			trackdata = {}
-			
+
 			trackdata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 			trackdata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 			trackdata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -346,8 +346,8 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 
 			trackdata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 			trackdata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-			
-			# If track-level GOET exists, overwrite metadata from album			
+
+			# If track-level GOET exists, overwrite metadata from album
 			if trackElem.find('GENRE') is not None:
 				trackdata['genre']	 = _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 			if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -365,7 +365,7 @@ def search(clientID='', userID='', artist='', album='', track='', toc=''):
 def _parseRadioMetadata(responseXML, number):
 	# Create GNTrackMetadata object
 	metadata = gnmetadata()
-	
+
 	# Parse response
 	responseTree = xml.etree.ElementTree.fromstring(responseXML)
 	responseElem = responseTree.find('RESPONSE')
@@ -373,7 +373,7 @@ def _parseRadioMetadata(responseXML, number):
 		#find the radio ID
 		RadioElem = responseElem.find('RADIO')
 		metadata['radio_id'] = _getElemText(RadioElem, 'ID')
-		
+
 		# Find Album the right album element
 		albums = responseElem.findall('ALBUM')
 		for albumElem in albums:
@@ -388,7 +388,7 @@ def _parseRadioMetadata(responseXML, number):
 				metadata['artist_image_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_IMAGE')
 				metadata['artist_bio_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_BIOGRAPHY')
 				metadata['review_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'REVIEW')
-	
+
 				# Look for OET
 				artistOriginElem = albumElem.find('ARTIST_ORIGIN')
 				if artistOriginElem is not None:
@@ -398,10 +398,10 @@ def _parseRadioMetadata(responseXML, number):
 				else:
 					# Try to get OET again by fetching album by GNID
 					metadata['artist_origin'], metadata['artist_era'], metadata['artist_type'] = _getOET(clientID, userID, metadata['album_gnid'])
-		
+
 				# Parse track metadata
 				trackElem = albumElem.find('TRACK')
-		
+
 				metadata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 				metadata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 				metadata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -409,8 +409,8 @@ def _parseRadioMetadata(responseXML, number):
 
 				metadata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 				metadata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-		
-				# If track-level GOET exists, overwrite metadata from album			
+
+				# If track-level GOET exists, overwrite metadata from album
 				if trackElem.find('GENRE') is not None:
 					metadata['genre']	= _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 				if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -419,7 +419,7 @@ def _parseRadioMetadata(responseXML, number):
 					metadata['artist_era'] = _getMultiElemText(trackElem, 'ARTIST_ERA', 'ORD', 'ID')
 				if trackElem.find('ARTIST_TYPE') is not None:
 					metadata['artist_type'] = _getMultiElemText(trackElem, 'ARTIST_TYPE', 'ORD', 'ID')
-				if trackElem.find('XID') is not None: 
+				if trackElem.find('XID') is not None:
 					metadata
 
 				return metadata
@@ -510,7 +510,7 @@ def get_discography(clientID='', userID='', artist='', rangeStart=1, rangeEnd=10
 		metadata['tracks'] = []
 		for trackElem in albumElem.iter('TRACK'):
 			trackdata = {}
-			
+
 			trackdata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 			trackdata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 			trackdata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -518,8 +518,8 @@ def get_discography(clientID='', userID='', artist='', rangeStart=1, rangeEnd=10
 
 			trackdata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 			trackdata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-			
-			# If track-level GOET exists, overwrite metadata from album			
+
+			# If track-level GOET exists, overwrite metadata from album
 			if trackElem.find('GENRE') is not None:
 				trackdata['genre']	 = _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 			if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -533,7 +533,7 @@ def get_discography(clientID='', userID='', artist='', rangeStart=1, rangeEnd=10
 		discography.append(metadata)
 
 	return discography
-	
+
 def fetch(clientID='', userID='', GNID=''):
 	"""
 	Fetches a track or album by GN ID
@@ -546,7 +546,7 @@ def fetch(clientID='', userID='', GNID=''):
 	if GNID=='':
 		print('GNID is required')
 		return None
-	
+
 	# Create XML request
 	query = _gnquery()
 
@@ -555,19 +555,19 @@ def fetch(clientID='', userID='', GNID=''):
 	query.addQueryGNID(GNID)
 	query.addQueryOption('SELECT_EXTENDED', 'COVER,REVIEW,ARTIST_BIOGRAPHY,ARTIST_IMAGE,ARTIST_OET,MOOD,TEMPO')
 	query.addQueryOption('SELECT_DETAIL', 'GENRE:3LEVEL,MOOD:2LEVEL,TEMPO:3LEVEL,ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')
-	
+
 	queryXML = query.toString()
-	
+
 	if DEBUG:
 		print('------------')
 		print('QUERY XML')
 		print('------------')
 		print(queryXML)
-	
+
 	# POST query
 	response = urllib_request.urlopen(_gnurl(clientID), queryXML)
 	responseXML = response.read()
-	
+
 	if DEBUG:
 		print('------------')
 		print('RESPONSE XML')
@@ -576,12 +576,12 @@ def fetch(clientID='', userID='', GNID=''):
 
 	# Create GNTrackMetadata object
 	metadata = gnmetadata()
-	
+
 	# Parse response
 	responseTree = xml.etree.ElementTree.fromstring(responseXML)
 	responseElem = responseTree.find('RESPONSE')
 	if responseElem.attrib['STATUS'] == 'OK':
-	
+
 		# Find Album element
 		albumElem = responseElem.find('ALBUM')
 
@@ -595,7 +595,7 @@ def fetch(clientID='', userID='', GNID=''):
 		metadata['artist_image_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_IMAGE')
 		metadata['artist_bio_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'ARTIST_BIOGRAPHY')
 		metadata['review_url'] = _getElemText(albumElem, 'URL', 'TYPE', 'REVIEW')
-	
+
 		# Look for OET
 		artistOriginElem = albumElem.find('ARTIST_ORIGIN')
 		if artistOriginElem is not None:
@@ -605,12 +605,12 @@ def fetch(clientID='', userID='', GNID=''):
 		else:
 			# Try to get OET again by fetching album by GNID
 			metadata['artist_origin'], metadata['artist_era'], metadata['artist_type'] = _getOET(clientID, userID, metadata['album_gnid'])
-		
+
 		# Parse track metadata
 		matchedTrackElem = albumElem.find('MATCHED_TRACK_NUM')
 		if matchedTrackElem is not None:
 			trackElem = albumElem.find('TRACK')
-		
+
 			metadata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 			metadata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 			metadata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -618,8 +618,8 @@ def fetch(clientID='', userID='', GNID=''):
 
 			metadata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 			metadata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-		
-			# If track-level GOET exists, overwrite metadata from album			
+
+			# If track-level GOET exists, overwrite metadata from album
 			if trackElem.find('GENRE') is not None:
 				metadata['genre']	= _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 			if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -633,7 +633,7 @@ def fetch(clientID='', userID='', GNID=''):
 		metadata['tracks'] = []
 		for trackElem in albumElem.iter('TRACK'):
 			trackdata = {}
-			
+
 			trackdata['track_number'] = _getElemText(trackElem, 'TRACK_NUM')
 			trackdata['track_gnid'] = _getElemText(trackElem, 'GN_ID')
 			trackdata['track_title'] = _getElemText(trackElem, 'TITLE')
@@ -641,8 +641,8 @@ def fetch(clientID='', userID='', GNID=''):
 
 			trackdata['mood'] = _getMultiElemText(trackElem, 'MOOD', 'ORD', 'ID')
 			trackdata['tempo'] = _getMultiElemText(trackElem, 'TEMPO', 'ORD', 'ID')
-			
-			# If track-level GOET exists, overwrite metadata from album			
+
+			# If track-level GOET exists, overwrite metadata from album
 			if trackElem.find('GENRE') is not None:
 				trackdata['genre']	 = _getMultiElemText(trackElem, 'GENRE', 'ORD', 'ID')
 			if trackElem.find('ARTIST_ORIGIN') is not None:
@@ -661,39 +661,39 @@ def _gnurl(clientID):
 	"""
 	clientIDprefix = clientID.split('-')[0]
 	return 'https://c' + clientIDprefix + '.web.cddbp.net/webapi/xml/1.0/'
-	
+
 def _getOET(clientID, userID, GNID):
 	"""
-	Helper function to retrieve Origin, Era, and Artist Type by direct album 
+	Helper function to retrieve Origin, Era, and Artist Type by direct album
 	fetch
 	"""
 	# Create XML request
 	query = _gnquery()
-	
+
 	query.addAuth(clientID, userID)
 	query.addQuery('ALBUM_FETCH')
 	query.addQueryGNID(GNID)
 	query.addQueryOption('SELECT_EXTENDED', 'ARTIST_OET')
 	query.addQueryOption('SELECT_DETAIL', 'ARTIST_ORIGIN:4LEVEL,ARTIST_ERA:2LEVEL,ARTIST_TYPE:2LEVEL')
-	
+
 	queryXML = query.toString()
-	
+
 	if DEBUG:
 		print('------------')
 		print('QUERY XML (from _getOET())')
 		print('------------')
 		print(queryXML)
-	
+
 	# POST query
 	response = urllib_request.urlopen(_gnurl(clientID), queryXML)
 	albumXML = response.read()
-	
+
 	if DEBUG:
 		print('------------')
 		print('RESPONSE XML (from _getOET())')
 		print('------------')
 		print(albumXML)
-	
+
 	# Parse XML
 	responseTree = xml.etree.ElementTree.fromstring(albumXML)
 	responseElem = responseTree.find('RESPONSE')
@@ -703,7 +703,7 @@ def _getOET(clientID, userID, GNID):
 		artistEra = _getMultiElemText(albumElem, 'ARTIST_ERA', 'ORD', 'ID')
 		artistType = _getMultiElemText(albumElem, 'ARTIST_TYPE', 'ORD', 'ID')
 	return artistOrigin, artistEra, artistType
-	
+
 class _gnquery:
 	"""
 	A utility class for creating and configuring an XML query for POST'ing to
@@ -712,19 +712,19 @@ class _gnquery:
 
 	def __init__(self):
 		self.root = xml.etree.ElementTree.Element('QUERIES')
-		
+
 	def addAuth(self, clientID, userID):
 		auth = xml.etree.ElementTree.SubElement(self.root, 'AUTH')
 		client = xml.etree.ElementTree.SubElement(auth, 'CLIENT')
 		user = xml.etree.ElementTree.SubElement(auth, 'USER')
-	
+
 		client.text = clientID
 		user.text = userID
-	
+
 	def addQuery(self, cmd):
 		query = xml.etree.ElementTree.SubElement(self.root, 'QUERY')
 		query.attrib['CMD'] = cmd
-	
+
 	def addQueryMode(self, modeStr):
 		query = self.root.find('QUERY')
 		mode = xml.etree.ElementTree.SubElement(query, 'MODE')
@@ -735,7 +735,7 @@ class _gnquery:
 		text = xml.etree.ElementTree.SubElement(query, 'TEXT')
 		text.attrib['TYPE'] = fieldName
 		text.text = value
-	
+
 	def addQueryOption(self, parameterName, value):
 		query = self.root.find('QUERY')
 		option = xml.etree.ElementTree.SubElement(query, 'OPTION')
@@ -743,17 +743,17 @@ class _gnquery:
 		parameter.text = parameterName
 		valueElem = xml.etree.ElementTree.SubElement(option, 'VALUE')
 		valueElem.text = value
-	
+
 	def addQueryGNID(self, GNID):
 		query = self.root.find('QUERY')
 		GNIDElem = xml.etree.ElementTree.SubElement(query, 'GN_ID')
 		GNIDElem.text = GNID
-		
+
 	def addQueryClient(self, clientID):
 		query = self.root.find('QUERY')
 		client = xml.etree.ElementTree.SubElement(query, 'CLIENT')
 		client.text = clientID
-		
+
 	def addQueryRange(self, start, end):
 		query = self.root.find('QUERY')
 		queryRange = xml.etree.ElementTree.SubElement(query, 'RANGE')
@@ -761,16 +761,16 @@ class _gnquery:
 		rangeStart.text = str(start)
 		rangeEnd = xml.etree.ElementTree.SubElement(queryRange, 'END')
 		rangeEnd.text = str(end)
-	
+
 	def addQueryTOC(self, toc):
-		# TOC is a string of format '150 20512 30837 50912 64107 78357 ...' 
+		# TOC is a string of format '150 20512 30837 50912 64107 78357 ...'
 		query = self.root.find('QUERY')
 		tocElem = xml.etree.ElementTree.SubElement(query, 'TOC')
 		offsetElem = xml.etree.ElementTree.SubElement(tocElem, 'OFFSETS')
 		offsetElem.text = toc
-		
+
 	def toString(self):
-		return xml.etree.ElementTree.tostring(self.root)
+		return xml.etree.ElementTree.tostring(self.root, encoding="utf-8")
 
 	#Methods added by Fabian to reflect the Rhythm use case
 
@@ -781,7 +781,7 @@ class _gnquery:
 		if genreID!='':
 			genreElement = xml.etree.ElementTree.SubElement(seed, 'GENRE')
 			genreElement.attrib['ID'] = genreID
-		if moodID!='':		
+		if moodID!='':
 			genreElement = xml.etree.ElementTree.SubElement(seed, 'MOOD')
 			genreElement.attrib['ID'] = moodID
 		if eraID!='':
@@ -801,7 +801,7 @@ class _gnquery:
 			text = xml.etree.ElementTree.SubElement(seed, 'TEXT')
 			text.attrib['TYPE'] = "TRACK"
 			text.text = track
-	
+
 	def addQueryEVENT(self, eventType, gnID):
 		query = self.root.find('QUERY')
 		event = xml.etree.ElementTree.SubElement(query, 'EVENT')
@@ -816,12 +816,12 @@ class _gnquery:
 		myradioid.text = radioID
 
 
- 
-		 
+
+
 
 def _getElemText(parentElem, elemName, elemAttribName=None, elemAttribValue=None):
 	"""
-	XML parsing helper function to find child element with a specific name, 
+	XML parsing helper function to find child element with a specific name,
 	and return the text value
 	"""
 	elems = parentElem.findall(elemName)
@@ -837,7 +837,7 @@ def _getElemText(parentElem, elemName, elemAttribName=None, elemAttribValue=None
 
 def _getElemAttrib(parentElem, elemName, elemAttribName):
 	"""
-	XML parsing helper function to find child element with a specific name, 
+	XML parsing helper function to find child element with a specific name,
 	and return the value of a specified attribute
 	"""
 	elem = parentElem.find(elemName)
