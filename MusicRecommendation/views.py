@@ -161,18 +161,18 @@ def load_data():
         print request.json['data']
         return request.json['data']
         # data = request.json['data']
-        ##  Using a form requires the request.form function 
+        ##  Using a form requires the request.form function
         # print data
 
 @app.route('/recommendation', methods=["POST"])
 def recommendation():
     print "Inside views.py under recommendation"
     if request.method == "POST":
-        print request.json['data']
+        print request.json
         # return request.json['data']
         # data = request.json['data']
-        ##  Using a form requires the request.form function 
+        ##  Using a form requires the request.form function
         # print data
         # resp = Response(response=, status=200, mimetype="application/json")
-        return request.json['data']
-
+        response = Response(response=request.json, status=200, mimetype="application/json")
+    return (response)

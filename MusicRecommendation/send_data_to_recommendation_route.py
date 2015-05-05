@@ -11,7 +11,8 @@ payload = json.loads(payload)
 
 data = urllib.urlencode(payload)
 print data
-request = urllib2.Request(url, data)
+request = urllib2.Request(url, json.dumps(payload))
+request.add_header("content-type","application/json")
 print request
 response = urllib2.urlopen(request)
 
