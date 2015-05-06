@@ -1,11 +1,16 @@
+"""
+	output_recommended_songs.py
+	the script runs the POST request method to output the recommended songs to the route called
+	output_recommended_songs
+"""
 import requests
 import json
 import urllib
 import urllib2
 
-url = 'http://localhost:8000/recommendation'
+url = 'http://localhost:8000/output_recommended_songs'
 
-json_file = open("recommended_songs.json", 'r')
+json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
 payload = json_file.readline()
 payload = json.loads(payload)
 
@@ -15,6 +20,7 @@ request = urllib2.Request(url, json.dumps(payload))
 request.add_header("content-type","application/json")
 print request
 response = urllib2.urlopen(request)
+# the reponse here will be used as 
 
 #headers = {'content-type': 'application/json'}
 #response = requests.post(url, data=json.dumps(payload), headers=headers)

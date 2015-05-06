@@ -1,3 +1,7 @@
+"""
+
+"""
+
 import sentiment_analysis
 import music_recommendation
 import preprocessing
@@ -58,16 +62,17 @@ fitbit_filenames.remove('./data/fitbit/.DS_Store')
 #print data_frame_mongo
 
 
-def main():
+def main(music_data):
+    """ the main function that runs the recommendation algorithm from the emotion classification
+    to the recommendation of songs"""
+
     # -0.245
     i = 0
 
     while (True):
         
         """ UPDATE THE FITBIT / MUSIC DATA """
-        chdir("./write_data/")
-        system("python fitbit.py")
-        chdir("..")
+        system("python ./write_data/fitbit.py")
         # as an alternative, you set up the connection to mongodb in aws instance
         
         """ DATA ACQUISITION """
@@ -75,14 +80,7 @@ def main():
         physiological_data_df = data_df.loc[:,['bpm', 'caloriesBurned']]
         physiological_data_df = physiological_data_df[physiological_data_df['bpm']!=0]
         print physiological_data_df['bpm'].corr(physiological_data_df['caloriesBurned'])
-        
-        # it is 0.71393429575697265
-        
-        #music_data = music_recommendation.getMusicData('./data/music/music.data')
-        #music_data.to_csv("./data/music.csv")
-        
-        music_data = pd.read_csv("./data/music.csv")    
-    
+            
         """ SENTIMENT ANALYSIS """
         pred_emotions_range, cluster_model = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS)
         # get the last k physiological_data_df and predict the emotional state
@@ -114,32 +112,19 @@ def main():
         json_file = open("./MusicRecommendation/recommended_songs.json", 'w')
         json_file.write(content)
         json_file.close()
-    
-        sleep(300)
 
-        i = i + 5
+        # call the output_recommended_songs.py script to 
+        system("python ./MusicRecommendataion/output_recommended_songs.py")
+        
+        """ JUST IN CASE """
+        json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
+        payload = json_file.readline()
+        payload = json.loads(payload)
+
+        return payload
+
+        sleep(180)
+
+        i = i + 3
         
         print str(i) + " minutes have passed "
-    
- 
-json_files = main()
-
-
-# intelligence 
-# coginitive mimic
-# symbolic AI vs. Neural Nets
-# Reasoning vs. Perception (or knowledge)
-
-# brain in a vet vs. adapted AI
-# narrow vs wide AI
-
-# AI begins in 1943. 
-# McCulloch + Pitts --> 
-# Alan Turing (Turing Machine) --> in 1950, publishes Turing Test for testing intelligence of a machine
-
-# Dartmouth Workshop 1956
-
-
-
-
-

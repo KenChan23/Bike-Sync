@@ -9,6 +9,8 @@ from flask import json
 from bson import json_util
 from bson.objectid import ObjectId
 from MusicRecommendation import app
+from Analytics import main
+import pandas as pd
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
 DATABASE = "citibike"
@@ -158,7 +160,8 @@ def home():
 @app.route('/load_date_data', methods=["POST"])
 def load_data():
     if request.method == "POST":
-        print request.json['data']
+
+
         return request.json['data']
         # data = request.json['data']
         ##  Using a form requires the request.form function
@@ -166,13 +169,31 @@ def load_data():
 
 @app.route('/recommendation', methods=["POST"])
 def recommendation():
-    print "Inside views.py under recommendation"
+    # this route makes the recommendatiaon of songs using the music data that is sent from
+    # the android music player (POST request)
+
     if request.method == "POST":
         print request.json
-        # return request.json['data']
-        # data = request.json['data']
-        ##  Using a form requires the request.form function
-        # print data
-        # resp = Response(response=, status=200, mimetype="application/json")
-        response = Response(response=request.json, status=200, mimetype="application/json")
+
+        # get the music data from Android app t
+        all_music_data = ad.DataFrame.read_dict(request.json)
+        # makes recommendations based on the music data as well as other data souces
+        payload = main.main(all_music_data) 
+        # will write the output of the recommended songs to the disk (.json format)
+
+        response = Response(response=payload, status=200, mimetype="application/json")
     return (response)
+
+@app.route('/output_recommended_songs', methods = ["POST"])
+def output_recommended_songs():
+    # this route calls the output_recommended_songs.py in order to make POST request
+    # to send the recommended songs data to the route
+
+    print "outputting the recommended songs worked!"
+    if request.method == "POST":
+        print request.json['data']
+        response = Response(response=request.json['data'], status=200, mimetype="application/json")
+        return (response)
+
+
+
