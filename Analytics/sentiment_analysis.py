@@ -10,7 +10,7 @@ import preprocessing
 from math import atan
 from math import pi
 from os import system
-system("python alchemyapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
+system("python ./Analytics/alchemyapi.py e2cbc188993e799390a9b9cf510c3927df0b2279")
 from alchemyapi import AlchemyAPI
 alchemy_obj = AlchemyAPI()
 

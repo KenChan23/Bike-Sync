@@ -15,7 +15,7 @@ from time import sleep
 from os.path import isfile, join
 from pymongo import MongoClient
 
-N_EMOTIONS = 5 # for clustering
+N_EMOTIONS = 8 # for clustering
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
 DATABASE = "citibike"
@@ -51,8 +51,6 @@ def get_data_frame_from_mongoddb(dbname, collection_name, query={}, no_id=True):
 
     return df
 
-
-chdir("..")
 fitbit_filenames = [ join("./data/fitbit/",f) for f in listdir("./data/fitbit/") if isfile(join("./data/fitbit/",f)) ]
 fitbit_filenames.remove('./data/fitbit/.DS_Store')
 
@@ -70,7 +68,7 @@ def main(music_data):
     i = 0
 
     while (True):
-        
+
         """ UPDATE THE FITBIT / MUSIC DATA """
         system("python ./write_data/fitbit.py")
         # as an alternative, you set up the connection to mongodb in aws instance
@@ -117,11 +115,10 @@ def main(music_data):
         system("python ./MusicRecommendataion/output_recommended_songs.py")
         
         """ JUST IN CASE """
-        json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
-        payload = json_file.readline()
-        payload = json.loads(payload)
-
-        return payload
+        #json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
+        #payload = json_file.readline()
+        #payload = json.loads(payload)
+        #return payload
 
         sleep(180)
 
