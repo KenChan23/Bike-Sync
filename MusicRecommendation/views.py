@@ -11,6 +11,7 @@ from bson.objectid import ObjectId
 from MusicRecommendation import app
 from Analytics import main
 import pandas as pd
+from json import dumps
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
 DATABASE = "citibike"
@@ -178,10 +179,14 @@ def recommendation():
         # get the music data from Android app t
         all_music_data = ad.DataFrame.read_dict(request.json)
         # makes recommendations based on the music data as well as other data souces
-        payload = main.main(all_music_data) 
+        main.main(all_music_data) 
         # will write the output of the recommended songs to the disk (.json format)
+        
+        json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
+        payload = json_file.readline()
+        payload = json.loads(payload)
 
-        response = Response(response=payload, status=200, mimetype="application/json")
+        response = Response(response=json.dumps(payload), status=200, mimetype="application/json")
     return (response)
 
 @app.route('/output_recommended_songs', methods = ["POST"])
@@ -189,11 +194,11 @@ def output_recommended_songs():
     # this route calls the output_recommended_songs.py in order to make POST request
     # to send the recommended songs data to the route
 
-    print "outputting the recommended songs worked!"
     if request.method == "POST":
-        print request.json['data']
-        response = Response(response=request.json['data'], status=200, mimetype="application/json")
-        return (response)
+        print "outputting the recommended songs worked!"
+        json_data = json.dumps(request.json['data'])
+        response = Response(response=json_data, status_code=200, mimetype="application/json")
+        return response
 
 
 
