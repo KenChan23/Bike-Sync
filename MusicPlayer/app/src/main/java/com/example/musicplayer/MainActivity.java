@@ -163,6 +163,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
 			} 
 			while (musicCursor.moveToNext());
 		}
+		new PostToServer().execute(songList);
 	}
 
 	@Override

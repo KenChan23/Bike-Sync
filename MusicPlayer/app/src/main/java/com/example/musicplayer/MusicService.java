@@ -120,7 +120,9 @@ MediaPlayer.OnCompletionListener {
 			Log.e("MUSIC SERVICE", "Error setting data source", e);
 		}
 		player.prepareAsync();
-		new PostToServer().execute(playSong);
+		ArrayList<Song> passList = new ArrayList<Song>();
+		passList.add(playSong);
+		new PostToServer().execute(passList);
 	}
 
 	//set the song
