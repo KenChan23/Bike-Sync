@@ -9,6 +9,9 @@ from flask import json
 from bson import json_util
 from bson.objectid import ObjectId
 from MusicRecommendation import app
+from Analytics import main
+from Analytics import pygn
+from pandas import read_json
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
 DATABASE = "citibike"
@@ -168,18 +171,23 @@ def load_data():
 def recommendation():
     print "Inside views.py under recommendation"
     if request.method == "POST":
-        print request.json
-        print json.dumps(request.json)
-        l = []
-        for thing in request.json:
-            l += [ thing['songID']]
-        l += [l[0]]*3
-        print l
+        ls = []
+        for song in request.json:
+            a_metadata = pygn.search(clientID = "58624-530E5E2D845DB16CB7D3A258CCCD5E07",
+                                    userID = "27396709641709153-2C0CF7D92465CE0CC6B7DC560EFCE44E",
+                                    artist = song['songArtist'],
+                                    album = song['songAlbum'],
+                                    track = song['songTitle'])
+            a_metadata['songID'] = song['songID'] 
+            ls.append(a_metadata)
+
+        music_data = read_json(ls)
+        content = main.main(music_data)
 
         # return request.json['data']
         # data = request.json['data']
         ##  Using a form requires the request.form function
         # print data
         # resp = Response(response=, status=200, mimetype="application/json")
-        response = Response(response=json.dumps(l), status=200, mimetype="application/json")
+        response = Response(response=content, status=200, mimetype="application/json")
     return (response)

@@ -58,68 +58,69 @@ fitbit_filenames.remove('./data/fitbit/.DS_Store')
 #print data_frame_mongo
 
 
-def main():
+def main(music_data):
+    # Parameter:
+    # music_data : the DataFrame that is the result of gracenote API search
     # -0.245
     i = 0
 
-    while (True):
-        
-        """ UPDATE THE FITBIT / MUSIC DATA """
-        chdir("./write_data/")
-        system("python fitbit.py")
-        chdir("..")
-        # as an alternative, you set up the connection to mongodb in aws instance
-        
-        """ DATA ACQUISITION """
-        data_df = preprocessing.get_data_df_from_JSON_Data(fitbit_filenames)
-        physiological_data_df = data_df.loc[:,['bpm', 'caloriesBurned']]
-        physiological_data_df = physiological_data_df[physiological_data_df['bpm']!=0]
-        print physiological_data_df['bpm'].corr(physiological_data_df['caloriesBurned'])
-        
-        # it is 0.71393429575697265
-        
-        #music_data = music_recommendation.getMusicData('./data/music/music.data')
-        #music_data.to_csv("./data/music.csv")
-        
-        music_data = pd.read_csv("./data/music.csv")    
+    """ UPDATE THE FITBIT / MUSIC DATA """
+    chdir("./write_data/")
+    system("python fitbit.py")
+    chdir("..")
+    # as an alternative, you set up the connection to mongodb in aws instance
     
-        """ SENTIMENT ANALYSIS """
-        pred_emotions_range, cluster_model = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS)
-        # get the last k physiological_data_df and predict the emotional state
-        pred_labels = cluster_model.predict(physiological_data_df.tail(music_data.shape[0]))
-        
-        pred_angles_using_AV =  sentiment_analysis.predict_emotion_using_AV_model(physiological_data_df)
-        pred_labels_using_AV = pred_angles_using_AV.apply(lambda x: sentiment_analysis.get_predicted_labels_using_angles(x))
-        pred_labels_using_AV = pred_labels_using_AV[pred_labels_using_AV != -1]
-        
-        """ MUSIC RECOMMENDATION """
-        # find the predicted lables for the musics
-        music_data['pred_labels'] = music_recommendation.get_predicted_music_label(music_recommendation.av_chart_scores, music_data['mood_score'])
-        # create a data structure that contains the scores of each mood
-        groupd_obj = music_recommendation.create_data_structure(music_data)
-        
-        # use the data (predicted labels of the emotion and the categorization of the musics)
-        # to recommenda the music
-        recommended_songs_label = music_recommendation.map_from_emotion_to_music_label(pred_labels_using_AV.tail(40), groupd_obj)
-        music_recommendation.get_songs_from_label(recommended_songs_label, groupd_obj, music_data)
-
-        
-        # open the json data again and write in a suitable format
-        print getcwd()
-        json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
-        content = json_file.readline()
-        json_file.close()
-        content = '{ "data":' + content + "}"
-        print content
-        json_file = open("./MusicRecommendation/recommended_songs.json", 'w')
-        json_file.write(content)
-        json_file.close()
+    """ DATA ACQUISITION """
+    data_df = preprocessing.get_data_df_from_JSON_Data(fitbit_filenames)
+    physiological_data_df = data_df.loc[:,['bpm', 'caloriesBurned']]
+    physiological_data_df = physiological_data_df[physiological_data_df['bpm']!=0]
+    print physiological_data_df['bpm'].corr(physiological_data_df['caloriesBurned'])
     
-        sleep(300)
+    # it is 0.71393429575697265
+    
+    #music_data = music_recommendation.getMusicData('./data/music/music.data')
+    #music_data.to_csv("./data/music.csv")
+       
 
-        i = i + 5
-        
-        print str(i) + " minutes have passed "
+    """ SENTIMENT ANALYSIS """
+    pred_emotions_range, cluster_model = sentiment_analysis.data_cluster(physiological_data_df, N_EMOTIONS)
+    # get the last k physiological_data_df and predict the emotional state
+    pred_labels = cluster_model.predict(physiological_data_df.tail(music_data.shape[0]))
+    
+    pred_angles_using_AV =  sentiment_analysis.predict_emotion_using_AV_model(physiological_data_df)
+    pred_labels_using_AV = pred_angles_using_AV.apply(lambda x: sentiment_analysis.get_predicted_labels_using_angles(x))
+    pred_labels_using_AV = pred_labels_using_AV[pred_labels_using_AV != -1]
+    
+    """ MUSIC RECOMMENDATION """
+    # find the predicted lables for the musics
+    music_data['pred_labels'] = music_recommendation.get_predicted_music_label(music_recommendation.av_chart_scores, music_data['mood_score'])
+    # create a data structure that contains the scores of each mood
+    groupd_obj = music_recommendation.create_data_structure(music_data)
+    
+    # use the data (predicted labels of the emotion and the categorization of the musics)
+    # to recommenda the music
+    recommended_songs_label = music_recommendation.map_from_emotion_to_music_label(pred_labels_using_AV.tail(40), groupd_obj)
+    music_recommendation.get_songs_from_label(recommended_songs_label, groupd_obj, music_data)
+
+    
+    # open the json data again and write in a suitable format
+    print getcwd()
+    json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
+    content = json_file.readline()
+    json_file.close()
+    content = '{ "data":' + content + "}"
+    print content
+    json_file = open("./MusicRecommendation/recommended_songs.json", 'w')
+    json_file.write(content)
+    json_file.close()
+
+    sleep(300)
+
+    i = i + 5
+    
+    print str(i) + " minutes have passed "
+
+    return content
     
  
 json_files = main()
