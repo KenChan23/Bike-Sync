@@ -11,7 +11,7 @@ from bson.objectid import ObjectId
 from MusicRecommendation import app
 from Analytics import main
 from Analytics import pygn
-from pandas import read_json
+from pandas.io.json import read_json
 
 HOSTNAME = "ec2-54-172-195-184.compute-1.amazonaws.com"
 DATABASE = "citibike"
@@ -178,11 +178,14 @@ def recommendation():
                                     artist = song['songArtist'],
                                     album = song['songAlbum'],
                                     track = song['songTitle'])
-            a_metadata['songID'] = song['songID'] 
+            a_metadata['songID'] = song['songID']
             ls.append(a_metadata)
 
-        music_data = read_json(ls)
+            print a_metadata.keys()
+
+        music_data = read_json(json.dumps(ls),orient='records')
         content = main.main(music_data)
+        print content
 
         # return request.json['data']
         # data = request.json['data']
