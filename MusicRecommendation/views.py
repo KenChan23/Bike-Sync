@@ -185,12 +185,22 @@ def recommendation():
 
         music_data = read_json(json.dumps(ls),orient='records')
         content = main.main(music_data)
-        print content
+        print "CONTENT", content
+
+        l = []
+
+        for song in json.loads(content):
+            print song['track_title']
+            l += [song['songID']]
+
+        print l
+
 
         # return request.json['data']
         # data = request.json['data']
         ##  Using a form requires the request.form function
         # print data
         # resp = Response(response=, status=200, mimetype="application/json")
-        response = Response(response=content, status=200, mimetype="application/json")
+
+        response = Response(response=json.dumps(l), status=200, mimetype="application/json")
     return (response)

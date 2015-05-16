@@ -288,17 +288,24 @@ def get_songs_from_label(label_of_recommended_songs, groupd_obj, music_data):
     # music_data : the data frame  that has the information about the music
 
     if (label_of_recommended_songs != ''):
-        recommended_songs = groupd_obj[label_of_recommended_songs]
-        print recommended_songs
+        print"RECOMMENDED"
+        if label_of_recommended_songs in groupd_obj.keys():
+            recommended_songs = groupd_obj[label_of_recommended_songs]
 
-        ls_index = []
-        for a_tuple in recommended_songs:
-            an_id = a_tuple[0]
-            ls_index.append(an_id)
 
-        records = music_data.iloc[ls_index]
+            ls_index = []
+            for a_tuple in recommended_songs:
+                an_id = a_tuple[0]
+                ls_index.append(an_id)
 
-        print records
+            records = music_data.iloc[ls_index]
+
+            print records
+
+        else:
+
+            records = music_data
+
 
         records.to_json('./MusicRecommendation/recommended_songs.json', orient='records')
 

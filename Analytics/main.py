@@ -110,8 +110,8 @@ def main(music_data):
     json_file = open("./MusicRecommendation/recommended_songs.json", 'r')
     content = json_file.readline()
     json_file.close()
-    content = '{ "data":' + content + "}"
-    print content
+    #content = '{ "data":' + content + "}"
+    #print content
     json_file = open("./MusicRecommendation/recommended_songs.json", 'w')
     json_file.write(content)
     json_file.close()
