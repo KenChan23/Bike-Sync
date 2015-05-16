@@ -169,10 +169,17 @@ def recommendation():
     print "Inside views.py under recommendation"
     if request.method == "POST":
         print request.json
+        print json.dumps(request.json)
+        l = []
+        for thing in request.json:
+            l += [ thing['songID']]
+        l += [l[0]]*3
+        print l
+
         # return request.json['data']
         # data = request.json['data']
         ##  Using a form requires the request.form function
         # print data
         # resp = Response(response=, status=200, mimetype="application/json")
-        response = Response(response=request.json, status=200, mimetype="application/json")
+        response = Response(response=json.dumps(l), status=200, mimetype="application/json")
     return (response)

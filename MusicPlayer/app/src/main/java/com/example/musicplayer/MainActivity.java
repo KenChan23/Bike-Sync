@@ -3,6 +3,7 @@ package com.example.musicplayer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import android.util.Log;
 
 import com.example.musicplayer.MusicService.MusicBinder;
 
@@ -43,6 +44,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
 
 	//controller
 	private MusicController controller;
+	private ArrayList<Long> alist;
 
 	//activity and playback pause flags
 	private boolean paused=false, playbackPaused=false;
@@ -82,6 +84,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
 			musicSrv = binder.getService();
 			//pass list
 			musicSrv.setList(songList);
+			musicSrv.setQueue(alist);
 			musicBound = true;
 		}
 
@@ -163,7 +166,11 @@ public class MainActivity extends Activity implements MediaPlayerControl {
 			} 
 			while (musicCursor.moveToNext());
 		}
-		new PostToServer().execute(songList);
+		PostToServer post = new PostToServer();
+		post.execute(songList);
+		try {alist = post.get();
+		 Log.d("LIST",alist.toString());
+			} catch(Exception e) { }
 	}
 
 	@Override

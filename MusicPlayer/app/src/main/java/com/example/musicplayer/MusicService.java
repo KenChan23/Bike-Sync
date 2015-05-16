@@ -45,7 +45,7 @@ MediaPlayer.OnCompletionListener {
 	//shuffle flag and random
 	private boolean shuffle=false;
 	private Random rand;
-
+	private ArrayList<Long> songQueue = new ArrayList<Long>();
 
 
 	public void onCreate(){
@@ -122,7 +122,7 @@ MediaPlayer.OnCompletionListener {
 		player.prepareAsync();
 		ArrayList<Song> passList = new ArrayList<Song>();
 		passList.add(playSong);
-		new PostToServer().execute(passList);
+		//new PostToServer().execute(passList);
 	}
 
 	//set the song
@@ -200,8 +200,26 @@ MediaPlayer.OnCompletionListener {
 		playSong();
 	}
 
+	public void setQueue(ArrayList<Long> q)
+	{
+		songQueue = new ArrayList<Long>(q);
+	}
+
 	//skip to next
 	public void playNext(){
+		Log.d("SONGQUE",songQueue.toString());
+
+		while (songQueue.size() > 0) {
+			for(int i = 0; i < songs.size();i++) {
+				Song s = songs.get(i);
+				if (s.getID() == songQueue.get(0)) {
+					songPosn = i;
+					songQueue.remove(0);
+					playSong();
+					return;
+				}
+			}
+		}
 		if(shuffle){
 			int newSong = songPosn;
 			while(newSong==songPosn){
